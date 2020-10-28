@@ -13,7 +13,7 @@ echo "<br>";
 echo $linha;
 echo "<br>";
 
-echo ucwords( strftime("%A %B"));
+echo ucwords(strftime("%A %B"));
 //ucwords coloca primeiras letras de cada palavra em maiúsclas.
 echo "<br>";
 echo "<br>";
