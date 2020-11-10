@@ -3,7 +3,9 @@
 function __autoload($nomeClass){
     //$nomeClass parâmetro que recebe nome da classe chamada automaticamente..
     
-    require_once("$nomeClass.php");// .php é necessário pois nomeClass só exibe o nome da classe, logo precisamos ter o .php para formar o nome do arquivo da classe.
+    require_once("$nomeClass.php");
+    //.php é necessário pois nomeClass só retorna o nome da classe, logo precisamos ter o
+    // .php para formar o nome do arquivo da classe.
     var_dump($nomeClass);
     echo "<br>";
 
