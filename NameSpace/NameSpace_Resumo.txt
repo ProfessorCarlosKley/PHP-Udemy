@@ -1,0 +1,5 @@
+/* NAMESPACE:
+ * Permite agrupar as classes dentro de pastas de forma organizada. 
+ * Não é interessante ter uma pasata com totas as classes dentro.
+ * Um programa com uma, duas ou três classes é uma situação bem diferente de outro bem maior com dezendas de classes, daí a importância de organizá-las.
+ * A pasta classe tem uma classe cadastr genérica. Mas dentro dela teremos uma subpasta mara orgnizar outras classes de cadastros filhas por exemplo.

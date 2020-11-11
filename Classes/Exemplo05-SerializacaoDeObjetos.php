@@ -32,7 +32,7 @@ class Endereco{
 }//Fim da Classe
 $newendereco = new Endereco("Rua José Pedro de Carvalho", "325", "Salvador-BA");
 echo $newendereco;
-//O echo precisa de uma string, ele não consege mostrar bjeto inteiro, sendo assim,
+//O echo precisa de uma string, ele não consege mostrar objeto inteiro, sendo assim,
 //__toString será chamado.
 unset($newendereco);//Destruindo objeto.
 
