@@ -1,0 +1,12 @@
+USE udemydbphp7;
+CREATE TABLE tb_usuarios(
+idusuario INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+#campo inteiro, não nulo, auto incremento e chave primária.
+deslogin VARCHAR(64) NOT NULL,
+#campo texto de qualquer caracter, campo descritivo, por isso prefixo des (boas práticas)
+dessenha VARCHAR(256) NOT NULL, 
+#o campo de senha será criado um rash para verificar senha por isso 256
+dtcadastro TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP()
+# TIMESTAMP para armazenar data e hora atomaticamente, default recebe a data e hora do servidor que está rodando.auto_increment
+# TIMESTAMP Já visto nas aulas anteriores do php.
+);
