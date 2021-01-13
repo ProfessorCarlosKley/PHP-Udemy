@@ -4,7 +4,7 @@ $diaDaSemana = date("w");
 switch ($diaDaSemana) {
     case 0:
         echo "DOMINGO";
-        break;
+        break; //evita execução do segundo case, caso est seja verdadeiro.
     case 1:
         echo "SEGUNDA-FEIRA";
         break;

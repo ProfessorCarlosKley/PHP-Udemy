@@ -1,7 +1,6 @@
 <?php
 # Para spl_autoload_register, ver comentários no arquivo Exemplo02.php do diretório:
 # Classes/Autoload
-
 //Usando função anônima para gerar registros autoload's:
 spl_autoload_register(function($nameClass){
     //Diretório de procura das classes. Na estrutura terá o nome class.

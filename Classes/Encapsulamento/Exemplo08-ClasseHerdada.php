@@ -21,7 +21,7 @@ class Programador extends Pessoa{
 }
 
 $linha = str_repeat("=", 150);
-#------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------
 echo $linha;
 echo "<br>";
 echo "Trabalhando com a classe Pessoa()";
@@ -30,11 +30,11 @@ echo $linha;
 echo "<br>";
 
 $objeto = new Pessoa();
-echo "Criador PHP: " . $objeto->nome . "<br>";
+echo "Criador PHP: " . $objeto->nome . "<br>"; //acesso direto ao atributo.
 echo "<br>";
 echo "O método resolve problema de leitura de protected e private.";
 echo "<br>";
-$objeto->verDados();
+$objeto->verDados(); //acesso através do método.
 //verDados método público, pode ser chamado fora da classe.
 echo "<br>";
 #------------------------------------------------------------------------------------------

@@ -2,7 +2,7 @@
 //Static, perite a chamada sem a necessidade da instância.
 
 class Documento{
-    public $numero;
+    private $numero;
 
     public function getNumero(){
         return $this -> numero;

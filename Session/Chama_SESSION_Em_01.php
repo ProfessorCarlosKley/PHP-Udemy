@@ -11,10 +11,16 @@ require_once("Config.php");
 
 
 
-session_unset($_SESSION['nome']);
-#Limpa a variável de seção. Mas no site que iniciou a seção as informações continuam.
+
+
 echo $_SESSION['nome'];
+
+//session_unset($_SESSION['nome']);
+
+#Limpa a variável de seção. Mas no site que iniciou a seção as informações continuam.
+
 session_destroy();
+
 #destroy além de limpar a variável, destrói a variável e as informações somem do site.
 
 # Para o array SESSION funcionar, o arquivo que o define tem que ser chamado antes.

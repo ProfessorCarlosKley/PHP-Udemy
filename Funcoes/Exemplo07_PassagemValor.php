@@ -1,5 +1,5 @@
 <?php
-$a = 10;
+$a = 10; //valor da variável inalterada.
 function trocaValor($a){
     $a = 50;
     return $a;

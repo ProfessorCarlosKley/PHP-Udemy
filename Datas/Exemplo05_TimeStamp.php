@@ -6,10 +6,10 @@ echo "A quantidade de segundos desde janeiro de 1970 até agora.";
 echo time();
 echo "<br>";
 
-echo "Data fixada com timestamp: " . date("d/m/Y H:i:s", 1603826735);
-// 1603826441 - Esse valor foi pego no momento da criação desse arquivo na linha echo time();
+echo "Data fixada com timestamp: " . date("d/m/Y H:i:s", 1610545869);
+// 1610545869 - Esse valor foi pego no momento da criação desse arquivo na linha echo time();
 echo "<br>No momento desse estudo, essa quantidade de segundos corresondia a: ";
-$anos = 1603826735 / 3600 / 24 / 365;
+$anos = 1610545869 / 3600 / 24 / 365;
 echo $anos . " anos. ";
 
 /* timestamp: O parâmetro opcional timestamp é um integer Unix timestamp cujo padrão é a hora local se timestamp não for informado. Em outras palavras, o padrão é o valor da função time(). */

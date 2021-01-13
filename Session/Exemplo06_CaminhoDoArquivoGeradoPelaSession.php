@@ -3,22 +3,25 @@ require_once('Config.php');
 echo "Local do arquivo de sessão: " . session_save_path();
 # Obtém e/ou define o caminho para armazenamento da sessão atual
 echo "<br>";
-echo "Status: " . session_status() . " ";
-# Retorna o status atual da sessão
-var_dump(session_status());
+
+
 echo "<br>";
 echo "Nome da Seção: " . session_name();
 # Obtém e/ou define o nome da sessão atual
 echo "<br>";
+echo "Status da Seção: ";
+echo "Status: " . session_status() . ": ";
+# Retorna o status atual da sessão
+var_dump(session_status());
 switch (session_status()) {
     case PHP_SESSION_DISABLED:
-        echo "As sessões estiverem desabilitadas.";
+        echo "As sessões estão desabilitadas.";
         break;
     case PHP_SESSION_NONE:
-        echo "As sessões estiverem habilitadas, mas nenhuma existir.";
+        echo "As sessões estão habilitadas, mas nenhuma ativa.";
         break;
     case PHP_SESSION_ACTIVE:
-        echo "As sessões estiverem habilitadas, e uma existir";
+        echo "As sessões estão habilitadas, e pelo menos uma ativa";
         break;
 }
 /*

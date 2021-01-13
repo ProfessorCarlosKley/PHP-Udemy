@@ -5,17 +5,15 @@
 */
 #-----------------------------------------------------------------------------------------
 interface Veiculo{
-    public function acelerar($velcodade);
+    public function acelerar($velocidade);
     public function desacelerar($velocidade);
     public function trocarMarcha($marcha);
   }
 
   // A classe que implement Veiculo:
 abstract class Automovel implements Veiculo{
-    //Automovel implementa Veiculo, porém, não podemos instanciar Automovel diretamente. 
-    //Ela é uma genérica e para instanciar precisamos chamar através de outra classe.
-    //Que será uma classe de um tipo específico de carro por exemplo.
-    public function acelerar($speed){
+//Automovel implementa Veiculo, porém, não podemos instanciar Automovel diretamente. Ela é uma genérica e para instanciar precisamos chamar através de outra classe. Que será uma classe de um tipo específico de carro por exemplo.
+public function acelerar($speed){
         //Na definição da função, o parâmetro não necessita ter exatamente o mesmo nome.
         //Basta que tenho o mesmo número de parâmetros que a interfece quer e seu tipo.
         echo "O veículo foi acelerado até: ". $speed . " km/h.<br> ";
@@ -33,7 +31,7 @@ abstract class Automovel implements Veiculo{
 
 }
 
-class DelRey extends Automovel{
+class DelRey extends Automovel{ //Instanciando carro e não Automóvel.
 
     public function empurrar(){
         //Método específico da classe DelRey

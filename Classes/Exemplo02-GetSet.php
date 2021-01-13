@@ -65,7 +65,9 @@ class Carro
             "Motor: " => $this->getMotor(),
             "Ano: " => $this->getAno()
             //No array usamos =>, na classe ->.
-            /*O espaço depois do nome das chaves no array tem que ser considerado, faz parte do nome.*/
+            /*O espaço depois do nome das chaves no array tem que ser considerado, faz parte do nome.
+            Modelo, Motor e Ano são as chaves do array.
+            */
         );
     }
 } //Fim da classe.
@@ -78,7 +80,7 @@ $gol->setModelo('Gol-GT');
 $gol->setMotor('1.6');
 $gol->setAno('2020');
 
-echo "Exibindo o getExibir que gera o array dos atributos: ";
+echo "Exibindo getExibir que gera o array dos atributos: ";
 echo "<br>";
 print_r($gol->getExibir());
 echo "<br>";
@@ -103,7 +105,8 @@ echo "Exibindo cada get's individuais com o array getExibir: ";
 echo "<br>";
 print_r($gol->getExibir()["Modelo: "]);
 echo "<br>";
-echo "Motor: "; //getAno retorna um float por isso, a string Motor não está na função
+echo "Motor: ";
+//getAno retorna um float por isso, a string Motor não está na função
 print_r($gol->getExibir()["Motor: "]);
 echo "<br>";
 echo "Ano: "; //getAno retorna um int por isso, a string Ano não está na função

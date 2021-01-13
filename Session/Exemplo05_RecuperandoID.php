@@ -1,5 +1,5 @@
 <?php
-session_id('s3n17pn06u0kbu6b6gj45cqij2');
+session_id('3a0ald2r9au6ef6km0everrgvh');
 require_once("Config.php");
 //Recuperando um id inicializado por outro navegador.
 //Lembrando que sempre temos que executar o exemplo01 para criar uma session.

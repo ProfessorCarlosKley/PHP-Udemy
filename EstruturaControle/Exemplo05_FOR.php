@@ -8,8 +8,9 @@ echo "<br>";
 echo "De 0 a 1000 de 5 em 5";
 
 for ($x = 0; $x <= 1000; $x += 5) {
-    echo $x . " ";
+    echo $x . " "; //apenas uma linha de instrução, nã prcisa de chaves.
 }
+
 echo "<br>";
 echo "<br>";
 echo "De 0 a 1000 ignorando o intervalo de 200 a 800";

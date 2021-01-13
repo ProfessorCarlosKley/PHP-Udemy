@@ -1,25 +1,23 @@
 <?php
 
 interface Veiculo{
-    public function acelerar($velcodade);
+    public function acelerar($velocidade);
     public function desacelerar($velocidade);
     public function trocarMarcha($marcha);
   }
 
-  // A classe que implement Veiculo:
+// A classe que implement Veiculo:
 class Civic implements Veiculo{
-    //Para implementar várias basta usar vígula: class Civic implements Veiculo, Outra...
-    public function acelerar($speed){
-        //Na definição da função, o parâmetro não necessita ter exatamente o mesmo nome.
-        //Basta que tenho o mesmo número de parâmetros que a interfece quer e seu tipo.
+//Para implementar várias basta usar vígula: class Civic implements Veiculo, Outra...
+public function acelerar($speed){
+//Na definição da função, o parâmetro não necessita ter exatamente o mesmo nome.
+//Basta que tenho o mesmo número de parâmetros que a interfece quer e seu tipo.
         echo "O veículo foi acelerado até: ". $speed . " km/h.<br> ";
     } //Fim do método acelerar
-
-    public function desacelerar($velocidade){
+public function desacelerar($velocidade){
         echo "O veículo desacelerou até: ". $velocidade . " km/h.<br>";
-    }//Fim do Freio
-
-    public function trocarMarcha($marcha){
+}//Fim do Freio
+public function trocarMarcha($marcha){
 
         echo "Marcha alterada para : ". $marcha . "ª marcha. <br>";
 
@@ -31,10 +29,6 @@ $carro = new Civic();
 echo $carro -> acelerar(100);
 echo $carro -> desacelerar(20);
 echo $carro -> trocarMarcha(5);
-
-
-
-
 
 
 //INTERFACE:-------------------------------------------------------------------------------

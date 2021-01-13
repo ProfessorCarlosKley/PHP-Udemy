@@ -10,7 +10,7 @@ abstract class Animal{
 
 class Cachorro extends Animal{
     public function somEmitido(){   
-    /*método polimórfico. Altera comportamento da classe pai e exibe mensagem abaixo par ao método somEmitido()*/
+/*método polimórfico. Altera comportamento da classe pai e exibe mensagem abaixo para o método somEmitido()*/
     
         return "CACHORRO: late!<br>";//Sobrepõe mensagem da classe pai.
     }
@@ -18,7 +18,7 @@ class Cachorro extends Animal{
 
 class Gato extends Animal{
     public function somEmitido(){
-    /*método polimórfico. Altera comportamento da classe pai e exibe mensagem abaixo par ao método somEmitido()*/
+/*método polimórfico. Altera comportamento da classe pai e exibe mensagem abaixo par ao método somEmitido()*/
         return "GATO: mia!<br>";//Sobrepõe mensagem da classe pai.
     }
 }
@@ -36,7 +36,7 @@ class Leao extends Animal{
     }
     public function mover(){
         return "Esse animal é muito veloz: " . parent::mover();
-        /*Nesse caso, parent permite que acessemos o método mover da classe pai.
+/*Nesse caso, parent permite que acessemos o método mover da classe pai.
         Usamos :: da mesma forma para acessar static.
         parent se não usássemos a mensagem anes da concatenação exibira apenas a mensagem definida em Animal (Pai) não permitiria o polimorfismo. No Polimorfismo o mátodo dentro da classe soprepõe ao método do Pai. é o que acontece com o método somEMitido */
     }
