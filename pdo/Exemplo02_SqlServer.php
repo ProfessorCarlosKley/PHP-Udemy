@@ -1,5 +1,5 @@
 <?php
-$conn = new PDO("sqlsrv:database=udemy;server=localhost\SQLEXPRESS;ConnectionPooling=0", "sa", "58958900");
+$conn = new PDO("sqlsrv:Database=udemy;server=localhost\SQLEXPRESS;ConnectionPooling=0", "sa", "58958900");
 /** PDO php data objetc, para trabalhar com banco de dados, php7 
  * .Torna mais prático o acesso ao banco.
  * 1) tipo de banco, aqui mysql, seguido de dois pontos e onome do banco.
