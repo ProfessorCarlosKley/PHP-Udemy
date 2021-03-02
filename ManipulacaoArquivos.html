@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://www.php.net/manual/pt_BR/function.fopen.php -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt_BR" class=" js flexbox flexboxlegacy datauri"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PHP: fopen - Manual </title>
+
+ <link rel="shortcut icon" href="https://www.php.net/favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="http://php.net/phpnetimprovedsearch.src" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="https://www.php.net/releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="https://www.php.net/feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="https://www.php.net/manual/pt_BR/function.fopen.php">
+ <link rel="shorturl" href="https://www.php.net/fopen">
+ <link rel="alternate" href="https://www.php.net/fopen" hreflang="x-default">
+
+ <link rel="contents" href="https://www.php.net/manual/pt_BR/index.php">
+ <link rel="index" href="https://www.php.net/manual/pt_BR/ref.filesystem.php">
+ <link rel="prev" href="https://www.php.net/manual/pt_BR/function.fnmatch.php">
+ <link rel="next" href="https://www.php.net/manual/pt_BR/function.fpassthru.php">
+
+ <link rel="alternate" href="https://www.php.net/manual/en/function.fopen.php" hreflang="en">
+ <link rel="alternate" href="https://www.php.net/manual/pt_BR/function.fopen.php" hreflang="pt_BR">
+ <link rel="alternate" href="https://www.php.net/manual/zh/function.fopen.php" hreflang="zh">
+ <link rel="alternate" href="https://www.php.net/manual/fr/function.fopen.php" hreflang="fr">
+ <link rel="alternate" href="https://www.php.net/manual/de/function.fopen.php" hreflang="de">
+ <link rel="alternate" href="https://www.php.net/manual/ja/function.fopen.php" hreflang="ja">
+ <link rel="alternate" href="https://www.php.net/manual/ro/function.fopen.php" hreflang="ro">
+ <link rel="alternate" href="https://www.php.net/manual/ru/function.fopen.php" hreflang="ru">
+ <link rel="alternate" href="https://www.php.net/manual/es/function.fopen.php" hreflang="es">
+ <link rel="alternate" href="https://www.php.net/manual/tr/function.fopen.php" hreflang="tr">
+
+<link rel="stylesheet" type="text/css" href="./ManipulacaoArquivos_files/cached.php" media="screen">
+<link rel="stylesheet" type="text/css" href="./ManipulacaoArquivos_files/cached(1).php" media="screen">
+<link rel="stylesheet" type="text/css" href="./ManipulacaoArquivos_files/cached(2).php" media="screen">
+<link rel="stylesheet" type="text/css" href="./ManipulacaoArquivos_files/cached(3).php" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="https://www.php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script>
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="https://www.php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script src="https://www.php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <!--<base href="https://www.php.net/manual/pt_BR/function.fopen.php">--><base href=".">
+
+
+</head>
+<body class="docs " style="">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="https://www.php.net/" class="brand"><img src="./ManipulacaoArquivos_files/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="https://www.php.net/downloads">Downloads</a></li>
+      <li class="active"><a href="https://www.php.net/docs.php">Documentation</a></li>
+      <li class=""><a href="https://www.php.net/get-involved">Get Involved</a></li>
+      <li class=""><a href="https://www.php.net/support">Help</a></li>
+      <li class="">
+        <a href="https://www.php.net/releases/8.0/index.php">
+          <img src="./ManipulacaoArquivos_files/logo_php8.svg" alt="php8" height="22" width="60">
+        </a>
+      </li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="https://www.php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <span class="twitter-typeahead" style="position: relative; display: inline-block;"><input class="tt-hint search-query" type="text" autocomplete="off" spellcheck="off" disabled="" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255, 255, 255);"><input type="search" name="pattern" class="search-query tt-query" placeholder="Search" accesskey="s" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;"><input type="submit" style="visibility: hidden; position: fixed"><span style="position: absolute; left: -9999px; visibility: hidden; white-space: nowrap; font-family: &quot;Fira Sans&quot;, &quot;Source Sans Pro&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></span><span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;"></span></span>
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<nav id="trick"><div><dl>
+<dt><a href="https://www.php.net/manual/en/getting-started.php">Getting Started</a></dt>
+	<dd><a href="https://www.php.net/manual/en/introduction.php">Introduction</a></dd>
+	<dd><a href="https://www.php.net/manual/en/tutorial.php">A simple tutorial</a></dd>
+<dt><a href="https://www.php.net/manual/en/langref.php">Language Reference</a></dt>
+	<dd><a href="https://www.php.net/manual/en/language.basic-syntax.php">Basic syntax</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.types.php">Types</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.variables.php">Variables</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.constants.php">Constants</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.expressions.php">Expressions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.operators.php">Operators</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.control-structures.php">Control Structures</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.functions.php">Functions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.oop5.php">Classes and Objects</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.namespaces.php">Namespaces</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.errors.php">Errors</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.exceptions.php">Exceptions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.generators.php">Generators</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.attributes.php">Attributes</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.references.php">References Explained</a></dd>
+	<dd><a href="https://www.php.net/manual/en/reserved.variables.php">Predefined Variables</a></dd>
+	<dd><a href="https://www.php.net/manual/en/reserved.exceptions.php">Predefined Exceptions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/reserved.interfaces.php">Predefined Interfaces and Classes</a></dd>
+	<dd><a href="https://www.php.net/manual/en/context.php">Context options and parameters</a></dd>
+	<dd><a href="https://www.php.net/manual/en/wrappers.php">Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href="https://www.php.net/manual/en/security.php">Security</a></dt>
+	<dd><a href="https://www.php.net/manual/en/security.intro.php">Introduction</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.general.php">General considerations</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.cgi-bin.php">Installed as CGI binary</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.apache.php">Installed as an Apache module</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.sessions.php">Session Security</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.filesystem.php">Filesystem Security</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.database.php">Database Security</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.errors.php">Error Reporting</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.globals.php">Using Register Globals</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.variables.php">User Submitted Data</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.hiding.php">Hiding PHP</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.current.php">Keeping Current</a></dd>
+<dt><a href="https://www.php.net/manual/en/features.php">Features</a></dt>
+	<dd><a href="https://www.php.net/manual/en/features.http-auth.php">HTTP authentication with PHP</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.cookies.php">Cookies</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.sessions.php">Sessions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.xforms.php">Dealing with XForms</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.file-upload.php">Handling file uploads</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.remote-files.php">Using remote files</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.connection-handling.php">Connection handling</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.persistent-connections.php">Persistent Database Connections</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.commandline.php">Command line usage</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.gc.php">Garbage Collection</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.dtrace.php">DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href="https://www.php.net/manual/en/funcref.php">Function Reference</a></dt>
+	<dd><a href="https://www.php.net/manual/en/refs.basic.php.php">Affecting PHP's Behaviour</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.utilspec.audio.php">Audio Formats Manipulation</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.remote.auth.php">Authentication Services</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.utilspec.cmdline.php">Command Line Specific Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.compression.php">Compression and Archive Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.crypto.php">Cryptography Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.database.php">Database Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.calendar.php">Date and Time Related Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.fileprocess.file.php">File System Related Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.international.php">Human Language and Character Encoding Support</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.utilspec.image.php">Image Processing and Generation</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.remote.mail.php">Mail Related Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.math.php">Mathematical Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.utilspec.nontext.php">Non-Text MIME Output</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.fileprocess.process.php">Process Control Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.basic.other.php">Other Basic Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.remote.other.php">Other Services</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.search.php">Search Engine Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.utilspec.server.php">Server Specific Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.basic.session.php">Session Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.basic.text.php">Text Processing</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.basic.vartype.php">Variable and Type Related Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.webservice.php">Web Services</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.utilspec.windows.php">Windows Only Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.xml.php">XML Manipulation</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.ui.php">GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+  <div id="breadcrumbs" class="clearfix">
+    <div id="breadcrumbs-inner">
+          <div class="next">
+        <a href="https://www.php.net/manual/pt_BR/function.fpassthru.php">
+          fpassthru »
+        </a>
+      </div>
+              <div class="prev">
+        <a href="https://www.php.net/manual/pt_BR/function.fnmatch.php">
+          « fnmatch        </a>
+      </div>
+          <ul>
+            <li><a href="https://www.php.net/manual/pt_BR/index.php">Manual do PHP</a></li>      <li><a href="https://www.php.net/manual/pt_BR/funcref.php">Referência das Funções</a></li>      <li><a href="https://www.php.net/manual/pt_BR/refs.fileprocess.file.php">Extensões Relacionadas a Sistema de Arquivo</a></li>      <li><a href="https://www.php.net/manual/pt_BR/book.filesystem.php">Filesystem</a></li>      <li><a href="https://www.php.net/manual/pt_BR/ref.filesystem.php">Funções para Sistema de arquivo</a></li>      </ul>
+    </div>
+  </div>
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+  <div class="page-tools">
+    <div class="change-language">
+      <form action="https://www.php.net/manual/change.php" method="get" id="changelang" name="changelang">
+        <fieldset>
+          <label for="changelang-langs">Change language:</label>
+          <select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+            <option value="en/function.fopen.php">English</option>
+            <option value="pt_BR/function.fopen.php" selected="selected">Brazilian Portuguese</option>
+            <option value="zh/function.fopen.php">Chinese (Simplified)</option>
+            <option value="fr/function.fopen.php">French</option>
+            <option value="de/function.fopen.php">German</option>
+            <option value="ja/function.fopen.php">Japanese</option>
+            <option value="ro/function.fopen.php">Romanian</option>
+            <option value="ru/function.fopen.php">Russian</option>
+            <option value="es/function.fopen.php">Spanish</option>
+            <option value="tr/function.fopen.php">Turkish</option>
+            <option value="help-translate.php">Other</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="edit-bug">
+      <a href="https://github.com/php/doc-pt_br">Submit a Pull Request</a>
+      <a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=function.fopen">Report a Bug</a>
+    </div>
+  </div><div id="function.fopen" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">fopen</h1>
+  <p class="verinfo">(PHP 4, PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">fopen</span> — <span class="dc-title">Abre um arquivo ou URL</span></p>
+
+ </div>
+ 
+ <div class="refsect1 description" id="refsect1-function.fopen-description">
+  <h3 class="title">Descrição<a class="genanchor" href="https://www.php.net/manual/pt_BR/function.fopen.php#refsect1-function.fopen-description"> ¶</a></h3>
+  <div class="methodsynopsis dc-description">
+   <span class="methodname"><strong>fopen</strong></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$mode</code></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$use_include_path</code></span>
+   [, <span class="methodparam"><span class="type">resource</span> <code class="parameter">$context</code></span>
+  ]] ) : <span class="type">resource</span></div>
+
+  <p class="para rdfs-comment">
+   <span class="function"><strong>fopen()</strong></span> conecta um recurso nomeado, especificado por
+   <code class="parameter">filename</code>, a um stream. 
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.fopen-parameters">
+  <h3 class="title">Parâmetros<a class="genanchor" href="https://www.php.net/manual/pt_BR/function.fopen.php#refsect1-function.fopen-parameters"> ¶</a></h3>
+  <dl>
+
+    
+     <dt>
+<code class="parameter">filename</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Se <code class="parameter">filename</code> estiver na forma de "scheme://...", é
+       assumido que seja uma URL, e o PHP buscará por um manipulador de protocolo
+       (também conhecido como wrapper) para aquele scheme. Se nenhum wrapper para
+       aquele protocolo estiver registrado, o PHP emitirá um aviso para ajudá-lo
+       a rastrear potenciais problemas no seu script, e então continuará presumindo
+       que <code class="parameter">filename</code> especifica um nome de arquivo.
+      </p>
+      <p class="para">
+       Se o PHP decidiu que <code class="parameter">filename</code> se refere
+       a um arquivo local, então ele tentará abrir um stream para aquele arquivo.
+       O arquivo precisa ser acessível pelo PHP, então você precisa assegurar
+       que as permissões de acesso do arquivo permitem este acesso.
+       Se você tiver ativado <code class="literal">safe mode</code>
+       ou <a href="https://www.php.net/manual/pt_BR/ini.core.php#ini.open-basedir" class="link">open_basedir</a>, outras
+       restrições podem se aplicar.
+      </p>
+      <p class="para">
+       Se o PHP decidiu que <code class="parameter">filename</code> se refere
+       a um protocolo registrado e esse protocolo estiver registrado como
+       um protocolo de rede, o PHP irá verificar para ter certeza que
+       <a href="https://www.php.net/manual/pt_BR/filesystem.configuration.php#ini.allow-url-fopen" class="link">allow_url_fopen</a> está
+       ativado. Se estiver desligado, o PHP emitirá um alerta e 
+       a chamada ao fopen irá falhar.
+      </p>
+      <blockquote class="note"><p><strong class="note">Nota</strong>: 
+       </p><p class="para">
+        A lista de protocolos suportados pode ser encontrada em <a href="https://www.php.net/manual/pt_BR/wrappers.php" class="xref">Protocolos e Wrappers suportados</a>. Alguns protocolos (também mencionados como
+        <code class="literal">wrappers</code>) suportam <code class="literal">context</code>
+        e/ou opções do <var class="filename">php.ini</var>. Recorra à página específica do
+        protocolo em uso para uma lista das opções que podem ser definidas.
+        (ex.: o valor <var class="filename">php.ini</var> <code class="literal">user_agent</code> utilizado pelo
+        wrapper <code class="literal">http</code>).
+       </p>
+      </blockquote>
+      <p class="para">
+       Na plataforma Windows, tenha cuidado de escapar qualquer barra invertida
+       usada no caminho do arquivo, ou use barras normais.
+       </p><div class="informalexample">
+        <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br>$handle&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"c:\\data\\info.txt"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"r"</span><span style="color: #007700">);<br></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+        </div>
+
+       </div>
+      
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">mode</code></dt>
+
+     <dd>
+
+      <p class="para">
+       O parâmetro <code class="parameter">mode</code> especifica o tipo de acesso
+       que você precisa ao stream. Pode ser um dos seguintes:
+       </p><table class="doctable table">
+        <caption><strong>
+         Lista dos possíveis modos de <span class="function"><strong>fopen()</strong></span>
+         utilizando <code class="parameter">mode</code>
+        </strong></caption>
+        
+         <thead>
+          <tr>
+           <th><code class="parameter">mode</code></th>
+           <th>Descrição</th>
+          </tr>
+
+         </thead>
+
+         <tbody class="tbody">
+          <tr>
+           <td><code class="literal">'r'</code></td>
+           <td>
+            Abre somente para leitura; coloca o ponteiro do arquivo no
+            começo do arquivo.
+           </td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">'r+'</code></td>
+           <td>
+            Abre para leitura e escrita; coloca o ponteiro do arquivo no
+            começo do arquivo.
+           </td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">'w'</code></td>
+           <td>
+            Abre somente para escrita; coloca o ponteiro do arquivo no
+            começo do arquivo e reduz o comprimento do arquivo para zero.
+            Se o arquivo não existir, tenta criá-lo.
+           </td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">'w+'</code></td>
+           <td>
+            Abre para leitura e escrita; coloca o ponteiro do arquivo no
+            começo do arquivo e reduz o comprimento do arquivo para zero.
+            Se o arquivo não existir, tenta criá-lo.
+           </td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">'a'</code></td>
+           <td>
+            Abre somente para escrita; coloca o ponteiro do arquivo no final
+            do arquivo. Se o arquivo não existir, tenta criá-lo.
+           </td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">'a+'</code></td>
+           <td>
+            Abre para leitura e escrita; coloca o ponteiro do arquivo no final
+            do arquivo. Se o arquivo não existir, tenta criá-lo.
+           </td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">'x'</code></td>
+           <td>
+            Cria e abre o arquivo somente para escrita; coloca o ponteiro no
+            começo do arquivo. Se o arquivo já existir, a chamada a
+            <span class="function"><strong>fopen()</strong></span> falhará, retornando <strong><code>false</code></strong> e
+            gerando um erro de nível <strong><code>E_WARNING</code></strong>. Se
+            o arquivo não existir, tenta criá-lo. Isto é equivalente
+            a especificar as flags <code class="literal">O_EXCL|O_CREAT</code> para a
+            chamada de sistema <code class="literal">open(2)</code>.
+           </td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">'x+'</code></td>
+           <td>
+            Cria e abre o arquivo para leitura e escrita; coloca o ponteiro no
+            começo do arquivo. Se o arquivo já existir, a chamada a
+            <span class="function"><strong>fopen()</strong></span> falhará, retornando <strong><code>false</code></strong> e
+            gerando um erro de nível <strong><code>E_WARNING</code></strong>. Se
+            o arquivo não existir, tenta criá-lo. Isto é equivalente
+            a especificar as flags <code class="literal">O_EXCL|O_CREAT</code> para a
+            chamada de sistema <code class="literal">open(2)</code>.
+           </td>
+          </tr>
+
+         </tbody>
+        
+       </table>
+
+      
+      <blockquote class="note"><p><strong class="note">Nota</strong>: 
+       </p><p class="para">
+        Famílias de sistemas operacionais diferentes têm convenções de
+        delimitação de linhas diferentes. Quando você escreve um arquivo texto
+        e quer inserir uma quebra de linha, você precisa utilizar o(s)
+        caractere(s) de fim de linha adequado(s) ao seu sistema operacional.
+        Sistemas baseados no Unix utilizam <code class="literal">\n</code> como caractere
+        de final de linha, sistemas baseados no Windows utilizam
+        <code class="literal">\r\n</code> e sistemas baseados no Macintosh utilizam
+        <code class="literal">\r</code>.
+       </p>
+       <p class="para">
+        Se escrever caracteres de fim de linha inadequados em seus arquivos, eles
+        deverão "parecer engraçados" quando você os abrir em outras
+        aplicações.
+       </p>
+       <p class="para">
+        O Windows oferece uma flag de tradução do modo texto (<code class="literal">'t'</code>)
+        que traduz, transparentemente, <code class="literal">\n</code> para
+        <code class="literal">\r\n</code> quando trabalhando no arquivo. Em contraste, você
+        também pode utilizar <code class="literal">'b'</code> para forçar o modo binário, que não
+        irá traduzir o arquivo. Para usar essas flags, informe ou
+        <code class="literal">'b'</code> ou <code class="literal">'t'</code> como o último caractere
+        no parâmetro <code class="parameter">mode</code>.
+       </p>
+       <p class="para">
+        O modo de tradução padrão depende da SAPI e da versão do PHP que
+        você estiver usando, então você é encorajado a sempre utilizar a flag apropriada
+        por razões de portabilidade. Você deve usar o modo <code class="literal">'t'</code>
+        se estiver trabalhando em arquivos texto simples e utilizar 
+        <code class="literal">\n</code> para delimitar as linhas em seu script, de forma que
+        você pode esperar que eles sejam lidos em outras aplicações como o Notepad. Você
+        deve usar <code class="literal">'b'</code> em todos os outros casos.
+       </p>
+       <p class="para">
+        Se você não especificar a flag 'b' quando trabalhar com arquivos binários, você
+        pode passar por problemas estranhos com seus dados, incluindo arquivos de imagens
+        danificados e problemas estranhos com os caracteres <code class="literal">\r\n</code>.
+       </p>
+      </blockquote>
+      <blockquote class="note"><p><strong class="note">Nota</strong>: 
+       </p><p class="para">
+        Para portabilidade, é fortemente recomendado que você sempre
+        utilize a flag 'b' quando abrir arquivos com <span class="function"><strong>fopen()</strong></span>.
+       </p>
+      </blockquote>
+      <blockquote class="note"><p><strong class="note">Nota</strong>: 
+       </p><p class="para">
+        Novamente para portabilidade, também é fortemente recomendado que
+        você reescreva códigos que utilizem ou confiem no modo <code class="literal">'t'</code>,
+        de forma que passem a utilizar os fins de linha corretos e
+        o modo <code class="literal">'b'</code>.
+       </p>
+      </blockquote>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">use_include_path</code></dt>
+
+     <dd>
+
+      <p class="para">
+       O terceiro parâmetro opcional <code class="parameter">use_include_path</code>
+       pode ser definido para '1' ou <strong><code>true</code></strong> se você quiser buscar o arquivo
+       também no <a href="https://www.php.net/manual/pt_BR/ini.core.php#ini.include-path" class="link">include_path</a>.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">context</code></dt>
+
+     <dd>
+
+      <blockquote class="note"><p><strong class="note">Nota</strong>: <span class="simpara">O suporte ao contexto foi
+ adicionado no PHP 5.0.0. Para uma descrição de <code class="literal">contextos</code>,
+ veja <a href="https://www.php.net/manual/pt_BR/book.stream.php" class="xref">Streams</a>.</span></p></blockquote>
+     </dd>
+
+    
+   </dl>
+
+  
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.fopen-returnvalues">
+  <h3 class="title">Valor Retornado<a class="genanchor" href="https://www.php.net/manual/pt_BR/function.fopen.php#refsect1-function.fopen-returnvalues"> ¶</a></h3>
+  <p class="para">
+   Retorna um recurso de ponteiro de arquivo em caso de sucesso,
+   ou <strong><code>false</code></strong> em caso de erro.
+  </p>
+ </div>
+
+
+ <div class="refsect1 errors" id="refsect1-function.fopen-errors">
+  <h3 class="title">Erros<a class="genanchor" href="https://www.php.net/manual/pt_BR/function.fopen.php#refsect1-function.fopen-errors"> ¶</a></h3>
+  <p class="para">
+   Se a abertura falhar, um erro nível <strong><code>E_WARNING</code></strong>
+   é gerado. Você pode utilizar
+   <a href="https://www.php.net/manual/pt_BR/language.operators.errorcontrol.php" class="link">@</a> para
+   suprimir esse alerta.
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.fopen-changelog">
+  <h3 class="title">Changelog<a class="genanchor" href="https://www.php.net/manual/pt_BR/function.fopen.php#refsect1-function.fopen-changelog"> ¶</a></h3>
+  <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Versão</th>
+       <th>Descrição</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>4.3.2</td>
+       <td>
+        A partir do PHP 4.3.2, o modo padrão é definido para binário em todas
+        as plataformas que distinguem entre modo texto e binário. Se você estiver
+        tendo problemas com seus scripts depois de uma atualização, tente acrescentar a
+        flag <code class="literal">'t'</code> como um paliativo até que você tenha tornado seus
+        scripts portáveis como mencionado acima.
+       </td>
+      </tr>
+
+      <tr>
+       <td>4.3.2</td>
+       <td>
+        As opções <code class="literal">'x'</code> e <code class="literal">'x+'</code> foram
+        adicionadas
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.fopen-examples">
+  <h3 class="title">Exemplos<a class="genanchor" href="https://www.php.net/manual/pt_BR/function.fopen.php#refsect1-function.fopen-examples"> ¶</a></h3>
+  <div class="example" id="example-2577">
+    <p><strong>Exemplo #1 Exemplos de <span class="function"><strong>fopen()</strong></span></strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br>$handle&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"/home/rasmus/file.txt"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"r"</span><span style="color: #007700">);<br></span><span style="color: #0000BB">$handle&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"/home/rasmus/file.gif"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"wb"</span><span style="color: #007700">);<br></span><span style="color: #0000BB">$handle&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"http://www.example.com/"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"r"</span><span style="color: #007700">);<br></span><span style="color: #0000BB">$handle&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"ftp://user:password@example.com/somefile.txt"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"w"</span><span style="color: #007700">);<br></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.fopen-notes">
+  <h3 class="title">Notas<a class="genanchor" href="https://www.php.net/manual/pt_BR/function.fopen.php#refsect1-function.fopen-notes"> ¶</a></h3>
+  <div class="warning"><strong class="warning">Aviso</strong><p class="para">Quando usando SSL, o Microsoft IIS
+ irá violar o protocolo fechando a conexão sem enviar uma notificação
+ <code class="literal">close_notify</code>. O PHP acusará isso como sendo "SSL: Fatal
+ Protocol Error" quando tentar ler os dados. Para prevenir isso, o valor de
+ <a href="https://www.php.net/manual/pt_BR/errorfunc.configuration.php#ini.error-reporting" class="link">error_reporting</a> deve ser
+ reduzido para um nível que não inclui avisos.
+ para o nível que não emita warnings.
+ O PHP 4.3.7 e seguintes conseguem detectar servidores IIS defeituosos quando você abre
+ um stream utilizando o wrapper <code class="literal">https://</code> e suprimirá os avisos.
+ Se você está usando <span class="function"><a href="https://www.php.net/manual/pt_BR/function.fsockopen.php" class="function">fsockopen()</a></span> para criar um socket
+ <code class="literal">ssl://</code>, a responsabilidade de detectar e suprimir esse aviso passa para você.</p></div>
+  <blockquote class="note"><p><strong class="note">Nota</strong>: <span class="simpara">Quando o <code class="literal">
+safe-mode</code> está ativo, o PHP verifica se
+o diretório no qual o script está em operação tem o mesmo UID (proprietário)
+do script que está sendo executado.</span></p></blockquote>
+  <p class="para">
+   Se você está tendo problemas com a leitura e gravação para
+   arquivos e você está usando a versão de módulo de servidor do PHP, lembre-se
+   de que os arquivos e diretórios que você está usando precisam ser 
+   acessíveis ao processo do servidor HTTP.
+  </p>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.fopen-seealso">
+  <h3 class="title">Veja Também<a class="genanchor" href="https://www.php.net/manual/pt_BR/function.fopen.php#refsect1-function.fopen-seealso"> ¶</a></h3>
+  <ul class="simplelist">
+    <li class="member"><a href="https://www.php.net/manual/pt_BR/wrappers.php" class="xref">Protocolos e Wrappers suportados</a></li>
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/pt_BR/function.fclose.php" class="function" rel="rdfs-seeAlso">fclose()</a> - Fecha um ponteiro de arquivo aberto</span></li>
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/pt_BR/function.fgets.php" class="function" rel="rdfs-seeAlso">fgets()</a> - Lê uma linha de um ponteiro de arquivo</span></li>
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/pt_BR/function.fread.php" class="function" rel="rdfs-seeAlso">fread()</a> - Leitura binary-safe de arquivo</span></li>
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/pt_BR/function.fwrite.php" class="function" rel="rdfs-seeAlso">fwrite()</a> - Escrita binary-safe em arquivos</span></li>
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/pt_BR/function.fsockopen.php" class="function" rel="rdfs-seeAlso">fsockopen()</a> - Abre um socket de conexão Internet ou de domínio Unix</span></li>
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/pt_BR/function.file.php" class="function" rel="rdfs-seeAlso">file()</a> - Lê todo o arquivo para um array</span></li>
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/pt_BR/function.file-exists.php" class="function" rel="rdfs-seeAlso">file_exists()</a> - Verifica se um arquivo ou diretório existe</span></li>
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/pt_BR/function.is-readable.php" class="function" rel="rdfs-seeAlso">is_readable()</a> - Diz se o arquivo existe e se ele pode ser lido</span></li>
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/pt_BR/function.stream-set-timeout.php" class="function" rel="rdfs-seeAlso">stream_set_timeout()</a> - Set timeout period on a stream</span></li>
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/pt_BR/function.popen.php" class="function" rel="rdfs-seeAlso">popen()</a> - Abre um processo como ponteiro de arquivo</span></li>
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/pt_BR/function.stream-context-create.php" class="function" rel="rdfs-seeAlso">stream_context_create()</a> - Creates a stream context</span></li>
+   </ul>
+  
+ </div>
+
+
+</div>
+<section id="usernotes">
+ <div class="head">
+  <span class="action"><a href="https://www.php.net/manual/add-note.php?sect=function.fopen&amp;redirect=https://www.php.net/manual/pt_BR/function.fopen.php"><img src="./ManipulacaoArquivos_files/notes-add@2x.png" alt="add a note" width="12" height="12"> <small>add a note</small></a></span>
+  <h3 class="title">User Contributed Notes <span class="count">20 notes</span></h3>
+ </div><div id="allnotes">
+  <div class="note" id="107851">  <div class="votes">
+    <div id="Vu107851">
+    <a href="https://www.php.net/manual/vote-note.php?id=107851&amp;page=function.fopen&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd107851">
+    <a href="https://www.php.net/manual/vote-note.php?id=107851&amp;page=function.fopen&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V107851" title="70% like this...">
+    106
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/pt_BR/function.fopen.php#107851" class="name">
+  <strong class="user"><em>chapman at worldtakeoverindustries dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/pt_BR/function.fopen.php#107851"> ¶</a><div class="date" title="2012-03-09 07:25"><strong>8 years ago</strong></div>
+  <div class="text" id="Hcom107851">
+<div class="phpcode"><code><span class="html">
+Note - using fopen in 'w' mode will NOT update the modification time (filemtime) of a file like you may expect. You may want to issue a touch() after writing and closing the file which update its modification time. This may become critical in a caching situation, if you intend to keep your hair.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="125499">  <div class="votes">
+    <div id="Vu125499">
+    <a href="https://www.php.net/manual/vote-note.php?id=125499&amp;page=function.fopen&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd125499">
+    <a href="https://www.php.net/manual/vote-note.php?id=125499&amp;page=function.fopen&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V125499" title="66% like this...">
+    2
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/pt_BR/function.fopen.php#125499" class="name">
+  <strong class="user"><em>Anon.</em></strong></a><a class="genanchor" href="https://www.php.net/manual/pt_BR/function.fopen.php#125499"> ¶</a><div class="date" title="2020-11-07 10:31"><strong>2 months ago</strong></div>
+  <div class="text" id="Hcom125499">
+<div class="phpcode"><code><span class="html">
+/***** GENTLE REMINDER *****/<br>Really important. Do NOT use the "w" flag unless you want to delete everything in the file.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="84028">  <div class="votes">
+    <div id="Vu84028">
+    <a href="https://www.php.net/manual/vote-note.php?id=84028&amp;page=function.fopen&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd84028">
+    <a href="https://www.php.net/manual/vote-note.php?id=84028&amp;page=function.fopen&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V84028" title="59% like this...">
+    19
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/pt_BR/function.fopen.php#84028" class="name">
+  <strong class="user"><em>php at delhelsa dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/pt_BR/function.fopen.php#84028"> ¶</a><div class="date" title="2008-06-24 12:27"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom84028">
+<div class="phpcode"><code><span class="html">
+With php 5.2.5 on Apache 2.2.4, accessing files on an ftp server with fopen() or readfile() requires an extra forwardslash if an absolute path is needed.
+<br>
+<br>i.e., if a file called bullbes.txt is stored under /var/school/ on ftp server example.com and you're trying to access it with user blossom and password buttercup, the url would be:
+<br>
+<br><a href="ftp://blossom:buttercup@example.com//var/school/bubbles.txt" rel="nofollow" target="_blank">ftp://blossom:buttercup@example.com//var/school/bubbles.txt</a>
+<br>
+<br>Note the two forwardslashes. It looks like the second one is needed so the server won't interpret the path as relative to blossom's home on townsville.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="55434">  <div class="votes">
+    <div id="Vu55434">
+    <a href="https://www.php.net/manual/vote-note.php?id=55434&amp;page=function.fopen&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd55434">
+    <a href="https://www.php.net/manual/vote-note.php?id=55434&amp;page=function.fopen&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V55434" title="57% like this...">
+    7
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/pt_BR/function.fopen.php#55434" class="name">
+  <strong class="user"><em>ideacode</em></strong></a><a class="genanchor" href="https://www.php.net/manual/pt_BR/function.fopen.php#55434"> ¶</a><div class="date" title="2005-08-03 07:28"><strong>15 years ago</strong></div>
+  <div class="text" id="Hcom55434">
+<div class="phpcode"><code><span class="html">
+Note that whether you may open directories is operating system dependent. The following lines:<br><br><span class="default">&lt;?php<br></span><span class="comment">// Windows ($fh === false)<br></span><span class="default">$fh </span><span class="keyword">= </span><span class="default">fopen</span><span class="keyword">(</span><span class="string">'c:\\Temp'</span><span class="keyword">, </span><span class="string">'r'</span><span class="keyword">);<br><br></span><span class="comment">// UNIX (is_resource($fh) === true)<br></span><span class="default">$fh </span><span class="keyword">= </span><span class="default">fopen</span><span class="keyword">(</span><span class="string">'/tmp'</span><span class="keyword">, </span><span class="string">'r'</span><span class="keyword">);<br></span><span class="default">?&gt;<br></span><br>demonstrate that on Windows (2000, probably XP) you may not open a directory (the error is "Permission Denied"), regardless of the security permissions on that directory.<br><br>On UNIX, you may happily read the directory format for the native filesystem.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="120976">  <div class="votes">
+    <div id="Vu120976">
+    <a href="https://www.php.net/manual/vote-note.php?id=120976&amp;page=function.fopen&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd120976">
+    <a href="https://www.php.net/manual/vote-note.php?id=120976&amp;page=function.fopen&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V120976" title="56% like this...">
+    2
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/pt_BR/function.fopen.php#120976" class="name">
+  <strong class="user"><em>petepostma-deletethis at gmail dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/pt_BR/function.fopen.php#120976"> ¶</a><div class="date" title="2017-04-12 03:40"><strong>3 years ago</strong></div>
+  <div class="text" id="Hcom120976">
+<div class="phpcode"><code><span class="html">
+The verbal descriptions take a while to read through to get a feel for the expected results for fopen modes. This csv table can help break it down for quicker understanding to find which mode you are looking for:<br><br>Mode,Creates,Reads,Writes,Pointer Starts,Truncates File,Notes,Purpose<br>r,,y,,beginning,,fails if file doesn't exist,basic read existing file<br>r+,,y,y,beginning,,fails if file doesn't exist,basic r/w existing file<br>w,y,,y,beginning+end,y,,"create, erase, write file"<br>w+,y,y,y,beginning+end,y,,"create, erase, write file with read option"<br>a,y,,y,end,,,"write from end of file, create if needed"<br>a+,y,y,y,end,,,"write from end of file, create if needed, with read options"<br>x,y,,y,beginning,,fails if file exists,"like w, but prevents over-writing an existing file"<br>x+,y,y,y,beginning,,fails if file exists,"like w+, but prevents over writing an existing file"<br>c,y,,y,beginning,,,open/create a file for writing without deleting current content<br>c+,y,y,y,beginning,,,"open/create a file that is read, and then written back down"</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="58099">  <div class="votes">
+    <div id="Vu58099">
+    <a href="https://www.php.net/manual/vote-note.php?id=58099&amp;page=function.fopen&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd58099">
+    <a href="https://www.php.net/manual/vote-note.php?id=58099&amp;page=function.fopen&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V58099" title="54% like this...">
+    10
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/pt_BR/function.fopen.php#58099" class="name">
+  <strong class="user"><em>info at b1g dot de</em></strong></a><a class="genanchor" href="https://www.php.net/manual/pt_BR/function.fopen.php#58099"> ¶</a><div class="date" title="2005-10-24 04:54"><strong>15 years ago</strong></div>
+  <div class="text" id="Hcom58099">
+<div class="phpcode"><code><span class="html">
+Simple class to fetch a HTTP URL. Supports "Location:"-redirections. Useful for servers with allow_url_fopen=false. Works with SSL-secured hosts.
+<br>
+<br><span class="default">&lt;?php
+<br></span><span class="comment">#usage:
+<br></span><span class="default">$r </span><span class="keyword">= new </span><span class="default">HTTPRequest</span><span class="keyword">(</span><span class="string">'<a href="http://www.example.com/" rel="nofollow" target="_blank">http://www.example.com</a>'</span><span class="keyword">);
+<br>echo </span><span class="default">$r</span><span class="keyword">-&gt;</span><span class="default">DownloadToString</span><span class="keyword">();
+<br>
+<br>class </span><span class="default">HTTPRequest
+<br></span><span class="keyword">{
+<br>&nbsp; &nbsp; var </span><span class="default">$_fp</span><span class="keyword">;&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// HTTP socket
+<br>&nbsp; &nbsp; </span><span class="keyword">var </span><span class="default">$_url</span><span class="keyword">;&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// full URL
+<br>&nbsp; &nbsp; </span><span class="keyword">var </span><span class="default">$_host</span><span class="keyword">;&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// HTTP host
+<br>&nbsp; &nbsp; </span><span class="keyword">var </span><span class="default">$_protocol</span><span class="keyword">;&nbsp; &nbsp; </span><span class="comment">// protocol (HTTP/HTTPS)
+<br>&nbsp; &nbsp; </span><span class="keyword">var </span><span class="default">$_uri</span><span class="keyword">;&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// request URI
+<br>&nbsp; &nbsp; </span><span class="keyword">var </span><span class="default">$_port</span><span class="keyword">;&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// port
+<br>&nbsp; &nbsp; 
+<br>&nbsp; &nbsp; // scan url
+<br>&nbsp; &nbsp; </span><span class="keyword">function </span><span class="default">_scan_url</span><span class="keyword">()
+<br>&nbsp; &nbsp; {
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$req </span><span class="keyword">= </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">_url</span><span class="keyword">;
+<br>&nbsp; &nbsp; &nbsp; &nbsp; 
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$pos </span><span class="keyword">= </span><span class="default">strpos</span><span class="keyword">(</span><span class="default">$req</span><span class="keyword">, </span><span class="string">'://'</span><span class="keyword">);
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">_protocol </span><span class="keyword">= </span><span class="default">strtolower</span><span class="keyword">(</span><span class="default">substr</span><span class="keyword">(</span><span class="default">$req</span><span class="keyword">, </span><span class="default">0</span><span class="keyword">, </span><span class="default">$pos</span><span class="keyword">));
+<br>&nbsp; &nbsp; &nbsp; &nbsp; 
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$req </span><span class="keyword">= </span><span class="default">substr</span><span class="keyword">(</span><span class="default">$req</span><span class="keyword">, </span><span class="default">$pos</span><span class="keyword">+</span><span class="default">3</span><span class="keyword">);
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$pos </span><span class="keyword">= </span><span class="default">strpos</span><span class="keyword">(</span><span class="default">$req</span><span class="keyword">, </span><span class="string">'/'</span><span class="keyword">);
+<br>&nbsp; &nbsp; &nbsp; &nbsp; if(</span><span class="default">$pos </span><span class="keyword">=== </span><span class="default">false</span><span class="keyword">)
+<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$pos </span><span class="keyword">= </span><span class="default">strlen</span><span class="keyword">(</span><span class="default">$req</span><span class="keyword">);
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$host </span><span class="keyword">= </span><span class="default">substr</span><span class="keyword">(</span><span class="default">$req</span><span class="keyword">, </span><span class="default">0</span><span class="keyword">, </span><span class="default">$pos</span><span class="keyword">);
+<br>&nbsp; &nbsp; &nbsp; &nbsp; 
+<br>&nbsp; &nbsp; &nbsp; &nbsp; if(</span><span class="default">strpos</span><span class="keyword">(</span><span class="default">$host</span><span class="keyword">, </span><span class="string">':'</span><span class="keyword">) !== </span><span class="default">false</span><span class="keyword">)
+<br>&nbsp; &nbsp; &nbsp; &nbsp; {
+<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; list(</span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">_host</span><span class="keyword">, </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">_port</span><span class="keyword">) = </span><span class="default">explode</span><span class="keyword">(</span><span class="string">':'</span><span class="keyword">, </span><span class="default">$host</span><span class="keyword">);
+<br>&nbsp; &nbsp; &nbsp; &nbsp; }
+<br>&nbsp; &nbsp; &nbsp; &nbsp; else 
+<br>&nbsp; &nbsp; &nbsp; &nbsp; {
+<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">_host </span><span class="keyword">= </span><span class="default">$host</span><span class="keyword">;
+<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">_port </span><span class="keyword">= (</span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">_protocol </span><span class="keyword">== </span><span class="string">'https'</span><span class="keyword">) ? </span><span class="default">443 </span><span class="keyword">: </span><span class="default">80</span><span class="keyword">;
+<br>&nbsp; &nbsp; &nbsp; &nbsp; }
+<br>&nbsp; &nbsp; &nbsp; &nbsp; 
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">_uri </span><span class="keyword">= </span><span class="default">substr</span><span class="keyword">(</span><span class="default">$req</span><span class="keyword">, </span><span class="default">$pos</span><span class="keyword">);
+<br>&nbsp; &nbsp; &nbsp; &nbsp; if(</span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">_uri </span><span class="keyword">== </span><span class="string">''</span><span class="keyword">)
+<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">_uri </span><span class="keyword">= </span><span class="string">'/'</span><span class="keyword">;
+<br>&nbsp; &nbsp; }
+<br>&nbsp; &nbsp; 
+<br>&nbsp; &nbsp; </span><span class="comment">// constructor
+<br>&nbsp; &nbsp; </span><span class="keyword">function </span><span class="default">HTTPRequest</span><span class="keyword">(</span><span class="default">$url</span><span class="keyword">)
+<br>&nbsp; &nbsp; {
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">_url </span><span class="keyword">= </span><span class="default">$url</span><span class="keyword">;
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">_scan_url</span><span class="keyword">();
+<br>&nbsp; &nbsp; }
+<br>&nbsp; &nbsp; 
+<br>&nbsp; &nbsp; </span><span class="comment">// download URL to string
+<br>&nbsp; &nbsp; </span><span class="keyword">function </span><span class="default">DownloadToString</span><span class="keyword">()
+<br>&nbsp; &nbsp; {
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$crlf </span><span class="keyword">= </span><span class="string">"\r\n"</span><span class="keyword">;
+<br>&nbsp; &nbsp; &nbsp; &nbsp; 
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// generate request
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$req </span><span class="keyword">= </span><span class="string">'GET ' </span><span class="keyword">. </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">_uri </span><span class="keyword">. </span><span class="string">' HTTP/1.0' </span><span class="keyword">. </span><span class="default">$crlf
+<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">.&nbsp; &nbsp; </span><span class="string">'Host: ' </span><span class="keyword">. </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">_host </span><span class="keyword">. </span><span class="default">$crlf
+<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">.&nbsp; &nbsp; </span><span class="default">$crlf</span><span class="keyword">;
+<br>&nbsp; &nbsp; &nbsp; &nbsp; 
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// fetch
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">_fp </span><span class="keyword">= </span><span class="default">fsockopen</span><span class="keyword">((</span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">_protocol </span><span class="keyword">== </span><span class="string">'https' </span><span class="keyword">? </span><span class="string">'ssl://' </span><span class="keyword">: </span><span class="string">''</span><span class="keyword">) . </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">_host</span><span class="keyword">, </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">_port</span><span class="keyword">);
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">fwrite</span><span class="keyword">(</span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">_fp</span><span class="keyword">, </span><span class="default">$req</span><span class="keyword">);
+<br>&nbsp; &nbsp; &nbsp; &nbsp; while(</span><span class="default">is_resource</span><span class="keyword">(</span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">_fp</span><span class="keyword">) &amp;&amp; </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">_fp </span><span class="keyword">&amp;&amp; !</span><span class="default">feof</span><span class="keyword">(</span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">_fp</span><span class="keyword">))
+<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$response </span><span class="keyword">.= </span><span class="default">fread</span><span class="keyword">(</span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">_fp</span><span class="keyword">, </span><span class="default">1024</span><span class="keyword">);
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">fclose</span><span class="keyword">(</span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">_fp</span><span class="keyword">);
+<br>&nbsp; &nbsp; &nbsp; &nbsp; 
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// split header and body
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$pos </span><span class="keyword">= </span><span class="default">strpos</span><span class="keyword">(</span><span class="default">$response</span><span class="keyword">, </span><span class="default">$crlf </span><span class="keyword">. </span><span class="default">$crlf</span><span class="keyword">);
+<br>&nbsp; &nbsp; &nbsp; &nbsp; if(</span><span class="default">$pos </span><span class="keyword">=== </span><span class="default">false</span><span class="keyword">)
+<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return(</span><span class="default">$response</span><span class="keyword">);
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$header </span><span class="keyword">= </span><span class="default">substr</span><span class="keyword">(</span><span class="default">$response</span><span class="keyword">, </span><span class="default">0</span><span class="keyword">, </span><span class="default">$pos</span><span class="keyword">);
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$body </span><span class="keyword">= </span><span class="default">substr</span><span class="keyword">(</span><span class="default">$response</span><span class="keyword">, </span><span class="default">$pos </span><span class="keyword">+ </span><span class="default">2 </span><span class="keyword">* </span><span class="default">strlen</span><span class="keyword">(</span><span class="default">$crlf</span><span class="keyword">));
+<br>&nbsp; &nbsp; &nbsp; &nbsp; 
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// parse headers
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$headers </span><span class="keyword">= array();
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$lines </span><span class="keyword">= </span><span class="default">explode</span><span class="keyword">(</span><span class="default">$crlf</span><span class="keyword">, </span><span class="default">$header</span><span class="keyword">);
+<br>&nbsp; &nbsp; &nbsp; &nbsp; foreach(</span><span class="default">$lines </span><span class="keyword">as </span><span class="default">$line</span><span class="keyword">)
+<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if((</span><span class="default">$pos </span><span class="keyword">= </span><span class="default">strpos</span><span class="keyword">(</span><span class="default">$line</span><span class="keyword">, </span><span class="string">':'</span><span class="keyword">)) !== </span><span class="default">false</span><span class="keyword">)
+<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$headers</span><span class="keyword">[</span><span class="default">strtolower</span><span class="keyword">(</span><span class="default">trim</span><span class="keyword">(</span><span class="default">substr</span><span class="keyword">(</span><span class="default">$line</span><span class="keyword">, </span><span class="default">0</span><span class="keyword">, </span><span class="default">$pos</span><span class="keyword">)))] = </span><span class="default">trim</span><span class="keyword">(</span><span class="default">substr</span><span class="keyword">(</span><span class="default">$line</span><span class="keyword">, </span><span class="default">$pos</span><span class="keyword">+</span><span class="default">1</span><span class="keyword">));
+<br>&nbsp; &nbsp; &nbsp; &nbsp; 
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// redirection?
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">if(isset(</span><span class="default">$headers</span><span class="keyword">[</span><span class="string">'location'</span><span class="keyword">]))
+<br>&nbsp; &nbsp; &nbsp; &nbsp; {
+<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$http </span><span class="keyword">= new </span><span class="default">HTTPRequest</span><span class="keyword">(</span><span class="default">$headers</span><span class="keyword">[</span><span class="string">'location'</span><span class="keyword">]);
+<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return(</span><span class="default">$http</span><span class="keyword">-&gt;</span><span class="default">DownloadToString</span><span class="keyword">(</span><span class="default">$http</span><span class="keyword">));
+<br>&nbsp; &nbsp; &nbsp; &nbsp; }
+<br>&nbsp; &nbsp; &nbsp; &nbsp; else 
+<br>&nbsp; &nbsp; &nbsp; &nbsp; {
+<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return(</span><span class="default">$body</span><span class="keyword">);
+<br>&nbsp; &nbsp; &nbsp; &nbsp; }
+<br>&nbsp; &nbsp; }
+<br>}
+<br></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="122348">  <div class="votes">
+    <div id="Vu122348">
+    <a href="https://www.php.net/manual/vote-note.php?id=122348&amp;page=function.fopen&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd122348">
+    <a href="https://www.php.net/manual/vote-note.php?id=122348&amp;page=function.fopen&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V122348" title="54% like this...">
+    2
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/pt_BR/function.fopen.php#122348" class="name">
+  <strong class="user"><em>etters dot ayoub at gmail dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/pt_BR/function.fopen.php#122348"> ¶</a><div class="date" title="2018-02-02 04:18"><strong>2 years ago</strong></div>
+  <div class="text" id="Hcom122348">
+<div class="phpcode"><code><span class="html">
+This functions check recursive permissions and recursive existence parent folders, before creating a folder. To avoid the generation of errors/warnings. <br><br>/**<br> * This functions check recursive permissions and recursive existence parent folders,<br> * before creating a folder. To avoid the generation of errors/warnings. <br> *<br> * @return bool<br> *&nbsp; &nbsp;&nbsp; true folder has been created or exist and writable. <br> *&nbsp; &nbsp;&nbsp; False folder not exist and cannot be created. <br> */<br>function createWritableFolder($folder)<br>{<br>&nbsp; &nbsp; if (file_exists($folder)) {<br>&nbsp; &nbsp; &nbsp; &nbsp; // Folder exist.<br>&nbsp; &nbsp; &nbsp; &nbsp; return is_writable($folder);<br>&nbsp; &nbsp; }<br>&nbsp; &nbsp; // Folder not exit, check parent folder.<br>&nbsp; &nbsp; $folderParent = dirname($folder);<br>&nbsp; &nbsp; if($folderParent != '.' &amp;&amp; $folderParent != '/' ) {<br>&nbsp; &nbsp; &nbsp; &nbsp; if(!createWritableFolder(dirname($folder))) {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Failed to create folder parent.<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return false;<br>&nbsp; &nbsp; &nbsp; &nbsp; }<br>&nbsp; &nbsp; &nbsp; &nbsp; // Folder parent created.<br>&nbsp; &nbsp; }<br><br>&nbsp; &nbsp; if ( is_writable($folderParent) ) {<br>&nbsp; &nbsp; &nbsp; &nbsp; // Folder parent is writable.<br>&nbsp; &nbsp; &nbsp; &nbsp; if ( mkdir($folder, 0777, true) ) {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Folder created.<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return true;<br>&nbsp; &nbsp; &nbsp; &nbsp; }<br>&nbsp; &nbsp; &nbsp; &nbsp; // Failed to create folder.<br>&nbsp; &nbsp; }<br>&nbsp; &nbsp; // Folder parent is not writable.<br>&nbsp; &nbsp; return false;<br>}<br><br>/**<br> * This functions check recursive permissions and recursive existence parent folders,<br> * before creating a file/folder. To avoid the generation of errors/warnings. <br> *<br> * @return bool<br> *&nbsp; &nbsp;&nbsp; true has been created or file exist and writable. <br> *&nbsp; &nbsp;&nbsp; False file not exist and cannot be created. <br> */<br>function createWritableFile($file)<br>{<br>&nbsp; &nbsp; // Check if conf file exist.<br>&nbsp; &nbsp; if (file_exists($file)) {<br>&nbsp; &nbsp; &nbsp; &nbsp; // check if conf file is writable.<br>&nbsp; &nbsp; &nbsp; &nbsp; return is_writable($file);<br>&nbsp; &nbsp; }<br><br>&nbsp; &nbsp; // Check if conf folder exist and try to create conf file.<br>&nbsp; &nbsp; if(createWritableFolder(dirname($file)) &amp;&amp; ($handle = fopen($file, 'a'))) {<br>&nbsp; &nbsp; &nbsp; &nbsp; fclose($handle);<br>&nbsp; &nbsp; &nbsp; &nbsp; return true; // File conf created.<br>&nbsp; &nbsp; }<br>&nbsp; &nbsp; // Inaccessible conf file.<br>&nbsp; &nbsp; return false;<br>}</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="64262">  <div class="votes">
+    <div id="Vu64262">
+    <a href="https://www.php.net/manual/vote-note.php?id=64262&amp;page=function.fopen&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd64262">
+    <a href="https://www.php.net/manual/vote-note.php?id=64262&amp;page=function.fopen&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V64262" title="54% like this...">
+    3
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/pt_BR/function.fopen.php#64262" class="name">
+  <strong class="user"><em>ceo at l-i-e dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/pt_BR/function.fopen.php#64262"> ¶</a><div class="date" title="2006-04-10 08:13"><strong>14 years ago</strong></div>
+  <div class="text" id="Hcom64262">
+<div class="phpcode"><code><span class="html">
+If you need fopen() on a URL to timeout, you can do like:<br><span class="default">&lt;?php<br>&nbsp; $timeout </span><span class="keyword">= </span><span class="default">3</span><span class="keyword">;<br>&nbsp; </span><span class="default">$old </span><span class="keyword">= </span><span class="default">ini_set</span><span class="keyword">(</span><span class="string">'default_socket_timeout'</span><span class="keyword">, </span><span class="default">$timeout</span><span class="keyword">);<br>&nbsp; </span><span class="default">$file </span><span class="keyword">= </span><span class="default">fopen</span><span class="keyword">(</span><span class="string">'<a href="http://example.com/" rel="nofollow" target="_blank">http://example.com</a>'</span><span class="keyword">, </span><span class="string">'r'</span><span class="keyword">);<br>&nbsp; </span><span class="default">ini_set</span><span class="keyword">(</span><span class="string">'default_socket_timeout'</span><span class="keyword">, </span><span class="default">$old</span><span class="keyword">);<br>&nbsp; </span><span class="default">stream_set_timeout</span><span class="keyword">(</span><span class="default">$file</span><span class="keyword">, </span><span class="default">$timeout</span><span class="keyword">);<br>&nbsp; </span><span class="default">stream_set_blocking</span><span class="keyword">(</span><span class="default">$file</span><span class="keyword">, </span><span class="default">0</span><span class="keyword">);<br>&nbsp; </span><span class="comment">//the rest is standard<br></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="125030">  <div class="votes">
+    <div id="Vu125030">
+    <a href="https://www.php.net/manual/vote-note.php?id=125030&amp;page=function.fopen&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd125030">
+    <a href="https://www.php.net/manual/vote-note.php?id=125030&amp;page=function.fopen&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V125030" title="50% like this...">
+    0
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/pt_BR/function.fopen.php#125030" class="name">
+  <strong class="user"><em>php-manual at merlindynamics dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/pt_BR/function.fopen.php#125030"> ¶</a><div class="date" title="2020-05-20 10:19"><strong>8 months ago</strong></div>
+  <div class="text" id="Hcom125030">
+<div class="phpcode"><code><span class="html">
+There is an undocumented mode for making fopen non-blocking (not working on windows). By adding 'n' to the mode parameter, fopen will not block, however if the pipe does not exist an error will be raised.<br><br>$fp = fopen("/tmp/debug", "a"); //blocks if pipe does not exist<br><br>$fp = fopen("/tmp/debug", "an"); //raises error on pipe not exist</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="124345">  <div class="votes">
+    <div id="Vu124345">
+    <a href="https://www.php.net/manual/vote-note.php?id=124345&amp;page=function.fopen&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd124345">
+    <a href="https://www.php.net/manual/vote-note.php?id=124345&amp;page=function.fopen&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V124345" title="50% like this...">
+    0
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/pt_BR/function.fopen.php#124345" class="name">
+  <strong class="user"><em>k-gun  at  git  dot  io</em></strong></a><a class="genanchor" href="https://www.php.net/manual/pt_BR/function.fopen.php#124345"> ¶</a><div class="date" title="2019-10-27 06:22"><strong>1 year ago</strong></div>
+  <div class="text" id="Hcom124345">
+<div class="phpcode"><code><span class="html">
+Seems not documented here but keep in mind, when $filename contains null byte (\0) then a TypeError will be thrown with message such;<br><br>TypeError: fopen() expects parameter 1 to be a valid path, string given in ...</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="109944">  <div class="votes">
+    <div id="Vu109944">
+    <a href="https://www.php.net/manual/vote-note.php?id=109944&amp;page=function.fopen&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd109944">
+    <a href="https://www.php.net/manual/vote-note.php?id=109944&amp;page=function.fopen&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V109944" title="50% like this...">
+    1
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/pt_BR/function.fopen.php#109944" class="name">
+  <strong class="user"><em>apathetic012 at gmail dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/pt_BR/function.fopen.php#109944"> ¶</a><div class="date" title="2012-09-04 03:19"><strong>8 years ago</strong></div>
+  <div class="text" id="Hcom109944">
+<div class="phpcode"><code><span class="html">
+a variable $http_response_header is available when doing the fopen(). Which contains an array of the response header.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="60718">  <div class="votes">
+    <div id="Vu60718">
+    <a href="https://www.php.net/manual/vote-note.php?id=60718&amp;page=function.fopen&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd60718">
+    <a href="https://www.php.net/manual/vote-note.php?id=60718&amp;page=function.fopen&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V60718" title="51% like this...">
+    2
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/pt_BR/function.fopen.php#60718" class="name">
+  <strong class="user"><em>flobee</em></strong></a><a class="genanchor" href="https://www.php.net/manual/pt_BR/function.fopen.php#60718"> ¶</a><div class="date" title="2006-01-14 07:58"><strong>15 years ago</strong></div>
+  <div class="text" id="Hcom60718">
+<div class="phpcode"><code><span class="html">
+download: i need a function to simulate a "wget url" and do not buffer the data in the memory to avoid thouse problems on large files:<br><span class="default">&lt;?php<br></span><span class="keyword">function </span><span class="default">download</span><span class="keyword">(</span><span class="default">$file_source</span><span class="keyword">, </span><span class="default">$file_target</span><span class="keyword">) {<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$rh </span><span class="keyword">= </span><span class="default">fopen</span><span class="keyword">(</span><span class="default">$file_source</span><span class="keyword">, </span><span class="string">'rb'</span><span class="keyword">);<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$wh </span><span class="keyword">= </span><span class="default">fopen</span><span class="keyword">(</span><span class="default">$file_target</span><span class="keyword">, </span><span class="string">'wb'</span><span class="keyword">);<br>&nbsp; &nbsp; &nbsp; &nbsp; if (</span><span class="default">$rh</span><span class="keyword">===</span><span class="default">false </span><span class="keyword">|| </span><span class="default">$wh</span><span class="keyword">===</span><span class="default">false</span><span class="keyword">) {<br></span><span class="comment">// error reading or opening file<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="keyword">return </span><span class="default">true</span><span class="keyword">;<br>&nbsp; &nbsp; &nbsp; &nbsp; }<br>&nbsp; &nbsp; &nbsp; &nbsp; while (!</span><span class="default">feof</span><span class="keyword">(</span><span class="default">$rh</span><span class="keyword">)) {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (</span><span class="default">fwrite</span><span class="keyword">(</span><span class="default">$wh</span><span class="keyword">, </span><span class="default">fread</span><span class="keyword">(</span><span class="default">$rh</span><span class="keyword">, </span><span class="default">1024</span><span class="keyword">)) === </span><span class="default">FALSE</span><span class="keyword">) {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="comment">// 'Download error: Cannot write to file ('.$file_target.')';<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="keyword">return </span><span class="default">true</span><span class="keyword">;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; }<br>&nbsp; &nbsp; &nbsp; &nbsp; }<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">fclose</span><span class="keyword">(</span><span class="default">$rh</span><span class="keyword">);<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">fclose</span><span class="keyword">(</span><span class="default">$wh</span><span class="keyword">);<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// No error<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">return </span><span class="default">false</span><span class="keyword">;<br>&nbsp; &nbsp; }<br></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="56551">  <div class="votes">
+    <div id="Vu56551">
+    <a href="https://www.php.net/manual/vote-note.php?id=56551&amp;page=function.fopen&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd56551">
+    <a href="https://www.php.net/manual/vote-note.php?id=56551&amp;page=function.fopen&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V56551" title="51% like this...">
+    1
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/pt_BR/function.fopen.php#56551" class="name">
+  <strong class="user"><em>durwood at speakeasy dot NOSPAM dot net</em></strong></a><a class="genanchor" href="https://www.php.net/manual/pt_BR/function.fopen.php#56551"> ¶</a><div class="date" title="2005-09-06 11:43"><strong>15 years ago</strong></div>
+  <div class="text" id="Hcom56551">
+<div class="phpcode"><code><span class="html">
+I couldn't for the life of me get a certain php script working when i moved my server to a new Fedora 4 installation. The problem was that fopen() was failing when trying to access a file as a URL through apache -- even though it worked fine when run from the shell and even though the file was readily readable from any browser.&nbsp; After trying to place blame on Apache, RedHat, and even my cat and dog, I finally ran across this bug report on Redhat's website:<br><br><a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=164700" rel="nofollow" target="_blank">https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=164700</a><br><br>Basically the problem was SELinux (which I knew nothing about) -- you have to run the following command in order for SELinux to allow php to open a web file:<br><br>/usr/sbin/setsebool httpd_can_network_connect=1<br><br>To make the change permanent, run it with the -P option:<br><br>/usr/sbin/setsebool -P httpd_can_network_connect=1<br><br>Hope this helps others out -- it sure took me a long time to track down the problem.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="14426">  <div class="votes">
+    <div id="Vu14426">
+    <a href="https://www.php.net/manual/vote-note.php?id=14426&amp;page=function.fopen&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd14426">
+    <a href="https://www.php.net/manual/vote-note.php?id=14426&amp;page=function.fopen&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V14426" title="52% like this...">
+    1
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/pt_BR/function.fopen.php#14426" class="name">
+  <strong class="user"><em>keithm at aoeex dot NOSPAM dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/pt_BR/function.fopen.php#14426"> ¶</a><div class="date" title="2001-07-31 05:19"><strong>19 years ago</strong></div>
+  <div class="text" id="Hcom14426">
+<div class="phpcode"><code><span class="html">
+I was working on a consol script for win32 and noticed a few things about it.&nbsp; On win32 it appears that you can't re-open the input stream for reading, but rather you have to open it once, and read from there on.&nbsp; Also, i don't know if this is a bug or what but it appears that fgets() reads until the new line anyway.&nbsp; The number of characters returned is ok, but it will not halt reading and return to the script.&nbsp; I don't know of a work around for this right now, but i'll keep working on it.
+<br>
+<br>This is some code to work around the close and re-open of stdin.
+<br>
+<br><span class="default">&lt;?php
+<br></span><span class="keyword">function </span><span class="default">read</span><span class="keyword">(</span><span class="default">$length</span><span class="keyword">=</span><span class="string">'255'</span><span class="keyword">){
+<br>&nbsp; &nbsp; if (!isset(</span><span class="default">$GLOBALS</span><span class="keyword">[</span><span class="string">'StdinPointer'</span><span class="keyword">])){
+<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$GLOBALS</span><span class="keyword">[</span><span class="string">'StdinPointer'</span><span class="keyword">]=</span><span class="default">fopen</span><span class="keyword">(</span><span class="string">"php://stdin"</span><span class="keyword">,</span><span class="string">"r"</span><span class="keyword">);
+<br>&nbsp; &nbsp; }
+<br>&nbsp; &nbsp; </span><span class="default">$line</span><span class="keyword">=</span><span class="default">fgets</span><span class="keyword">(</span><span class="default">$GLOBALS</span><span class="keyword">[</span><span class="string">'StdinPointer'</span><span class="keyword">],</span><span class="default">$length</span><span class="keyword">);
+<br>&nbsp; &nbsp; return </span><span class="default">trim</span><span class="keyword">(</span><span class="default">$line</span><span class="keyword">);
+<br>}
+<br>echo </span><span class="string">"Enter your name: "</span><span class="keyword">;
+<br></span><span class="default">$name</span><span class="keyword">=</span><span class="default">read</span><span class="keyword">();
+<br>echo </span><span class="string">"Enter your age: "</span><span class="keyword">;
+<br></span><span class="default">$age</span><span class="keyword">=</span><span class="default">read</span><span class="keyword">();
+<br>echo </span><span class="string">"Hi </span><span class="default">$name</span><span class="string">, Isn't it Great to be </span><span class="default">$age</span><span class="string"> years old?"</span><span class="keyword">;
+<br>@</span><span class="default">fclose</span><span class="keyword">(</span><span class="default">$StdinPointer</span><span class="keyword">);
+<br></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="105180">  <div class="votes">
+    <div id="Vu105180">
+    <a href="https://www.php.net/manual/vote-note.php?id=105180&amp;page=function.fopen&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd105180">
+    <a href="https://www.php.net/manual/vote-note.php?id=105180&amp;page=function.fopen&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V105180" title="50% like this...">
+    0
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/pt_BR/function.fopen.php#105180" class="name">
+  <strong class="user"><em>php at richardneill dot org</em></strong></a><a class="genanchor" href="https://www.php.net/manual/pt_BR/function.fopen.php#105180"> ¶</a><div class="date" title="2011-08-01 09:39"><strong>9 years ago</strong></div>
+  <div class="text" id="Hcom105180">
+<div class="phpcode"><code><span class="html">
+fopen() will block if the file to be opened is a fifo. This is true whether it's opened in "r" or "w" mode.&nbsp; (See man 7 fifo: this is the correct, default behaviour; although Linux supports non-blocking fopen() of a fifo, PHP doesn't).<br>The consequence of this is that you can't discover whether an initial fifo read/write would block because to do that you need stream_select(), which in turn requires that fopen() has happened!</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="104325">  <div class="votes">
+    <div id="Vu104325">
+    <a href="https://www.php.net/manual/vote-note.php?id=104325&amp;page=function.fopen&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd104325">
+    <a href="https://www.php.net/manual/vote-note.php?id=104325&amp;page=function.fopen&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V104325" title="49% like this...">
+    -1
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/pt_BR/function.fopen.php#104325" class="name">
+  <strong class="user"><em>splogamurugan at gmail dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/pt_BR/function.fopen.php#104325"> ¶</a><div class="date" title="2011-06-09 02:13"><strong>9 years ago</strong></div>
+  <div class="text" id="Hcom104325" style="opacity: 0.75;">
+<div class="phpcode"><code><span class="html">
+While opening a file with multibyte data (Ex: données multi-octets), faced some issues with the encoding. Got to know that it uses&nbsp; windows-1250. Used iconv to convert it to UTF-8 and it resolved the issue.&nbsp; 
+<br>
+<br><span class="default">&lt;?php
+<br></span><span class="keyword">function </span><span class="default">utf8_fopen_read</span><span class="keyword">(</span><span class="default">$fileName</span><span class="keyword">) {
+<br>&nbsp; &nbsp; </span><span class="default">$fc </span><span class="keyword">= </span><span class="default">iconv</span><span class="keyword">(</span><span class="string">'windows-1250'</span><span class="keyword">, </span><span class="string">'utf-8'</span><span class="keyword">, </span><span class="default">file_get_contents</span><span class="keyword">(</span><span class="default">$fileName</span><span class="keyword">)); 
+<br>&nbsp; &nbsp; </span><span class="default">$handle</span><span class="keyword">=</span><span class="default">fopen</span><span class="keyword">(</span><span class="string">"php://memory"</span><span class="keyword">, </span><span class="string">"rw"</span><span class="keyword">);
+<br>&nbsp; &nbsp; </span><span class="default">fwrite</span><span class="keyword">(</span><span class="default">$handle</span><span class="keyword">, </span><span class="default">$fc</span><span class="keyword">); 
+<br>&nbsp; &nbsp; </span><span class="default">fseek</span><span class="keyword">(</span><span class="default">$handle</span><span class="keyword">, </span><span class="default">0</span><span class="keyword">); 
+<br>&nbsp; &nbsp; return </span><span class="default">$handle</span><span class="keyword">;
+<br>}
+<br></span><span class="default">?&gt;
+<br></span>
+<br>Example usage:
+<br>
+<br><span class="default">&lt;?php
+<br>$fh </span><span class="keyword">= </span><span class="default">utf8_fopen_read</span><span class="keyword">(</span><span class="string">"./tpKpiBundle.csv"</span><span class="keyword">);
+<br>while ((</span><span class="default">$data </span><span class="keyword">= </span><span class="default">fgetcsv</span><span class="keyword">(</span><span class="default">$fh</span><span class="keyword">, </span><span class="default">1000</span><span class="keyword">, </span><span class="string">","</span><span class="keyword">)) !== </span><span class="default">false</span><span class="keyword">) {
+<br>&nbsp; &nbsp; foreach (</span><span class="default">$data </span><span class="keyword">as </span><span class="default">$value</span><span class="keyword">) {
+<br>&nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="default">$value </span><span class="keyword">. </span><span class="string">"&lt;br /&gt;\n"</span><span class="keyword">;
+<br>&nbsp; &nbsp; }
+<br>}
+<br></span><span class="default">?&gt;
+<br></span>
+<br>Hope it helps.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="107468">  <div class="votes">
+    <div id="Vu107468">
+    <a href="https://www.php.net/manual/vote-note.php?id=107468&amp;page=function.fopen&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd107468">
+    <a href="https://www.php.net/manual/vote-note.php?id=107468&amp;page=function.fopen&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V107468" title="48% like this...">
+    -1
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/pt_BR/function.fopen.php#107468" class="name">
+  <strong class="user"><em>kasper at webmasteren dot eu</em></strong></a><a class="genanchor" href="https://www.php.net/manual/pt_BR/function.fopen.php#107468"> ¶</a><div class="date" title="2012-02-10 08:36"><strong>8 years ago</strong></div>
+  <div class="text" id="Hcom107468" style="opacity: 0.75;">
+<div class="phpcode"><code><span class="html">
+"Do not use the following reserved device names for the name of a file:<br>CON, PRN, AUX, NUL, COM1, COM2, COM3, COM4, COM5, COM6, COM7, COM8, COM9, LPT1, <br>LPT2, LPT3, LPT4, LPT5, LPT6, LPT7, LPT8, and LPT9. Also avoid these names <br>followed immediately by an extension; for example, NUL.txt is not recommended. <br>For more information, see Namespaces"<br>it is a windows limitation.<br>see:<br><a href="http://msdn.microsoft.com/en-us/library/windows/desktop/aa365247(v=vs.85" rel="nofollow" target="_blank">http://msdn.microsoft.com/en-us/library/windows/desktop/aa365247(v=vs.85</a>).aspx</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="80978">  <div class="votes">
+    <div id="Vu80978">
+    <a href="https://www.php.net/manual/vote-note.php?id=80978&amp;page=function.fopen&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd80978">
+    <a href="https://www.php.net/manual/vote-note.php?id=80978&amp;page=function.fopen&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V80978" title="48% like this...">
+    -1
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/pt_BR/function.fopen.php#80978" class="name">
+  <strong class="user"><em>sean downey</em></strong></a><a class="genanchor" href="https://www.php.net/manual/pt_BR/function.fopen.php#80978"> ¶</a><div class="date" title="2008-02-09 12:23"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom80978" style="opacity: 0.75;">
+<div class="phpcode"><code><span class="html">
+when using ssl / https on windows i would get the error:
+<br>"Warning: fopen(<a href="https://example.com/" rel="nofollow" target="_blank">https://example.com</a>): failed to open stream: Invalid argument in someSpecialFile.php on line 4344534"
+<br>
+<br>This was because I did not have the extension "php_openssl.dll" enabled.
+<br>
+<br>So if you have the same problem, goto your php.ini file and enable it :)</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="37553">  <div class="votes">
+    <div id="Vu37553">
+    <a href="https://www.php.net/manual/vote-note.php?id=37553&amp;page=function.fopen&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd37553">
+    <a href="https://www.php.net/manual/vote-note.php?id=37553&amp;page=function.fopen&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V37553" title="48% like this...">
+    -1
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/pt_BR/function.fopen.php#37553" class="name">
+  <strong class="user"><em>dan at cleandns dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/pt_BR/function.fopen.php#37553"> ¶</a><div class="date" title="2003-11-19 11:15"><strong>17 years ago</strong></div>
+  <div class="text" id="Hcom37553" style="opacity: 0.75;">
+<div class="phpcode"><code><span class="html">
+<span class="default">&lt;?php<br></span><span class="comment">#going to update last users counter script since<br>#aborting a write because a file is locked is not correct.<br><br></span><span class="default">$counter_file </span><span class="keyword">= </span><span class="string">'/tmp/counter.txt'</span><span class="keyword">;<br></span><span class="default">clearstatcache</span><span class="keyword">();<br></span><span class="default">ignore_user_abort</span><span class="keyword">(</span><span class="default">true</span><span class="keyword">);&nbsp; &nbsp;&nbsp; </span><span class="comment">## prevent refresh from aborting file operations and hosing file<br></span><span class="keyword">if (</span><span class="default">file_exists</span><span class="keyword">(</span><span class="default">$counter_file</span><span class="keyword">)) {<br>&nbsp;&nbsp; </span><span class="default">$fh </span><span class="keyword">= </span><span class="default">fopen</span><span class="keyword">(</span><span class="default">$counter_file</span><span class="keyword">, </span><span class="string">'r+'</span><span class="keyword">);<br>&nbsp; &nbsp; while(</span><span class="default">1</span><span class="keyword">) {<br>&nbsp; &nbsp; &nbsp; if (</span><span class="default">flock</span><span class="keyword">(</span><span class="default">$fh</span><span class="keyword">, </span><span class="default">LOCK_EX</span><span class="keyword">)) {<br>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="comment">#$buffer = chop(fgets($fh, 2));<br>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="default">$buffer </span><span class="keyword">= </span><span class="default">chop</span><span class="keyword">(</span><span class="default">fread</span><span class="keyword">(</span><span class="default">$fh</span><span class="keyword">, </span><span class="default">filesize</span><span class="keyword">(</span><span class="default">$counter_file</span><span class="keyword">)));<br>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="default">$buffer</span><span class="keyword">++;<br>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="default">rewind</span><span class="keyword">(</span><span class="default">$fh</span><span class="keyword">);<br>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="default">fwrite</span><span class="keyword">(</span><span class="default">$fh</span><span class="keyword">, </span><span class="default">$buffer</span><span class="keyword">);<br>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="default">fflush</span><span class="keyword">(</span><span class="default">$fh</span><span class="keyword">);<br>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="default">ftruncate</span><span class="keyword">(</span><span class="default">$fh</span><span class="keyword">, </span><span class="default">ftell</span><span class="keyword">(</span><span class="default">$fh</span><span class="keyword">));&nbsp; &nbsp;&nbsp; <br>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="default">flock</span><span class="keyword">(</span><span class="default">$fh</span><span class="keyword">, </span><span class="default">LOCK_UN</span><span class="keyword">);<br>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; break;<br>&nbsp; &nbsp; &nbsp; }<br>&nbsp;&nbsp; }<br>}<br>else {<br>&nbsp;&nbsp; </span><span class="default">$fh </span><span class="keyword">= </span><span class="default">fopen</span><span class="keyword">(</span><span class="default">$counter_file</span><span class="keyword">, </span><span class="string">'w+'</span><span class="keyword">);<br>&nbsp;&nbsp; </span><span class="default">fwrite</span><span class="keyword">(</span><span class="default">$fh</span><span class="keyword">, </span><span class="string">"1"</span><span class="keyword">);<br>&nbsp;&nbsp; </span><span class="default">$buffer</span><span class="keyword">=</span><span class="string">"1"</span><span class="keyword">;<br>}<br></span><span class="default">fclose</span><span class="keyword">(</span><span class="default">$fh</span><span class="keyword">);<br><br>print </span><span class="string">"Count is </span><span class="default">$buffer</span><span class="string">"</span><span class="keyword">;<br><br></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="37761">  <div class="votes">
+    <div id="Vu37761">
+    <a href="https://www.php.net/manual/vote-note.php?id=37761&amp;page=function.fopen&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd37761">
+    <a href="https://www.php.net/manual/vote-note.php?id=37761&amp;page=function.fopen&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V37761" title="48% like this...">
+    -1
+    </div>
+  </div>
+  <a href="https://www.php.net/manual/pt_BR/function.fopen.php#37761" class="name">
+  <strong class="user"><em>ken dot gregg at rwre dot com</em></strong></a><a class="genanchor" href="https://www.php.net/manual/pt_BR/function.fopen.php#37761"> ¶</a><div class="date" title="2003-11-25 03:03"><strong>17 years ago</strong></div>
+  <div class="text" id="Hcom37761" style="opacity: 0.75;">
+<div class="phpcode"><code><span class="html">
+PHP will open a directory if a path with no file name is supplied. This just bit me. I was not checking the filename part of a concatenated string.
+<br>
+<br>For example:
+<br>
+<br><span class="default">&lt;?php
+<br>$fd </span><span class="keyword">= </span><span class="default">fopen</span><span class="keyword">(</span><span class="string">'/home/mydir/' </span><span class="keyword">. </span><span class="default">$somefile</span><span class="keyword">, </span><span class="string">'r'</span><span class="keyword">);
+<br></span><span class="default">?&gt;
+<br></span>
+<br>Will open the directory if $somefile = ''
+<br>
+<br>If you attempt to read using the file handle you will get the binary directory contents. I tried append mode and it errors out so does not seem to be dangerous.
+<br>
+<br>This is with FreeBSD 4.5 and PHP 4.3.1. Behaves the same on 4.1.1 and PHP 4.1.2. I have not tested other version/os combinations.</span>
+</code></div>
+  </div>
+ </div></div>
+
+ <div class="foot"><a href="https://www.php.net/manual/add-note.php?sect=function.fopen&amp;redirect=https://www.php.net/manual/pt_BR/function.fopen.php"><img src="./ManipulacaoArquivos_files/notes-add@2x.png" alt="add a note" width="12" height="12"> <small>add a note</small></a></div>
+</section>    </section><!-- layout-content -->
+        <aside class="layout-menu">
+
+        <ul class="parent-menu-list">
+                                    <li>
+                <a href="https://www.php.net/manual/pt_BR/ref.filesystem.php">Funções para Sistema de arquivo</a>
+
+                                    <ul class="child-menu-list">
+
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.basename.php" title="basename">basename</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.chgrp.php" title="chgrp">chgrp</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.chmod.php" title="chmod">chmod</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.chown.php" title="chown">chown</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.clearstatcache.php" title="clearstatcache">clearstatcache</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.copy.php" title="copy">copy</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.delete.php" title="delete">delete</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.dirname.php" title="dirname">dirname</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.disk-free-space.php" title="disk_​free_​space">disk_​free_​space</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.disk-total-space.php" title="disk_​total_​space">disk_​total_​space</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.diskfreespace.php" title="diskfreespace">diskfreespace</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.fclose.php" title="fclose">fclose</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.feof.php" title="feof">feof</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.fflush.php" title="fflush">fflush</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.fgetc.php" title="fgetc">fgetc</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.fgetcsv.php" title="fgetcsv">fgetcsv</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.fgets.php" title="fgets">fgets</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.fgetss.php" title="fgetss">fgetss</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.file-exists.php" title="file_​exists">file_​exists</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.file-get-contents.php" title="file_​get_​contents">file_​get_​contents</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.file-put-contents.php" title="file_​put_​contents">file_​put_​contents</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.file.php" title="file">file</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.fileatime.php" title="fileatime">fileatime</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.filectime.php" title="filectime">filectime</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.filegroup.php" title="filegroup">filegroup</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.fileinode.php" title="fileinode">fileinode</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.filemtime.php" title="filemtime">filemtime</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.fileowner.php" title="fileowner">fileowner</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.fileperms.php" title="fileperms">fileperms</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.filesize.php" title="filesize">filesize</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.filetype.php" title="filetype">filetype</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.flock.php" title="flock">flock</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.fnmatch.php" title="fnmatch">fnmatch</a>
+                        </li>
+                                                <li class="current">
+                            <a href="https://www.php.net/manual/pt_BR/function.fopen.php" title="fopen">fopen</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.fpassthru.php" title="fpassthru">fpassthru</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.fputcsv.php" title="fputcsv">fputcsv</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.fputs.php" title="fputs">fputs</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.fread.php" title="fread">fread</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.fscanf.php" title="fscanf">fscanf</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.fseek.php" title="fseek">fseek</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.fstat.php" title="fstat">fstat</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.ftell.php" title="ftell">ftell</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.ftruncate.php" title="ftruncate">ftruncate</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.fwrite.php" title="fwrite">fwrite</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.glob.php" title="glob">glob</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.is-dir.php" title="is_​dir">is_​dir</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.is-executable.php" title="is_​executable">is_​executable</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.is-file.php" title="is_​file">is_​file</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.is-link.php" title="is_​link">is_​link</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.is-readable.php" title="is_​readable">is_​readable</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.is-uploaded-file.php" title="is_​uploaded_​file">is_​uploaded_​file</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.is-writable.php" title="is_​writable">is_​writable</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.is-writeable.php" title="is_​writeable">is_​writeable</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.lchgrp.php" title="lchgrp">lchgrp</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.lchown.php" title="lchown">lchown</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.link.php" title="link">link</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.linkinfo.php" title="linkinfo">linkinfo</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.lstat.php" title="lstat">lstat</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.mkdir.php" title="mkdir">mkdir</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.move-uploaded-file.php" title="move_​uploaded_​file">move_​uploaded_​file</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.parse-ini-file.php" title="parse_​ini_​file">parse_​ini_​file</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.parse-ini-string.php" title="parse_​ini_​string">parse_​ini_​string</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.pathinfo.php" title="pathinfo">pathinfo</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.pclose.php" title="pclose">pclose</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.popen.php" title="popen">popen</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.readfile.php" title="readfile">readfile</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.readlink.php" title="readlink">readlink</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.realpath-cache-get.php" title="realpath_​cache_​get">realpath_​cache_​get</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.realpath-cache-size.php" title="realpath_​cache_​size">realpath_​cache_​size</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.realpath.php" title="realpath">realpath</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.rename.php" title="rename">rename</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.rewind.php" title="rewind">rewind</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.rmdir.php" title="rmdir">rmdir</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.set-file-buffer.php" title="set_​file_​buffer">set_​file_​buffer</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.stat.php" title="stat">stat</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.symlink.php" title="symlink">symlink</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.tempnam.php" title="tempnam">tempnam</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.tmpfile.php" title="tmpfile">tmpfile</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.touch.php" title="touch">touch</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.umask.php" title="umask">umask</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/pt_BR/function.unlink.php" title="unlink">unlink</a>
+                        </li>
+                        
+                    </ul>
+                
+            </li>
+                        
+                    </ul>
+    </aside>
+
+
+  </div><!-- layout -->
+
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="https://www.php.net/copyright.php">Copyright © 2001-2021 The PHP Group</a></li>
+        <li><a href="https://www.php.net/my.php">My PHP.net</a></li>
+        <li><a href="https://www.php.net/contact.php">Contact</a></li>
+        <li><a href="https://www.php.net/sites.php">Other PHP.net sites</a></li>
+        <li><a href="https://www.php.net/privacy.php">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script src="./ManipulacaoArquivos_files/jquery.min.js.transferir"></script>
+<script src="./ManipulacaoArquivos_files/cached(4).php"></script>
+<script src="./ManipulacaoArquivos_files/cached(5).php"></script>
+<script src="./ManipulacaoArquivos_files/cached(6).php"></script>
+<script src="./ManipulacaoArquivos_files/cached(7).php"></script>
+<script src="./ManipulacaoArquivos_files/cached(8).php"></script>
+<script src="./ManipulacaoArquivos_files/cached(9).php"></script>
+
+<a id="toTop" href="javascript:;" style="display: inline;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="./ManipulacaoArquivos_files/to-top@2x.png"></a>
+
+
+
+</body></html>

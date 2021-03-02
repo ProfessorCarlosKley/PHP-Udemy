@@ -1,0 +1,16 @@
+{
+    "name": "karloskley/composer",
+    "description": "Aula PHP 7",
+    "type": "project",
+    "authors": [
+    	{
+    		"name": "Carlos Kley",
+    		"email": "karloskley@hotmail.com"
+    	}
+    ],
+    "minimum-stability": "dev",
+    "require":{
+    	"monolog/monolog": "1.0.*"
+    }
+
+}

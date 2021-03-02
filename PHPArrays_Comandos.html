@@ -1,0 +1,1787 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)https://www.homehost.com.br/blog/tutoriais/php/php-array/ -->
+<html lang="pt-BR" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="./PHPArrays_Comandos_files/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+
+<meta name="google-site-verification" content="Of7tcTVNdCu0yglY9AzGOw9pwLz_7IG8FAD11C4kIF4">
+<!--<link rel="canonical" href="https://www.homehost.com.br">-->
+<link href="./PHPArrays_Comandos_files/css" rel="stylesheet">
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <title>Hospedagem de sites Homehost com dom&iacute;nios por R$ 1,99</title>
+<meta name="description" content="Planos ilimitados com SSL gr&aacute;tis, loja virtual, e-mail marketing e servidores cloud. Hospedagem de sites em Wordpress e e-mail profissional.">
+-->
+
+<link rel="stylesheet" type="text/css" href="./PHPArrays_Comandos_files/easy-responsive-tabs.min.css">
+<link rel="stylesheet" type="text/css" href="./PHPArrays_Comandos_files/font-awesome.min.css">
+<!--link rel="stylesheet" type="text/css" href="css/megamenu.css"-->
+<link rel="stylesheet" type="text/css" href="./PHPArrays_Comandos_files/component.min.css">
+<link rel="stylesheet" type="text/css" href="./PHPArrays_Comandos_files/owl.carousel.min.css">
+<link rel="stylesheet" type="text/css" href="./PHPArrays_Comandos_files/owl.theme.min.css">
+<link rel="stylesheet" type="text/css" href="./PHPArrays_Comandos_files/style.min.css">
+<link rel="stylesheet" type="text/css" href="./PHPArrays_Comandos_files/jquery.bxslider.min.css">
+<link rel="stylesheet" href="./PHPArrays_Comandos_files/slide.min.css"> <!-- Resource style -->
+<script type="text/javascript" async="" src="./PHPArrays_Comandos_files/analytics.js.transferir"></script><script type="text/javascript" async="" src="./PHPArrays_Comandos_files/f.txt"></script><script type="text/javascript" id="www-widgetapi-script" src="./PHPArrays_Comandos_files/www-widgetapi.js.transferir" async=""></script><script type="text/javascript" async="" src="./PHPArrays_Comandos_files/js"></script><script src="./PHPArrays_Comandos_files/444003689635203" async=""></script><script async="" src="./PHPArrays_Comandos_files/fbevents.js.transferir"></script><script src="./PHPArrays_Comandos_files/iframe_api"></script><script async="" src="./PHPArrays_Comandos_files/plans_prices.min.js.transferir"></script>
+
+
+<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<meta property="og:title" content="PHP Array: O que é, como utilizar e as principais funções">
+<meta property="og:description" content="Neste artigo vamos desvendar sobre o PHP Array, o que são, como funciona, e como utilizar. Inicialmente, recomendamos a leitura do nosso artigo sobre o que é">
+<meta property="og:image" content="https://www.homehost.com.br/blog/wp-content/uploads/2019/10/PHP-ARRAY.png">
+<meta property="og:image:width" content="1120">
+<meta property="og:image:height" content="440">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PHP Array: O que é, como utilizar e as principais funções">
+<meta name="twitter:description" content="Neste artigo vamos desvendar sobre o PHP Array, o que são, como funciona, e como utilizar. Inicialmente, recomendamos a leitura do nosso artigo sobre o que é">
+<meta name="twitter:image" content="https://www.homehost.com.br/blog/wp-content/uploads/2019/10/PHP-ARRAY.png">
+<meta name="author" content="Rafael Marques">
+
+	<!-- This site is optimized with the Yoast SEO Premium plugin v14.8.1 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>PHP Array: O que é, como utilizar e as principais funções | Homehost</title>
+	<meta name="description" content="Neste artigo vamos desvendar sobre o PHP Array. O que é, como funciona e como utilizar, assim como as principais funções envolvendo arrays!">
+	<meta name="robots" content="index, follow">
+	<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+	<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+	<link rel="canonical" href="https://www.homehost.com.br/blog/tutoriais/php/php-array/">
+	<meta property="og:locale" content="pt_BR">
+	<meta property="og:type" content="article">
+	<meta property="og:url" content="https://www.homehost.com.br/blog/tutoriais/php/php-array/">
+	<meta property="og:site_name" content="Homehost">
+	<meta property="article:publisher" content="https://www.facebook.com/Homehost/">
+	<meta property="article:published_time" content="2019-10-10T00:20:26+00:00">
+	<meta property="article:modified_time" content="2020-05-31T17:55:25+00:00">
+	<meta property="og:image" content="https://www.homehost.com.br/blog/wp-content/uploads/2019/10/PHP-ARRAY.png">
+	<meta property="og:image:width" content="1120">
+	<meta property="og:image:height" content="440">
+	<meta name="twitter:creator" content="@Homehost">
+	<meta name="twitter:site" content="@Homehost">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.homehost.com.br/blog/#website","url":"https://www.homehost.com.br/blog/","name":"Homehost","description":"Hospedagem De Sites","potentialAction":[{"@type":"SearchAction","target":"https://www.homehost.com.br/blog/?s={search_term_string}","query-input":"required name=search_term_string"}],"inLanguage":"pt-BR"},{"@type":"ImageObject","@id":"https://www.homehost.com.br/blog/tutoriais/php/php-array/#primaryimage","inLanguage":"pt-BR","url":"https://www.homehost.com.br/blog/wp-content/uploads/2019/10/PHP-ARRAY.png","width":1120,"height":440},{"@type":"WebPage","@id":"https://www.homehost.com.br/blog/tutoriais/php/php-array/#webpage","url":"https://www.homehost.com.br/blog/tutoriais/php/php-array/","name":"PHP Array: O que \u00e9, como utilizar e as principais fun\u00e7\u00f5es | Homehost","isPartOf":{"@id":"https://www.homehost.com.br/blog/#website"},"primaryImageOfPage":{"@id":"https://www.homehost.com.br/blog/tutoriais/php/php-array/#primaryimage"},"datePublished":"2019-10-10T00:20:26+00:00","dateModified":"2020-05-31T17:55:25+00:00","author":{"@id":"https://www.homehost.com.br/blog/#/schema/person/a2154603d8bc4cfd0c3bda2c09c4017e"},"description":"Neste artigo vamos desvendar sobre o PHP Array. O que \u00e9, como funciona e como utilizar, assim como as principais fun\u00e7\u00f5es envolvendo arrays!","inLanguage":"pt-BR","potentialAction":[{"@type":"ReadAction","target":["https://www.homehost.com.br/blog/tutoriais/php/php-array/"]}]},{"@type":"Person","@id":"https://www.homehost.com.br/blog/#/schema/person/a2154603d8bc4cfd0c3bda2c09c4017e","name":"Rafael Marques","image":{"@type":"ImageObject","@id":"https://www.homehost.com.br/blog/#personlogo","inLanguage":"pt-BR","url":"https://secure.gravatar.com/avatar/6b8d285d6e9d504bc747fe0b0a36909a?s=96&d=mm&r=g","caption":"Rafael Marques"},"description":"Desenvolvedor e Escritor apaixonado por Tecnologia, Empreendedorismo e Educa\u00e7\u00e3o.","sameAs":["https://www.instagram.com/rafamarquesrmb/","https://www.linkedin.com/in/rafamarquesrmb/"]}]}</script>
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Feed para Homehost »" href="https://www.homehost.com.br/blog/feed/">
+<link rel="alternate" type="application/rss+xml" title="Feed de comentários para Homehost »" href="https://www.homehost.com.br/blog/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Feed de comentários para Homehost » PHP Array: O que é, como utilizar e as principais funções" href="https://www.homehost.com.br/blog/tutoriais/php/php-array/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.homehost.com.br\/blog\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.6"}};
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./PHPArrays_Comandos_files/wp-emoji-release.min.js.transferir" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="./PHPArrays_Comandos_files/style.min(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="twentyfifteen-fonts-css" href="./PHPArrays_Comandos_files/css(1)" type="text/css" media="all">
+<link rel="stylesheet" id="genericons-css" href="./PHPArrays_Comandos_files/genericons.css" type="text/css" media="all">
+<link rel="stylesheet" id="twentyfifteen-style-css" href="./PHPArrays_Comandos_files/style.css" type="text/css" media="all">
+<style id="twentyfifteen-style-inline-css" type="text/css">
+
+			.post-navigation .nav-previous { background-image: url(https://www.homehost.com.br/blog/wp-content/uploads/2019/09/Curso-de-PHP-Introdutório-785x275.jpg); }
+			.post-navigation .nav-previous .post-title, .post-navigation .nav-previous a:hover .post-title, .post-navigation .nav-previous .meta-nav { color: #fff; }
+			.post-navigation .nav-previous a:before { background-color: rgba(0, 0, 0, 0.4); }
+		
+			.post-navigation .nav-next { background-image: url(https://www.homehost.com.br/blog/wp-content/uploads/2019/10/ISSET--785x275.png); border-top: 0; }
+			.post-navigation .nav-next .post-title, .post-navigation .nav-next a:hover .post-title, .post-navigation .nav-next .meta-nav { color: #fff; }
+			.post-navigation .nav-next a:before { background-color: rgba(0, 0, 0, 0.4); }
+		
+</style>
+<link rel="stylesheet" id="css-2-css" href="./PHPArrays_Comandos_files/style.min(2).css" type="text/css" media="all">
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentyfifteen-ie-css'  href='https://www.homehost.com.br/blog/wp-content/themes/homehost-wts/css/ie.css?ver=20141010' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='twentyfifteen-ie7-css'  href='https://www.homehost.com.br/blog/wp-content/themes/homehost-wts/css/ie7.css?ver=20141010' type='text/css' media='all' />
+<![endif]-->
+<link rel="stylesheet" id="jquery-lazyloadxt-spinner-css-css" href="./PHPArrays_Comandos_files/jquery.lazyloadxt.spinner.css" type="text/css" media="all">
+<script type="text/javascript" src="./PHPArrays_Comandos_files/jquery.min.js.transferir" id="jquery-core-js"></script>
+<script type="text/javascript" src="./PHPArrays_Comandos_files/jquery-migrate.min.js.transferir" id="jquery-migrate-js"></script>
+<link rel="https://api.w.org/" href="https://www.homehost.com.br/blog/wp-json/"><link rel="alternate" type="application/json" href="https://www.homehost.com.br/blog/wp-json/wp/v2/posts/4694"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.homehost.com.br/blog/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.homehost.com.br/blog/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.6">
+<link rel="shortlink" href="https://www.homehost.com.br/blog/?p=4694">
+<link rel="alternate" type="application/json+oembed" href="https://www.homehost.com.br/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.homehost.com.br%2Fblog%2Ftutoriais%2Fphp%2Fphp-array%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://www.homehost.com.br/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.homehost.com.br%2Fblog%2Ftutoriais%2Fphp%2Fphp-array%2F&amp;format=xml">
+<script type="text/javascript">
+	window._zem_rp_post_id = '4694';
+	window._zem_rp_thumbnails = false;
+	window._zem_rp_post_title = 'PHP+Array%3A+O+que+%C3%A9%2C+como+utilizar+e+as+principais+fun%C3%A7%C3%B5es';
+	window._zem_rp_post_tags = ['php+array', 'tutorial', 'array', 'php', 'criar+sites', 'desenvolvedores', 'php', 'tutoriais', 'ness', 'lia', 'local', 'multi', 'uma', 'valor', 'de', 'ou', 'como', 'da', 'na', 'nest', 'os', 'php', 'a'];
+	window._zem_rp_static_base_url = 'https://content.zemanta.com/static/';
+	window._zem_rp_wp_ajax_url = 'https://www.homehost.com.br/blog/wp-admin/admin-ajax.php';
+	window._zem_rp_plugin_version = '1.13';
+	window._zem_rp_num_rel_posts = '6';
+</script>
+<style type="text/css">
+.related_post_title {
+}
+ul.related_post {
+}
+ul.related_post li {
+}
+ul.related_post li a {
+}
+ul.related_post li img {
+}</style>
+
+<script src="./PHPArrays_Comandos_files/f(1).txt"></script><script type="text/javascript" async="" src="./PHPArrays_Comandos_files/phplive.js.transferir"></script></head>
+<body onload="updatePrice(1);updatePrice(3);updatePrice(5);updatePrice(501);" class="post-template-default single single-post postid-4694 single-format-standard">
+
+<header class="header">
+
+
+
+
+
+
+    <!-- your content here -->
+
+<script>
+    /*
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8435229-2', 'auto');
+  ga('send', 'pageview');
+  */
+
+
+
+</script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="./PHPArrays_Comandos_files/js(1)"></script>
+    <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-989716450');
+
+  gtag('config', 'UA-8435229-2');
+    </script>
+
+
+    
+
+    <!--<base href="/">--><base href=".">
+
+
+
+
+    <div class="cbp-af-header cbp-af-header-shrink">
+        <div class="cbp-af-inner">
+            <div class="header-top">
+                <div class="wrap clear">
+                    <div class="header-top-left clear">
+                        <a href="https://www.homehost.com.br/" class="logo">
+                            <img src="./PHPArrays_Comandos_files/logo.png" alt="logo homehost">
+                        </a>
+                        <div class="header-contact">
+                            <div class="megamenu_container megamenu_dark_bar megamenu_light">
+                                <!-- Begin Menu Container -->
+
+                                <!--<ul class="megamenu" id="megamenu">
+							    <li><a href="#" class="megamenu_drop">MENU</a>
+            <div class="dropdown_fullwidth">
+                <div class="wrap">
+					<ul class="inner-menu-sub">
+							  <li><a href="#"></a></li>
+					</ul>
+                </div>
+                </div>
+          </li>
+					</ul>-->
+					<button class="RespMenu">
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+                                <ul class="megamenu" id="megamenu">
+                                    <!-- Begin Mega Menu -->
+
+                                    <li>
+                                        <a href="javascript:void(0)" class="megamenu_drop">A Homehost</a><!-- Begin Item -->
+                                        <div class="dropdown_fullwidth">
+                                            <!-- Begin Item Container -->
+                                            <div class="wrap">
+                                                <ul class="inner-menu-sub">
+                                                    <li>
+                                                        <span class="con-icon">
+                                                            <img class="header-nav-whoweare" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0AQMAAAD/tomoAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAA5JREFUeNpjYBgFgxkAAAGgAAGNZifWAAAAAElFTkSuQmCC" alt="whoweare">
+                                                        </span>
+                                                        <a href="https://www.homehost.com.br/quem-somos.php">Quem Somos</a>
+                                                    </li>
+                                                    <li>
+                                                        <span class="faq-icon">
+                                                            <img class="header-nav-infrastructure" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0AQMAAAD/tomoAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAA5JREFUeNpjYBgFgxkAAAGgAAGNZifWAAAAAElFTkSuQmCC" alt="infrastructure">
+                                                        </span>
+                                                        <a href="https://www.homehost.com.br/infraestrutura">Infraestrutura</a>
+                                                    </li>
+                                                    <li>
+                                                        <span class="con-icon">
+                                                            <img class="header-nav-workwithus" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0AQMAAAD/tomoAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAA5JREFUeNpjYBgFgxkAAAGgAAGNZifWAAAAAElFTkSuQmCC" alt="workwithus">
+                                                        </span>
+                                                        <a href="https://www.homehost.com.br/trabalhe.php">Trabalhe Conosco</a>
+                                                    </li>
+                                                    <li>
+                                                        <span class="con-icon">
+                                                            <img class="header-nav-programaffilade" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0AQMAAAD/tomoAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAA5JREFUeNpjYBgFgxkAAAGgAAGNZifWAAAAAElFTkSuQmCC" alt="programaffilade">
+                                                        </span>
+                                                        <a href="https://www.homehost.com.br/afiliados">Afiliados</a>
+                                                    </li>
+                                                    <li>
+                                                        <span class="con-icon">
+                                                            <img class="header-nav-pripolcy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0AQMAAAD/tomoAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAA5JREFUeNpjYBgFgxkAAAGgAAGNZifWAAAAAElFTkSuQmCC" alt="pripolcy">
+                                                        </span>
+                                                        <a href="https://www.homehost.com.br/privacidade.php">Politica De Privacidade</a>
+                                                    </li>
+                                                    <li>
+                                                        <span class="con-icon">
+                                                            <img class="header-nav-termscondition" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0AQMAAAD/tomoAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAA5JREFUeNpjYBgFgxkAAAGgAAGNZifWAAAAAElFTkSuQmCC" alt="termscondition">
+                                                        </span>
+                                                        <a href="https://www.homehost.com.br/termos.php">Termos De Servico</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div><!-- End Item Container -->
+                                    </li>
+
+
+                                    <!--/**************************end of first*******************************/	-->
+
+
+                                    <li>
+                                        <a href="javascript:void(0)" class="megamenu_drop">Atendimento</a><!-- Begin Item -->
+                                        <div class="dropdown_fullwidth">
+                                            <!-- Begin Item Container -->
+                                            <div class="wrap">
+                                                <ul class="inner-menu-sub">
+                                                    <li>
+                                                        <span class="con-icon">
+                                                            <img class="header-nav-invoice" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0AQMAAAD/tomoAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAA5JREFUeNpjYBgFgxkAAAGgAAGNZifWAAAAAElFTkSuQmCC" alt="" width="52" height="52">
+                                                        </span>
+                                                        <a href="https://www.homehost.com.br/painelgeral/segundavia.php">2ª via de boleto</a>
+                                                    </li>
+                                                    <li>
+                                                        <span class="faq-icon">
+                                                            <img class="header-nav-faq" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0AQMAAAD/tomoAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAA5JREFUeNpjYBgFgxkAAAGgAAGNZifWAAAAAElFTkSuQmCC" alt="atendimento" width="40" height="40">
+                                                        </span>
+                                                        <a href="https://www.homehost.com.br/suporte#faqSec">FAQ</a>
+                                                    </li>
+                                                    <li>
+                                                        <span class="con-icon">
+                                                            <img class="header-nav-contact-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0AQMAAAD/tomoAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAA5JREFUeNpjYBgFgxkAAAGgAAGNZifWAAAAAElFTkSuQmCC" alt="contato" width="52" height="52">
+                                                        </span>
+                                                        <a href="https://www.homehost.com.br/suporte#phoneSec">Contatos</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div><!-- End Item Container -->
+                                    </li>
+
+
+                                    <!-- /**************************end of second*******************************/-->
+
+
+                                    <li>
+                                        <a href="javascript:void(0)" class="megamenu_drop">Nossos Serviços</a><!-- Begin Item -->
+                                        <div class="dropdown_fullwidth">
+                                            <!-- Begin Item Container -->
+                                            <div class="wrap">
+                                                <ul class="inner-menu-sub">
+                                                    <li class="hdbld">
+                                                        <span class="reg-icon">
+                                                            <img class="header-nav-www" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0AQMAAAD/tomoAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAA5JREFUeNpjYBgFgxkAAAGgAAGNZifWAAAAAElFTkSuQmCC" alt="www">
+                                                        </span>
+                                                        <a href="https://www.homehost.com.br/pesquisa-de-dominios">Registro de domínios</a>
+                                                    </li>
+                                                    <li class="hdbld">
+                                                        <span class="hos-icon">
+                                                            <img class="header-nav-acco" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0AQMAAAD/tomoAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAA5JREFUeNpjYBgFgxkAAAGgAAGNZifWAAAAAElFTkSuQmCC" width="52" height="52" alt="hospedagem">
+                                                        </span>
+                                                        <a href="https://www.homehost.com.br/#">Hospedagem</a>
+                                                        <ul class="sub-menu-sub">
+                                                            <li>
+                                                                <a href="https://www.homehost.com.br/hospedagem-de-sites">Hospedagem de sites</a>
+                                                            </li>
+															<li>
+                                                                <a href="https://www.homehost.com.br/hospedagem-wordpress">Hospedagem Wordpress</a>
+                                                            </li>
+															<li>
+                                                                <a href="https://www.homehost.com.br/hospedagem-python-django">Hospedagem Python/Django</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="https://www.homehost.com.br/hospedagem-nodejs">Hospedagem Node.JS</a>
+                                                            </li>
+                                                            <!--<li>
+                                                                <a href="/email_profissional">Email Profissional</a>
+                                                            </li>-->
+															<li>
+                                                                <a href="https://www.homehost.com.br/certificado-ssl-gratis">Certificado ssl grátis</a>
+                                                            </li>
+                                                            <!--<li>
+                                                                <a href="http://clientes.tidc.com.br/cart.php?gid=4">R&aacute;dio Online</a>
+                                                            </li>-->
+                                                            <!--<li><a href="hospedagem-de-sites">Hospedagem Wordpress</a></li>
+										<li><a href="hospedagem-de-sites">Hospedagem Joomla</a></li>
+										<li><a href="hospedagem-de-sites">Hospedagem Drupal</a></li>
+										<li><a href="hospedagem-de-sites">Hospedagem Magento</a></li>-->
+                                                        </ul>
+                                                    </li>
+                                                    <li class="hdbld">
+                                                        <span class="pro-icon">
+                                                            <img class="header-nav-profe" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0AQMAAAD/tomoAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAA5JREFUeNpjYBgFgxkAAAGgAAGNZifWAAAAAElFTkSuQmCC" width="52" height="52" alt="corporativa">
+                                                        </span>
+                                                        <a href="https://www.homehost.com.br/#">Corporativos</a>
+                                                        <ul class="sub-menu-sub">
+
+
+                                                            <li>
+                                                                <a href="https://www.homehost.com.br/landing/loja-virtual/">Loja Virtual</a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="https://www.homehost.com.br/revenda-de-hospedagem">Revenda de hospedagem</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="https://www.homehost.com.br/hospedagem-de-sites-ssd">Hospedagem de sites em SSD</a>
+                                                            </li>
+                                                            <li>
+                                                                <!--<a href="http://clientes.tidc.com.br/cart.php">Servidores cloud</a>-->
+                                                                <a href="https://www.homehost.com.br/servidor-vps">Servidores VPS</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <!-- !!! SEM CONTEUDO
+                        <li class="hdbld"><span class="reg-icon"><img src="/images/otherservices.png" alt="otherservices"></span><a href="#">Outros Servicos</a>
+							  <ul class="sub-menu-sub">
+										<li><a href="#">Webmail</a></li>
+										<li><a href="#">E-mail Marketing</a></li>
+										<li><a href="/certificado-ssl-gratis">Certificado SSL</a></li>
+                                    </ul>
+						</li>
+                        -->
+                                                </ul>
+                                            </div>
+                                        </div><!-- End Item Container -->
+                                    </li><!--  /**************************end of third*******************************/-->
+
+
+                                    <li>
+                                        <a href="javascript:void(0)" class="megamenu_drop">Blog</a><!-- Begin Item -->
+                                        <div class="dropdown_fullwidth">
+                                            <!-- Begin Item Container -->
+                                            <div class="wrap">
+                                                <ul class="inner-menu-sub">
+                                                    <li class="hdbld">
+                                                        <span class="reg-icon">
+                                                            <img class="header-nav-tutorialicon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0AQMAAAD/tomoAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAA5JREFUeNpjYBgFgxkAAAGgAAGNZifWAAAAAElFTkSuQmCC" alt="tutorialicon">
+                                                        </span>
+                                                        <a href="https://www.homehost.com.br/#">Tutoriais</a>
+                                                        <ul class="sub-menu-sub">
+															<!--<li>
+                                                                <a href="/suporte#contactSec">Tutoriais em Video</a>
+                                                            </li>-->
+                                                            <li>
+                                                                <a href="https://www.homehost.com.br/blog/tutoriais/contas-de-email/como-configurar-seu-email">Configuracao de e-mail</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="https://www.homehost.com.br/blog/category/tutoriais/cpanel">Configuracao de cPanel</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="https://www.homehost.com.br/blog/desenvolvedores/">Tutoriais sobre Desenvolvimento</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="hdbld">
+                                                        <span class="hos-icon">
+                                                            <img class="header-nav-news" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0AQMAAAD/tomoAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAA5JREFUeNpjYBgFgxkAAAGgAAGNZifWAAAAAElFTkSuQmCC" alt="news">
+                                                        </span>
+                                                        <a href="https://www.homehost.com.br/#">Novidades Homehost</a>
+                                                        <ul class="sub-menu-sub">
+                                                            <li>
+                                                                <a href="https://www.homehost.com.br/blog/tutoriais/email-marketing/">E-mail Marketing</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="https://www.homehost.com.br/blog/internet/montar-site-aprenda-criar-o-seu-site-na-internet/">Construtor de sites</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="https://www.homehost.com.br/blog/produtos-e-servicos/ganhe-ate-r-70-para-cada-cliente-indicado-novo-sistema-de-afiliados-homehost">Programa de afiliados</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="hdbld">
+                                                        <span class="pro-icon">
+                                                            <img class="header-nav-articleicon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0AQMAAAD/tomoAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAA5JREFUeNpjYBgFgxkAAAGgAAGNZifWAAAAAElFTkSuQmCC" alt="articleicon">
+                                                        </span>
+                                                        <a href="https://www.homehost.com.br/#">Artigos</a>
+                                                        <ul class="sub-menu-sub">
+															<li>
+                                                                <a href="https://www.homehost.com.br/blog/">Página inicial do Blog</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="https://www.homehost.com.br/blog/desenvolvedores/">Desenvolvimento</a>
+                                                            </li>
+                                                            <!-- SEM CONTEUDO <li><a href="#">Tecnologia</a></li> -->
+                                                            <li>
+                                                                <a href="https://www.homehost.com.br/blog/seguranca/">Seguranca</a>
+                                                            </li>
+                                                            <!-- SEM CONTEUDO <li><a href="#">Mobile</a></li> -->
+                                                            <li>
+                                                                <a href="https://www.homehost.com.br/blog/seo/">SEO</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="hdbld">
+                                                        <span class="reg-icon">
+                                                            <img class="header-nav-platforms" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0AQMAAAD/tomoAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAA5JREFUeNpjYBgFgxkAAAGgAAGNZifWAAAAAElFTkSuQmCC" alt="platforms">
+                                                        </span>
+                                                        <a href="https://www.homehost.com.br/#">Plataformas</a>
+                                                        <ul class="sub-menu-sub">
+                                                            <li>
+                                                                <a href="https://www.homehost.com.br/blog/wordpress/como-instalar-o-wordpress-em-menos-de-5-minutos">Wordpress</a>
+                                                            </li>
+                                                            <!-- SEM CONTEUDO <li><a href="#">Joomla</a></li> -->
+                                                            <!-- SEM CONTEUDO <li><a href="#">Drupal</a></li> -->
+                                                            <li>
+                                                                <a href="https://www.homehost.com.br/blog/category/tutoriais/magento">Magento</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div><!-- End Item Container -->
+                                    </li>
+
+
+                                    <!--  /**************************end of fourth*******************************/-->
+                                    <!-- ESTA AREA NAO FOI IDENTIFICADA -->
+                                    <!-- <li class="wtbrd"><a href="#">Area do cliente</a> --><!-- Begin Item --><!-- </li> -->
+
+
+                                    <!--  /**************************end of fifth*******************************/-->
+                                </ul><!-- End Mega Menu -->
+
+
+
+
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-top-right clear">
+
+                        <div class="header-serch">
+                            <span class="mag-glass"></span>
+                            <div class="hide-box">
+                                <!--form>
+                		<input type="search" value="" placeholder="Busca"/>
+                    </form-->
+                                <script>
+			function fillBusca()
+			{
+				$('#q').val("site:homehost.com.br "+$('#q').val());
+				return true;
+			}
+                                </script>
+                                <form action="https://duckduckgo.com/" method="GET" name="frmBusca" onsubmit="return fillBusca();">
+                                    <input type="search" value="" placeholder="Busca" name="q" id="q">
+                                </form>
+
+
+                            </div>
+                        </div>
+                                                <div class="header-serch-right">
+                            <a href="https://www.homehost.com.br/painelgeral/login.php" class="loginRed">Área do cliente</a>
+                            <a href="https://www.homehost.com.br/#" class="setting">Minha Conta</a>
+                            <div class="log-form">
+                                <form action="https://painel.homehost.com.br/auth.php" method="POST" target="_blank">
+                                    <input name="dominio" type="text" value="" placeholder="Domínio">
+                                    <input name="senha" type="password" value="" placeholder="**********">
+                                    <input type="submit" value="Acessar">
+                                </form>
+                                <a href="https://www.homehost.com.br/painelgeral/rec_senha.php" class="alignright">Esqueci minha senha</a>
+                            </div>
+                            <!--a href="#" class="logout">sair</a-->
+                        </div>
+                                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</header>
+<script src="./PHPArrays_Comandos_files/jquery.min.js(1).transferir"></script>
+<!--<script>
+    (function(){
+
+
+      var hr = (function(){
+        var dt = new Date();
+        if(localStorage.getItem('timer') !== null){
+            return localStorage.getItem('timer');      
+        }else {
+            var nowh = dt.setHours(dt.getHours() + 5);
+            localStorage.setItem('timer', String(nowh));
+            return nowh;
+        }
+      })();
+
+      var countDownDate = hr;
+      var x = setInterval(function() {
+
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
+
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+     var template  = '<div class="counter">' +
+        '<div class="days text-shadow"><b>'+days+'</b><p>dias</p></div>' +
+        '<div class="hours text-shadow"><b>'+hours+'</b><p>horas</p></div>' +
+        '<div class="minutes text-shadow"><b>'+minutes+'</b><p>minutos</p></div>' +
+        '<div class="seconds text-shadow"><b>'+seconds+'</b><p>segundos</p></div>' +
+     '</div><div class="clear"></div>';
+     $("#timer").html(template);
+     $("#floating-timer").html(template);
+
+    if (distance < 0) {
+        clearInterval(x);
+        $("#show-promotion").addClass("d-none");
+        $("#show-promotion-expired").removeClass("d-none");
+        $(".floating-timer").css("display","none");
+    }
+
+    }, 1000);
+    })();
+</script>-->
+
+<!-- floating-timer 
+<div class="floating-timer">
+    <div class="block">
+        <div class="pre-left-content">
+          <h3>15% de desconto</h3>
+          <p>Últimas horas. Aproveite!</p>
+        </div>
+        <div class="left-content">
+            <div id="floating-timer"></div>
+        </div>
+        <div class="right-content">
+            <div class="box-btn">
+                <a href="https://www.homehost.com.br/hospedagem-de-sites" class="btn btn-white btn-animation-1" id="comeceagora">Garanta o seu desconto</a>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+ floating-timer -->
+<script>
+
+
+$(window).on("scroll", function () {
+   if ($(this).scrollTop() > 800) {
+      if(localStorage.getItem('timer') !== null){
+        var now = new Date().getTime();
+        var timer = new Date(Number(localStorage.getItem('timer'))).getTime();
+        if(now < timer){
+            $('.floating-timer').css("display","block");
+        }
+      }
+   } else {
+      $('.floating-timer').css("display","none");
+   }
+});
+
+</script>
+<!--<div class="banner blogbanner">
+     <img src="https://www.homehost.com.br/images/blogbanner.jpg" alt="banner" width=1400 height=702>
+     <div class="header-mid-inn header-mid">
+         <div class="header-1">HOSPEDAGEM DE SITES</div>
+         <div class="orange header-2">Tudo inclu&iacute;do. Simples assim.</div>
+     </div>
+</div>-->
+<style>
+.container-of-banner {
+ width:100%;
+ height:300px;
+ overflow: hidden;
+ background:#CCC url('https://www.homehost.com.br/images/blogbanner.jpg');
+ background-size: 100% auto;
+ background-repeat: no-repeat;
+ background-position: center 56px;
+}
+.form-search-top-banner {
+ position: absolute;
+ top: 15%;
+ right: 20%;
+}
+.form-search-top-banner .input-left {
+    float:left;
+}
+.form-search-top-banner .input-right {
+    float:right;
+}
+.form-search-top-banner form input[type='search']{
+    border:#c2c2c2 solid 1px;
+    width:350px;
+    padding:15px;
+    font-size:15px;
+}
+.form-search-top-banner form input[type='submit']{
+    padding:15px !important;
+    margin:0;
+}
+@media (max-width: 576px) {
+  a.loginRed{ 
+    display:none;
+  }
+ .container-of-banner {
+    margin:0 0 -40px;
+    width:100%;
+    height:200px;
+    overflow: hidden;
+    background: url('https://www.homehost.com.br/images/blogbanner.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center 83px;
+ } 
+ 
+ .form-search-top-banner {
+    width:330px;
+    margin:0 auto 0;
+    left:0;
+    right:0;
+  }
+ .form-search-top-banner form input[type='search']{
+    width:200px;
+    padding:7px;
+  }
+ .form-search-top-banner form input[type='submit']{
+    padding:7px !important;
+ }
+}
+</style>
+<div class="container-of-banner">
+	 <div class="form-search-top-banner">
+        <form role="search" method="get" action="https://www.homehost.com.br/blog/">
+            <div class="input-left">
+                <input type="search" placeholder="Pesquisar …" value="" name="s">
+            </div>
+            <div class="input-right">
+                <input type="submit" value="Pesquisar">
+            </div>
+        </form>
+	 </div>
+</div>
+
+<div class="main blogmain">
+<div class="wrap">
+<div class="breadcrumbs" typeof="BreadcrumbList" vocab="http://schema.org/">
+<!-- Breadcrumb NavXT 6.5.0 -->
+<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to Homehost." href="https://www.homehost.com.br/blog" class="home"><span property="name">Homehost</span></a><meta property="position" content="1"></span> &gt; <span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to the Tutoriais category archives." href="https://www.homehost.com.br/blog/category/tutoriais/" class="taxonomy category"><span property="name">Tutoriais</span></a><meta property="position" content="2"></span> &gt; <span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to the PHP category archives." href="https://www.homehost.com.br/blog/category/tutoriais/php/" class="taxonomy category"><span property="name">PHP</span></a><meta property="position" content="3"></span> &gt; <span property="itemListElement" typeof="ListItem"><span property="name" class="post post-post current-item">PHP Array: O que é, como utilizar e as principais funções</span><meta property="url" content="https://www.homehost.com.br/blog/tutoriais/php/php-array/"><meta property="position" content="4"></span></div>
+
+<div class="blogDetail clear">
+<div class="blogDetailLeft">
+
+		
+<article class="blglst" id="post-4694">
+	
+
+	
+	<h1>PHP Array: O que é, como utilizar e as principais funções</h1>	<div class="post-thumb">
+	<img width="1120" height="440" src="./PHPArrays_Comandos_files/lazy_placeholder.gif" data-lazy-type="image" data-src="https://www.homehost.com.br/blog/wp-content/uploads/2019/10/PHP-ARRAY.png" class="lazy-hidden attachment-full size-full wp-post-image" alt="" loading="lazy" srcset="" data-srcset="https://www.homehost.com.br/blog/wp-content/uploads/2019/10/PHP-ARRAY.png 1120w, https://www.homehost.com.br/blog/wp-content/uploads/2019/10/PHP-ARRAY-300x118.png 300w, https://www.homehost.com.br/blog/wp-content/uploads/2019/10/PHP-ARRAY-768x302.png 768w, https://www.homehost.com.br/blog/wp-content/uploads/2019/10/PHP-ARRAY-1024x402.png 1024w, https://www.homehost.com.br/blog/wp-content/uploads/2019/10/PHP-ARRAY-1x1.png 1w" sizes="(max-width: 1120px) 100vw, 1120px"><noscript><img width="1120" height="440" src="https://www.homehost.com.br/blog/wp-content/uploads/2019/10/PHP-ARRAY.png" class="attachment-full size-full wp-post-image" alt="" loading="lazy" srcset="https://www.homehost.com.br/blog/wp-content/uploads/2019/10/PHP-ARRAY.png 1120w, https://www.homehost.com.br/blog/wp-content/uploads/2019/10/PHP-ARRAY-300x118.png 300w, https://www.homehost.com.br/blog/wp-content/uploads/2019/10/PHP-ARRAY-768x302.png 768w, https://www.homehost.com.br/blog/wp-content/uploads/2019/10/PHP-ARRAY-1024x402.png 1024w, https://www.homehost.com.br/blog/wp-content/uploads/2019/10/PHP-ARRAY-1x1.png 1w" sizes="(max-width: 1120px) 100vw, 1120px" /></noscript>	</div>
+	<div class="entry-content">
+		<p>Neste artigo vamos desvendar sobre o PHP Array, o que são, como funciona, e como utilizar. Inicialmente, recomendamos a leitura do nosso artigo sobre <a href="https://www.homehost.com.br/blog/criar-sites/o-que-e-php/">o que é</a> PHP, onde você poderá aprender mais sobre a linguagem PHP, como funciona e ainda como instalar um servidor local para poder estar fazendo os testes na sua própria máquina.</p>
+<p>Portanto, veremos nesse artigo os seguintes tópicos:</p>
+<ul>
+<li><a href="https://www.homehost.com.br/blog/tutoriais/php/php-array/#top01">O Que é a PHP array?</a></li>
+<li><a href="https://www.homehost.com.br/blog/tutoriais/php/php-array/#top02">Como Criar uma Array?</a></li>
+<li><a href="https://www.homehost.com.br/blog/tutoriais/php/php-array/#top03">Utilizando as chaves da array</a></li>
+<li><a href="https://www.homehost.com.br/blog/tutoriais/php/php-array/#top04">PHP Array Multidimensional (ou PHP Multi Array)</a></li>
+<li><a href="https://www.homehost.com.br/blog/tutoriais/php/php-array/#top05">Contando os elementos de uma PHP Array</a></li>
+<li><a href="https://www.homehost.com.br/blog/tutoriais/php/php-array/#top06">Adicionando um valor a array dinamicamente</a></li>
+<li><a href="https://www.homehost.com.br/blog/tutoriais/php/php-array/#top07">Adicionando ou removendo um valor na PHP array</a></li>
+<li><a href="https://www.homehost.com.br/blog/tutoriais/php/php-array/#top08">Ordenando uma PHP Array</a></li>
+<li><a href="https://www.homehost.com.br/blog/tutoriais/php/php-array/#top09">Combinando PHP Arrays</a></li>
+<li><a href="https://www.homehost.com.br/blog/tutoriais/php/php-array/#top10">Filtrando Elementos de um Array</a></li>
+<li><a href="https://www.homehost.com.br/blog/tutoriais/php/php-array/#top11">Iterando Arrays</a></li>
+<li><a href="https://www.homehost.com.br/blog/tutoriais/php/php-array/#top12">Iteração com o Foreach</a></li>
+<li><a href="https://www.homehost.com.br/blog/tutoriais/php/php-array/#top13">Iteração com o For</a></li>
+<li><a href="https://www.homehost.com.br/blog/tutoriais/php/php-array/#top14">Iterando com o While</a></li>
+<li><a href="https://www.homehost.com.br/blog/tutoriais/php/php-array/#top15">Conclusão</a></li>
+</ul>
+<p><a name="top01"></a></p>
+<h2>O Que é a PHP array?</h2>
+<p class="para">No PHP, um array é, na verdade, um mapa ordenado. Ou seja, é um tipo que relaciona valores a chaves. Portanto, é uma lista de valores que serão armazenados na memória. O PHP array é um tipo de dado, assim como <strong>integer</strong>,&nbsp;<strong>float</strong>,&nbsp;<strong>string</strong>&nbsp;ou&nbsp;<strong>boolean</strong>. Porém, ele pode armazenar mais de um valor, relacionando-os a suas chaves.</p>
+<p>De uma forma geral, podemos dizer que a PHP array é uma variável do php, porém com a possibilidade de dentro dela possuirmos diversos valores. Academicamente falando, o PHP array é equivalente ao conceito de <strong>vetor</strong>. Também considerando uma array do PHP, existem as PHP arrays multidimensionais (também conhecidas como PHP Multi Arrays), que são arrays compostas por outras arrays. Portanto, outro conceito acadêmico que se assemelha a array do PHP é o conceito de <strong>matriz</strong>.<br>
+<a name="top02"></a></p>
+<h2>Como Criar uma Array?</h2>
+<p>Inicialmente, para criar uma <a href="https://www.homehost.com.br/blog/criar-sites/o-que-e-php/">PHP</a> array, primeiramente você vai criar uma variável. Após isso, deve-se atribuir para ela um par de chaves[ ]. Por fim, dentro dessas chaves, você armazena os valores que quiser, separados por vírgula. Veja o exemplo abaixo:</p>
+<pre class="lang:xhtml decode:true">&lt;?php
+$arr=["primeiro valor", "segundo valor", "terceiro valor"];
+print_r($arr);
+?&gt;</pre>
+<p>Através da função print_r conseguimos imprimir nossa array no navegador, tendo como resultado conforme a imagem abaixo:</p>
+<p><img loading="lazy" class="lazy-hidden wp-image-4639 size-full aligncenter" src="./PHPArrays_Comandos_files/lazy_placeholder.gif" data-lazy-type="image" data-src="https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo03-3.jpg" alt="Exemplo de Array" width="602" height="33" srcset="" data-srcset="https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo03-3.jpg 602w, https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo03-3-300x16.jpg 300w, https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo03-3-1x1.jpg 1w" sizes="(max-width: 602px) 100vw, 602px"><noscript><img loading="lazy" class="wp-image-4639 size-full aligncenter" src="https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo03-3.jpg" alt="Exemplo de Array" width="602" height="33" srcset="https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo03-3.jpg 602w, https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo03-3-300x16.jpg 300w, https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo03-3-1x1.jpg 1w" sizes="(max-width: 602px) 100vw, 602px" /></noscript></p>
+<p>Outra forma de declarar uma array é através da função array(), onde incluímos os valores dentro dos parenteses, separados por vírgula. Vejamos o mesmo exemplo anterior só que com essa sintaxe:</p>
+<pre class="lang:xhtml decode:true">&lt;?php
+$arr=array("primeiro valor", "segundo valor", "terceiro valor");
+print_r($arr);
+?&gt;</pre>
+<p><a name="top03"></a></p>
+<h2>Utilizando as chaves da array</h2>
+<p>Nos exemplos que utilizamos acima, você pode observar que os valores da PHP array são armazenados dentro de chaves. Dessa forma podemos utilizar um valor específico da array. Observe ainda, que quando as chaves são enumeradas automaticamente, a array inicia-se pela chave [0], e assim por diante. Portanto, a primeira chave é a chave [0] e não a chave [1]. Por exemplo, ainda utilizando a array dos exemplos acima, caso eu queira pegar o segunda valor, ou seja, o valor da chave [1], basta eu chamar pela $arr[1]. Vejamos no exemplo abaixo</p>
+<pre class="lang:xhtml decode:true">&lt;?php
+$arr=array("primeiro valor", "segundo valor", "terceiro valor");
+echo $arr[1];
+?&gt;</pre>
+<p>Dessa forma, o resultado no nosso navegador será conforme a imagem abaixo:</p>
+<p><img loading="lazy" class="lazy-hidden size-full wp-image-4641 aligncenter" src="./PHPArrays_Comandos_files/lazy_placeholder.gif" data-lazy-type="image" data-src="https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo04-3.jpg" alt="Exemplor 02 de array" width="134" height="30" srcset="" data-srcset="https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo04-3.jpg 134w, https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo04-3-1x1.jpg 1w" sizes="(max-width: 134px) 100vw, 134px"><noscript><img loading="lazy" class="size-full wp-image-4641 aligncenter" src="https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo04-3.jpg" alt="Exemplor 02 de array" width="134" height="30" srcset="https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo04-3.jpg 134w, https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo04-3-1x1.jpg 1w" sizes="(max-width: 134px) 100vw, 134px" /></noscript></p>
+<p>Outra coisa que podemos estar fazendo é criar chaves personalizadas para nossa array. Para isso, basta utilizar “<strong>=&gt;</strong>“, onde a esquerda teremos o nome da chave e a direita o valor da chave. Vejamos o exemplo a seguir:</p>
+<pre class="lang:xhtml decode:true">&lt;?php
+$arr=array( "nome"=&gt;"Rafael","sobrenome"=&gt;"Marques", "idade"=&gt;"25");
+print_r($arr);
+
+echo "&lt;br/&gt;&lt;br/&gt;";
+echo "Nome: &lt;b&gt;".$arr["nome"]."&lt;/b&gt;&lt;br/&gt;";
+echo "Sobrenome: &lt;b&gt;".$arr["sobrenome"]."&lt;/b&gt;&lt;br/&gt;";
+echo "Idade: &lt;b&gt;".$arr["idade"]."&lt;/b&gt;";
+?&gt;</pre>
+<p>Com o exemplo acima, vemos por completo como utilizar as chaves personalizadas e ainda como chamar as mesmas através de suas chaves. Portanto, o resultado no navegador será como na imagem abaixo:</p>
+<p><img loading="lazy" class="lazy-hidden size-full wp-image-4642 aligncenter" src="./PHPArrays_Comandos_files/lazy_placeholder.gif" data-lazy-type="image" data-src="https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo05-2.jpg" alt="Curso de PHP: exemplo de array com chaves" width="553" height="127" srcset="" data-srcset="https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo05-2.jpg 553w, https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo05-2-300x69.jpg 300w, https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo05-2-1x1.jpg 1w" sizes="(max-width: 553px) 100vw, 553px"><noscript><img loading="lazy" class="size-full wp-image-4642 aligncenter" src="https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo05-2.jpg" alt="Curso de PHP: exemplo de array com chaves" width="553" height="127" srcset="https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo05-2.jpg 553w, https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo05-2-300x69.jpg 300w, https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo05-2-1x1.jpg 1w" sizes="(max-width: 553px) 100vw, 553px" /></noscript><br>
+<a name="top04"></a></p>
+<h2>PHP Array Multidimensional (ou PHP Multi Array)</h2>
+<p>As PHP arrays são estruturas heterogêneas que permitem que você salve múltiplos dados de tipos diferentes em um mesmo lugar. Dessa forma, é permitido incluir uma ou mais arrays, dentro de uma mesma PHP array. Portanto, obtemos assim a forma de estrutura de uma matriz. Veja então o exemplo abaixo:</p>
+<pre class="lang:xhtml decode:true">&lt;?php
+$arr=array(
+array("Primeiro valor","Segundo valor"),
+array("Terceiro valor","Quarto valor")
+);
+print_r($arr);
+echo "&lt;br/&gt;";
+print_r($arr[0]);
+echo "&lt;br/&gt;";
+print_r($arr[1]);
+?&gt;</pre>
+<p>Dessa forma, teremos como resultado impresso no nosso navegador conforme imagem abaixo:</p>
+<p><img loading="lazy" class="lazy-hidden size-full wp-image-4644 aligncenter" src="./PHPArrays_Comandos_files/lazy_placeholder.gif" data-lazy-type="image" data-src="https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo06-1.jpg" alt="Array multidimensional em php" width="1040" height="87" srcset="" data-srcset="https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo06-1.jpg 1040w, https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo06-1-300x25.jpg 300w, https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo06-1-768x64.jpg 768w, https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo06-1-1024x86.jpg 1024w, https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo06-1-1x1.jpg 1w" sizes="(max-width: 1040px) 100vw, 1040px"><noscript><img loading="lazy" class="size-full wp-image-4644 aligncenter" src="https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo06-1.jpg" alt="Array multidimensional em php" width="1040" height="87" srcset="https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo06-1.jpg 1040w, https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo06-1-300x25.jpg 300w, https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo06-1-768x64.jpg 768w, https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo06-1-1024x86.jpg 1024w, https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo06-1-1x1.jpg 1w" sizes="(max-width: 1040px) 100vw, 1040px" /></noscript></p>
+<p>Caso que queira acessar valores específicos dentro das PHP arrays internas, podemos chamar utilizando a estrutura $arr[][]. Vejamos então o exemplo a seguir:</p>
+<pre class="lang:xhtml decode:true">&lt;?php
+$arr=array(
+array("Primeiro valor","Segundo valor"),
+array("Terceiro valor","Quarto valor")
+);
+
+print_r($arr[0][0]);
+echo "&lt;br/&gt;";
+print_r($arr[0][1]);
+echo "&lt;br/&gt;";
+print_r($arr[1][0]);
+echo "&lt;br/&gt;";
+print_r($arr[1][1]);
+?&gt;</pre>
+<p>Dessa forma, teremos em nosso navegador conforme a imagem abaixo:</p>
+<p><img loading="lazy" class="lazy-hidden size-full wp-image-4645 aligncenter" src="./PHPArrays_Comandos_files/lazy_placeholder.gif" data-lazy-type="image" data-src="https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo07.jpg" alt="Exemplo de arrays multidimensionais" width="136" height="103" srcset="" data-srcset="https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo07.jpg 136w, https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo07-1x1.jpg 1w" sizes="(max-width: 136px) 100vw, 136px"><noscript><img loading="lazy" class="size-full wp-image-4645 aligncenter" src="https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo07.jpg" alt="Exemplo de arrays multidimensionais" width="136" height="103" srcset="https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo07.jpg 136w, https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo07-1x1.jpg 1w" sizes="(max-width: 136px) 100vw, 136px" /></noscript><br>
+<a name="top05"></a></p>
+<h2>Contando os elementos de uma PHP Array</h2>
+<p>Principalmente quando utilizamos chaves personalizadas, as vezes se torna difícil identificar a grosso modo quantos elementos uma PHP Array possui. Portanto, para isso existe a função count() que faz essa verificação e retorna para você o valor de elementos contidos dentro dela.</p>
+<p>Vejamos então o exemplo abaixo:</p>
+<pre class="lang:xhtml decode:true ">&lt;?php
+$numeros = [1,2,700,13,6,78,100,212,15,2,3,1000,412,6];
+echo count($numeros);
+?&gt;</pre>
+<p>Observe que dessa forma, teremos como retorno em nosso navegador o valor 14. Ou seja, há um total de 14 elementos dentro da nossa PHP array $numeros.<br>
+<a name="top06"></a></p>
+<h2>Adicionando um valor a array dinamicamente</h2>
+<p>Além das formas anteriores de declarar uma&nbsp; array, também podemos criar uma array e adicionar seu valores de uma maneira dinâmica. Para isso, basta estar chamando o nome da array com [] ao final, e automaticamente, o valor será incrementado a uma última chave, ao fim da array. Vejamos o exemplo abaixo para melhor entendimento:</p>
+<pre class="lang:xhtml decode:true ">&lt;?php
+$arr = array();
+$arr[] = 'azul';
+$arr[] = 'amarelo';
+$arr[] = 'vermelho';
+$arr[] = 'rosa';
+  
+print_r($arr)
+?&gt;</pre>
+<p>Dessa forma, teremos como resultado conforme a imagem abaixo:</p>
+<p><img loading="lazy" class="size-full wp-image-4701 aligncenter lazy-loaded" src="./PHPArrays_Comandos_files/phparr1.jpg" data-lazy-type="image" data-src="https://www.homehost.com.br/blog/wp-content/uploads/2019/10/phparr1.jpg" alt="Exemplo de PHP Array adicionando valores dinamicamente" width="426" height="32" srcset="https://www.homehost.com.br/blog/wp-content/uploads/2019/10/phparr1.jpg 426w, https://www.homehost.com.br/blog/wp-content/uploads/2019/10/phparr1-300x23.jpg 300w, https://www.homehost.com.br/blog/wp-content/uploads/2019/10/phparr1-1x1.jpg 1w" data-srcset="" sizes="(max-width: 426px) 100vw, 426px"><noscript><img loading="lazy" class="size-full wp-image-4701 aligncenter" src="https://www.homehost.com.br/blog/wp-content/uploads/2019/10/phparr1.jpg" alt="Exemplo de PHP Array adicionando valores dinamicamente" width="426" height="32" srcset="https://www.homehost.com.br/blog/wp-content/uploads/2019/10/phparr1.jpg 426w, https://www.homehost.com.br/blog/wp-content/uploads/2019/10/phparr1-300x23.jpg 300w, https://www.homehost.com.br/blog/wp-content/uploads/2019/10/phparr1-1x1.jpg 1w" sizes="(max-width: 426px) 100vw, 426px" /></noscript></p>
+<p>Também é possível adicionar um valor a uma PHP array já existente, da mesma forma. Lembre-se sempre que dessa forma, o valor sempre será adicionado a uma chave posterior a última chave já existente. Vamos então criar uma array com 3 valores a ela. Posteriormente, acrescentaremos valores de forma dinâmica, e verificaremos então o resultado.</p>
+<pre class="lang:xhtml decode:true ">&lt;?php
+	$arr=array("primeiro valor", "segundo valor", "terceiro valor"); 
+	echo "valor incial da minha array é:&lt;br&gt;";
+ 	print_r($arr);
+	echo "&lt;br/&gt;&lt;br/&gt;";
+  
+	$arr[] = 'quarto valor';
+	$arr[] = 'quinto valor';
+  
+	echo "Agora a nossa array é:&lt;br/&gt;";
+  	print_r($arr);
+	echo "&lt;br/&gt;";
+?&gt;</pre>
+<p>E dessa forma, teremos então como resultado conforme imagem abaixo:</p>
+<p><img loading="lazy" class="size-full wp-image-4703 aligncenter lazy-loaded" src="./PHPArrays_Comandos_files/phparr2.jpg" data-lazy-type="image" data-src="https://www.homehost.com.br/blog/wp-content/uploads/2019/10/phparr2.jpg" alt="Exemplo de adicionar valor dinamicamente ao vetor ja existente" width="734" height="103" srcset="https://www.homehost.com.br/blog/wp-content/uploads/2019/10/phparr2.jpg 734w, https://www.homehost.com.br/blog/wp-content/uploads/2019/10/phparr2-300x42.jpg 300w, https://www.homehost.com.br/blog/wp-content/uploads/2019/10/phparr2-1x1.jpg 1w" data-srcset="" sizes="(max-width: 734px) 100vw, 734px"><noscript><img loading="lazy" class="size-full wp-image-4703 aligncenter" src="https://www.homehost.com.br/blog/wp-content/uploads/2019/10/phparr2.jpg" alt="Exemplo de adicionar valor dinamicamente ao vetor ja existente" width="734" height="103" srcset="https://www.homehost.com.br/blog/wp-content/uploads/2019/10/phparr2.jpg 734w, https://www.homehost.com.br/blog/wp-content/uploads/2019/10/phparr2-300x42.jpg 300w, https://www.homehost.com.br/blog/wp-content/uploads/2019/10/phparr2-1x1.jpg 1w" sizes="(max-width: 734px) 100vw, 734px" /></noscript><br>
+<a name="top07"></a></p>
+<h2>Adicionando ou removendo um valor na PHP array</h2>
+<p>Através de algumas funções pode se acrescentar valores dentro de uma array. Podemos também estar removendo valores da array já existente. Portanto, veremos nesse tópico algumas maneiras para poder realizar essas funções:</p>
+<ul>
+<li>1. Adicionar um Novo Elemento no início do Array</li>
+<li>2. Adicionar um Novo Elemento no final do Array</li>
+<li>3. Remover o Primeiro Elemento de um Array</li>
+<li>4. Remover o Último Elemento do Array</li>
+</ul>
+<h4>1. Adicionar um Novo Elemento no Inicio do Array</h4>
+<p>É possível adicionar um novo elemento ao início de uma PHP array com a função <strong>array_unshift()</strong>. Vejamos então o exemplo abaixo:</p>
+<pre class="lang:xhtml decode:true ">&lt;?php
+$frutas=array('maçã','banana','limão');
+array_unshift($frutas, 'abacaxi');
+print_r($frutas);
+?&gt;</pre>
+<p>Observe que dessa&nbsp; forma, teremos como resultado a Array ( [0] =&gt; abacaxi [1] =&gt; maçã [2] =&gt; banana [3] =&gt; limão ). O elemento “abacaxi” foi adicionado ao índice [0], e os demais elementos tiveram suas chaves alteradas para o próximo valor.</p>
+<h4>2. Adicionar um Novo Elemento no Final do Array</h4>
+<p>Assim como já vimos anteriormente, podemos estar acrescentando de forma dinâmica, apenas chamando a array com [] e automaticamente ela irá ser acrescentada ao final da array. Porém, outra forma de estar realizando isso, é através da função <strong>array_push()</strong>. Observe o exemplo abaixo utilizando a mesma array do exemplo anterior:</p>
+<pre class="lang:xhtml decode:true ">&lt;?php
+$frutas=array('maçã','banana','limão');
+array_push($frutas, 'abacaxi');
+print_r($frutas);
+?&gt;</pre>
+<p>Dessa forma, teremos como resultado a Array ( [0] =&gt; maçã [1] =&gt; banana [2] =&gt; limão [3] =&gt; abacaxi ), ou seja, mantemos todos os elementos da PHP array em suas chaves originais, e acrescentamos uma chave posteriormente a última já existente, contendo o valor do nosso novo elemento.</p>
+<h4>3. Remover o Primeiro Elemento de um Array</h4>
+<p>Muitas vezes, precisamos estar removendo um elemento de dentro de nossa array. Podemos estar removendo o primeiro valor de um array através da função <strong>array_shift()</strong>. Dessa forma, vejamos o exemplo abaixo:</p>
+<pre class="lang:xhtml decode:true ">&lt;?php
+$frutas=array('maçã','banana','limão','abacaxi');
+array_shift($frutas);
+print_r($frutas);
+?&gt;</pre>
+<p>Observe que teremos como resultado então a Array ( [0] =&gt; banana [1] =&gt; limão [2] =&gt; abacaxi ). Portanto, perceba que o primeiro valor da array inicial, ou seja, “maçã” foi removido. Dessa forma, todas os demais elementos permanecem na array, porém alteram suas chaves para um anterior a de origem.</p>
+<h4>4. Remover o Último Elemento de um Array</h4>
+<p>Ao contrário da função <strong>array_shift()</strong> apresentado anteriormente, também podemos estar removendo o último elemento de uma array. Para isto, basta estar utilizando a função <strong>array_pop()</strong>. Vejamos então o mesmo exemplo acima, só que agora removendo o último elemento da PHP Array:</p>
+<pre class="lang:xhtml decode:true ">&lt;?php
+$frutas=array('maçã','banana','limão','abacaxi');
+array_pop($frutas);
+print_r($frutas);
+?&gt;</pre>
+<p>Dessa forma, teremos como resultado a Array ( [0] =&gt; maçã [1] =&gt; banana [2] =&gt; limão ). Ou seja, continuamos com a nossa array original, com os elementos compostos na mesmas chaves, porém com a última chave e seu valor removidas da php array.<br>
+<a name="top08"></a></p>
+<h2>Ordenando uma PHP Array</h2>
+<p>Os elementos contidos na PHP array podem ser ordenados, classificados em ordem alfabética ou numérica e de forma crescente, ou decrescente. Para isso, utilizamos as funções envolvendo <a href="https://www.w3schools.com/php/php_arrays_sort.asp"><strong>sort</strong></a>. Portanto, podemos organizar as arrays tanto através da ordem crescente ou decrescente de seus valores, como também através da ordem crescente ou decrescente de suas chaves.</p>
+<h4>Ordenando os elementos de forma crescente</h4>
+<p>Podemos ordenar os elementos de forma crescente apenas usando a função <strong>sort()</strong>. Dessa forma, podemos utilizar tanto para organizar de forma crescente alfabética, como numérica.</p>
+<p>Vejamos no exemplo abaixo um PHP Array com valores alfabéticos. Iremos então ordenar de forma crescente alfabeticamente.</p>
+<pre class="lang:xhtml decode:true">&lt;?php
+$carros = array("Volvo", "BMW", "Toyota");
+sort($carros);
+print_r($carros);
+?&gt;</pre>
+<p>Observe que dessa forma, obteremos então como resultado a Array ( [0] =&gt; BMW [1] =&gt; Toyota [2] =&gt; Volvo ).</p>
+<p>Vamos agora fazer a mesma coisa, mas para uma PHP array contendo valores numéricos:</p>
+<pre class="lang:xhtml decode:true">&lt;?php
+$numeros = array(3, 6, 2, 52, 11);
+sort($numeros);
+print_r($numeros);
+?&gt;</pre>
+<p>Observe que dessa forma, obteremos então como resultado a Array ( [0] =&gt; 2 [1] =&gt; 3 [2] =&gt; 6 [3] =&gt; 11 [4] =&gt; 52 ).</p>
+<h4>Ordenando os elementos de forma decrescente</h4>
+<p>Ao contrário da função <strong>sort()</strong>, podemos organizar nossa PHP array através de seus valores em ordem decrescente. Para isso basta utilizar a função <strong>rsort()</strong>. Vejamos então os mesmos exemplos das PHP arrays utilizadas anteriormente, só que dessa vez, usaremos a função <strong>rsort().</strong></p>
+<p>Iremos então ordenar de forma decrescente alfabeticamente:</p>
+<pre class="lang:xhtml decode:true ">&lt;?php
+$carros = array("Volvo", "BMW", "Toyota");
+rsort($carros);
+print_r($carros);
+?&gt;</pre>
+<p>Dessa forma, obteremos então como resultado a Array ( [0] =&gt; Volvo [1] =&gt; Toyota [2] =&gt; BMW ).</p>
+<p>Agora utilizando a array numérica, vamos ordená-la de forma decrescente:</p>
+<pre class="lang:xhtml decode:true">&lt;?php
+$numeros = array(3, 6, 2, 52, 11);
+rsort($numeros);
+print_r($numeros);
+?&gt;</pre>
+<p>Portanto, teremos como resultado a Array ( [0] =&gt; 52 [1] =&gt; 11 [2] =&gt; 6 [3] =&gt; 3 [4] =&gt; 2 ).</p>
+<h4>Ordenando uma array com chaves personalizadas</h4>
+<p>Podemos ordenar de 4 formas uma array com chaves personalizadas:</p>
+<ul>
+<li>1- Através do valor de forma crescente;</li>
+<li>2- Através do valor de forma decrescente;</li>
+<li>3- Através da Chave de forma crescente;</li>
+<li>4- Através da Chave de forma decrescente.</li>
+<li>5- Remover Elementos Repetidos de um Array</li>
+</ul>
+<p>Vamos então estudar esses 4 métodos de forma resumida.</p>
+<h4>1- Ordenando uma array com chaves personalizadas através do valor de forma crescente</h4>
+<p>O exemplo a seguir classifica uma PHP arrays em ordem <strong>crescente</strong>, de acordo com o <strong>valor</strong>. Para isso usamos a função <strong>asort()</strong>.</p>
+<pre class="lang:xhtml decode:true">&lt;?php
+$idade = array("Peter"=&gt;"35", "Ben"=&gt;"37", "Joe"=&gt;"43");
+asort($idade);
+print_r($idade);
+?&gt;</pre>
+<p>Observe então, que o resultado levará em consideração a ordem alfabética dos valores, e não das chaves. Portanto, teremos como resultado a Array ( [Peter] =&gt; 35 [Ben] =&gt; 37 [Joe] =&gt; 43 )</p>
+<h4>2- Ordenando uma array com chaves personalizadas através do valor de forma decrescente</h4>
+<p>O exemplo a seguir classifica uma PHP arrays em ordem <strong>decrescente</strong>, de acordo com o <strong>valor</strong>. Para isso usamos a função a <strong>arsort()</strong>.</p>
+<pre class="lang:xhtml decode:true ">&lt;?php
+$idade = array("Peter"=&gt;"35", "Ben"=&gt;"37", "Joe"=&gt;"43");
+arsort($idade);
+print_r($idade);
+?&gt;</pre>
+<p>Dessa forma, teremos como resultado a Array ( [Joe] =&gt; 43 [Ben] =&gt; 37 [Peter] =&gt; 35 ).</p>
+<h4>3- Ordenando uma array com chaves personalizadas através da Chave de forma crescente</h4>
+<p>O exemplo a seguir classifica uma PHP arrays em ordem <strong>crescente</strong>, de acordo com a <strong>chave</strong>. Para isso usamos a função <strong>ksort()</strong>.</p>
+<pre class="lang:xhtml decode:true ">&lt;?php
+$idade = array("Peter"=&gt;"35", "Ben"=&gt;"37", "Joe"=&gt;"43");
+ksort($idade);
+print_r($idade);
+?&gt;</pre>
+<p>Observe então, que dessa vez, os valores não foram considerados para ordenar a php array, mas sim as suas chaves. Portanto obtemos como resultado a Array ( [Ben] =&gt; 37 [Joe] =&gt; 43 [Peter] =&gt; 35 )</p>
+<h4>4- Ordenando uma array com chaves personalizadas através da Chave de forma decrescente</h4>
+<p>O exemplo a seguir classifica uma PHP arrays em ordem <strong>decrescente</strong>, de acordo com a <strong>chave</strong>. Para isso usamos a função a <strong>krsort()</strong>.</p>
+<pre class="lang:xhtml decode:true ">&lt;?php
+$idade = array("Peter"=&gt;"35", "Ben"=&gt;"37", "Joe"=&gt;"43");
+krsort($idade);
+print_r($idade);
+?&gt;</pre>
+<p>Portanto, teremos como resultado a Array ( [Peter] =&gt; 35 [Joe] =&gt; 43 [Ben] =&gt; 37 ).</p>
+<h4>5- Remover Elementos Repetidos de um Array</h4>
+<p>Às vezes, é comum que nossa PHP Array possua valores repetidos, principalmente se ela for muito grande. Portanto, caso você queira filtrar os elementos que se repetem, ou seja, que possuem o mesmo valor, basta utilizar a função <strong>array_unique()</strong>. Dessa forma, teremos como resultado uma nova array onde todos os elementos repetidos serão removidos, permanecendo na ordem apenas o que apareceu na primeira chave de mesmo valores. Vejamos então o exemplo abaixo contendo 7 itens, onde alguns se repetem.</p>
+<pre class="lang:xhtml decode:true">&lt;?php
+$frutas=array('maçã','banana','limão','banana','abacaxi','banana','limão');
+$frutas=array_unique($frutas);
+print_r($frutas);
+?&gt;</pre>
+<p>Observe que inicialmente temos os valores da Array ( [0] =&gt; maçã [1] =&gt; banana [2] =&gt; limão [3] =&gt; banana [4] =&gt; abacaxi [5] =&gt; banana [6] =&gt; limão ). Porém, após utilizarmos a função array_unique(), passamos então a ter a Array ( [0] =&gt; maçã [1] =&gt; banana [2] =&gt; limão [4] =&gt; abacaxi ), removendo assim todos os itens repetidos.<br>
+<a name="top09"></a></p>
+<h2>Combinando PHP Arrays</h2>
+<p>Muitas vezes necessitamos combinar duas ou mais arrays e transforma-las em uma só. Ou seja, pegar todos os elementos de uma array e combina com outra array diferente. Para isso, podemos utilizar a função <strong>array_merge()</strong> para estarmos combinando as arrays em uma única php array. Vejamos o exemplo a seguir:</p>
+<pre class="lang:xhtml decode:true ">&lt;?php
+$frutas=array('maçã','banana','limão');
+$legumes=array('batata','cenoura');
+$compras=array_merge($frutas,$legumes);
+print_r($compras);
+?&gt;</pre>
+<p>Observe então que ao final, criamos uma array, $compras, onde realizamos a combinação da array $frutas com a array $legumes. Portanto, nosso resultado será Array ( [0] =&gt; maçã [1] =&gt; banana [2] =&gt; limão [3] =&gt; batata [4] =&gt; cenoura ). Podemos estar fazendo isso com duas ou mais arrays.<br>
+<a name="top10"></a></p>
+<h2>Filtrando Elementos de um Array</h2>
+<p>Caso seja necessário utilizar um filtro para pegar valores específico de uma array, podemos estar e utilizando a função array_filter(). Para isso, inicialmente é necessário criar uma função, que será utilizada para realizar o filtro. Posteriormente, chamamos então pela sintaxe:</p>
+<pre class="lang:xhtml decode:true">array_filter($array,'função')</pre>
+<p>Vamos criar uma função que irá filtrar nossa PHP array, para que sejam considerados apenas os valores maiores ou iguais a 15. Posteriormente, utilizaremos a função array_filter() e realizaremos o filtro. Vejamos então o exemplo abaixo:</p>
+<pre class="lang:xhtml decode:true ">&lt;?php
+function filtro($value)
+{
+    return $value &gt;= 15;
+}
+$numeros = [1,2,700,13,6,78,100,212,15,2,3,1000,412,6];
+$filtrado = array_filter($numeros, 'filtro');
+print_r($filtrado);
+?&gt;</pre>
+<p>Observe então que após aplicar o filtro, teremos então como resultado a Array ( [2] =&gt; 700 [5] =&gt; 78 [6] =&gt; 100 [7] =&gt; 212 [8] =&gt; 15 [11] =&gt; 1000 [12] =&gt; 412 ).</p>
+<p>Caso queira aprender sobre como criar funções e outros assuntos, acesse nosso <a href="https://www.homehost.com.br/blog/criar-sites/curso-de-php/">curso introdutório</a> de php.<br>
+<a name="top11"></a></p>
+<h2>Iterando Arrays</h2>
+<p>Na computação, ou melhor, na programação, o termo Iteração significa a repetição de uma ou mais ações. Cada iteração refere-se a apenas uma instância da ação, ou seja, cada repetição possui uma ou mais iterações. Dessa forma, iterar uma array significa então passar por todos os elementos de uma array e executar um bloco de comandos. Para isso, utilizamos alguns laços de repetições.</p>
+<p>Um laço de repetição nada mais é que um recurso que permite executar mais de uma vez trechos de código de acordo com uma condição. O PHP possui quatro estruturas de laços de repetição:&nbsp;<strong>for</strong>,&nbsp;<strong>foreach</strong>,&nbsp;<strong>while</strong>&nbsp;e&nbsp;<strong>do-while</strong>.</p>
+<p>Os laços de repetição também são comumente conhecidos como&nbsp;<strong>Loop</strong>, ou&nbsp;<strong>Looping</strong>. Também são considerados estruturas de controle. Você pode estar vendo mais sobre esses laços de repetição no <a href="https://www.homehost.com.br/blog/criar-sites/curso-de-php/">nosso curso introdutório de</a> PHP e também no nosso <a href="https://www.homehost.com.br/blog/criar-sites/php-foreach/">artigo sobre foreach</a>.<br>
+<a name="top12"></a></p>
+<h3>Iterando arrays com o Foreach</h3>
+<p>Existem vários modos para percorrer uma PHP array, no entanto, o mais simples deles é utilizando o laço de repetição <a href="https://www.homehost.com.br/blog/criar-sites/php-foreach/">foreach</a> em PHP. Este comando funciona só com arrays e objetos, e retorna um erro quando utilizado com outros tipos de expressões.</p>
+<p>O <strong>PHP foreach</strong> é um laço de repetição especializada na iteração de Arrays. Ou seja, ele funciona como uma estrutura que está projetada para percorrer todos os elementos de uma Array. Dessa forma, além de melhorar a legibilidade do código, também evitamos alguns problemas, como o acesso a elementos não existentes. Este é um problema que poder ocorrer quando trabalhamos com uma estrutura do laço de repetição <strong><a href="https://www.w3schools.com/php/php_looping_for.asp">for</a> </strong>em sua definição básica.</p>
+<p>Com o <strong>PHP</strong> <strong>Foreach</strong> temos acesso a todos os elementos, da mesma forma que teríamos se trabalhássemos com o <strong>for</strong> normal. Dessa forma, temos um laço de repetição que percorrerá todos os elementos e a cada ciclo será definido o próximo elemento contido na estrutura que está sendo iterada. Dessa forma, podemos entender o <strong>foreach</strong> como uma função que, a cada elemento de uma array, executa um bloco de ações definidas.</p>
+<p>A sintaxe básica do PHP Foreach é conforme o código abaixo:</p>
+<pre class="lang:xhtml decode:true ">foreach ($array as $value) {
+    //código a ser executado;
+}</pre>
+<p>Dessa forma, para cada iteração do laço de repetição, o valor do elemento atual da Array é atribuído ao valor $value. Consequentemente o ponteiro da array é movido um a um, até atingir seu último elemento.</p>
+<p>Vejamos então o exemplo abaixo:</p>
+<pre class="lang:xhtml decode:true">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;?php  
+    $cores = array("azul", "vermelho", "amarelo", "verde"); 
+
+    foreach ($cores as $value) {
+        echo "$value &lt;br&gt;";
+    }
+?&gt;  
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+<p>Dessa forma, a nosso laço de repetição percorrerá cada elemento da nossa array $cores e irá imprimi-lo na tela, conforme na imagem abaixo:</p>
+<p><img loading="lazy" class="lazy-hidden size-full wp-image-4543 aligncenter" src="./PHPArrays_Comandos_files/lazy_placeholder.gif" data-lazy-type="image" data-src="https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo01-1.jpg" alt="Exemplo do laço de repetição PHP Foreach" width="109" height="111" srcset="" data-srcset="https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo01-1.jpg 109w, https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo01-1-1x1.jpg 1w" sizes="(max-width: 109px) 100vw, 109px"><noscript><img loading="lazy" class="size-full wp-image-4543 aligncenter" src="https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo01-1.jpg" alt="Exemplo do laço de repetição PHP Foreach" width="109" height="111" srcset="https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo01-1.jpg 109w, https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo01-1-1x1.jpg 1w" sizes="(max-width: 109px) 100vw, 109px" /></noscript></p>
+<p>Você pode estar aprofundando seus conhecimentos sobre o PHP <a href="https://www.homehost.com.br/blog/criar-sites/php-foreach/">Foreach em nosso artigo</a> onde explicamos detalhadamente sobre ele e suas formas de utilização.<br>
+<a name="top13"></a></p>
+<h3>Iterando arrays com o For</h3>
+<p>O laço de repetição do PHP for executa um bloco de código um número especificado de vezes.</p>
+<p>Dentre as estruturas de laço de repetição do PHP, ela é a mais complexa, porém ainda assim, será de fácil compreensão. Vamos analisar abaixo sua sintaxe básica:</p>
+<pre class="lang:xhtml decode:true ">for (contador; condição ; incremento ou decremento) { 
+    # code...
+}</pre>
+<p>Vamos compreende-la agora.</p>
+<p>O <strong>Contador</strong>, é como uma variável, geralmente utilizamos algo como $i. Também nessa etapa já colocamos o valor inicial do nosso contador, por exemplo, 0.</p>
+<p>Já a <strong>condição</strong>, representa até quando o nosso laço de repetição irá funcionar.</p>
+<p>O <strong>incremento ou decremento</strong> nada mais é que o valor que será adicionado para cada vez que o laço de repetição for executado. Geralmente utilizamos a termologia <strong>$var++</strong> para que adicione 1 ao valor a cada repetição, ou <strong>$var–</strong>, para que reduza em 1 o valor a cada repetição.</p>
+<p>Portanto, vamos fazer a seguinte estrutura para poder realizar a iteração. Através da função <strong>count()</strong>, vamos definir o valor máximo ao qual o contador irá alcançar, ou seja, o número de elementos que compõem a nossa PHP array. Com isso, vamos aplicar então o seguinte código:</p>
+<pre class="lang:xhtml decode:true ">&lt;?php
+  $cores = array("azul", "vermelho", "amarelo", "verde");
+  $valormax=count($cores);
+for ($i = 0; $i &lt; $valormax; $i++) {
+  echo "$cores[$i] &lt;br&gt;";
+}
+?&gt;</pre>
+<p>Dessa forma, a nosso laço de repetição percorrerá cada elemento da nossa PHP array $cores e irá imprimi-lo na tela, conforme na imagem abaixo:</p>
+<p><img loading="lazy" class="lazy-hidden size-full wp-image-4543 aligncenter" src="./PHPArrays_Comandos_files/lazy_placeholder.gif" data-lazy-type="image" data-src="https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo01-1.jpg" alt="Exemplo do laço de repetição PHP Foreach" width="109" height="111" srcset="" data-srcset="https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo01-1.jpg 109w, https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo01-1-1x1.jpg 1w" sizes="(max-width: 109px) 100vw, 109px"><noscript><img loading="lazy" class="size-full wp-image-4543 aligncenter" src="https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo01-1.jpg" alt="Exemplo do laço de repetição PHP Foreach" width="109" height="111" srcset="https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo01-1.jpg 109w, https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo01-1-1x1.jpg 1w" sizes="(max-width: 109px) 100vw, 109px" /></noscript><br>
+<a name="top14"></a></p>
+<h3>Iterando arrays com o While</h3>
+<p>O comando de repetição <strong>While</strong>, nada mais é que “enquanto”. É o laço de repetição mais simples. Ele testa uma condição e caso verdadeira, executa um comando ou bloco de comandos. E repete isso enquanto a condição continuar sendo verdadeira.</p>
+<p>A expressão só é testada a cada vez que o bloco de instrução termina, além do teste inicial. Portanto, se o valor da expressão passar a ser falsa no meio do bloco de instrução, ele ainda executará até o final este bloco, e só então, quando refazer o teste da condição, que finalizará o laço de repetição. Isso acontece, pois, se no teste inicial a condição for avaliada como false, o bloco de comandos não será executado.</p>
+<p>Vejamos então a sintaxe abaixo do laço de repetição <strong>while</strong>:</p>
+<pre class="lang:xhtml decode:true ">while (condição) {
+    #código
+}</pre>
+<p>Portanto, vamos criar um laço de repetição com um contador dentro dele para realizar a iteração da nossa PHP Array. Observe que a estrutura é similar ao que fizemos no exemplo anteriormente, com o <strong>for</strong>.</p>
+<pre class="lang:xhtml decode:true">&lt;?php
+  $cores = array("azul", "vermelho", "amarelo", "verde");
+  $valormax=count($cores);
+  $i=0;
+while($i &lt; $valormax){
+  echo "$cores[$i] &lt;br&gt;";
+  $i++;
+}
+?&gt;</pre>
+<p>Dessa forma, nosso resultado será:</p>
+<p><img loading="lazy" class="lazy-hidden size-full wp-image-4543 aligncenter" src="./PHPArrays_Comandos_files/lazy_placeholder.gif" data-lazy-type="image" data-src="https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo01-1.jpg" alt="Exemplo do laço de repetição PHP Foreach" width="109" height="111" srcset="" data-srcset="https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo01-1.jpg 109w, https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo01-1-1x1.jpg 1w" sizes="(max-width: 109px) 100vw, 109px"><noscript><img loading="lazy" class="size-full wp-image-4543 aligncenter" src="https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo01-1.jpg" alt="Exemplo do laço de repetição PHP Foreach" width="109" height="111" srcset="https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo01-1.jpg 109w, https://www.homehost.com.br/blog/wp-content/uploads/2019/09/exemplo01-1-1x1.jpg 1w" sizes="(max-width: 109px) 100vw, 109px" /></noscript><br>
+<a name="top15"></a></p>
+<h2>Conclusão: o que são arrays PHP</h2>
+<p>Com todas as informações apresentadas nesse tópico, com certeza você terá uma grande fonte de pesquisa e conhecimento para poder utilizar PHP array sempre que necessário. Portanto, recomendamos a leitura de todos os tópicos, e que experimentem executar na práticas os exemplos. Também recomendamos experimentar criar seus próprios códigos e criar suas próprias funções. Caso já possua conhecimento avançados, experimente executar funções envolvendo arrays e <a href="https://www.homehost.com.br/blog/tutoriais/mysql/o-que-e-um-banco-de-dados/">banco de dados</a>. Continue seus estudos.</p>
+<p>Segue algumas recomendações de estudos que você pode estar lendo em nosso blog para se tornar um desenvolvedor web e complementar seus estudos:</p>
+<ul>
+<li><a href="https://www.homehost.com.br/blog/tutoriais/o-que-e-html/">O que é HTML</a></li>
+<li><a href="https://www.homehost.com.br/blog/criar-sites/html-basico/">HTML Básico</a></li>
+<li><a href="https://www.homehost.com.br/blog/criar-sites/html-css/">HTML CSS</a></li>
+<li><a href="https://www.homehost.com.br/blog/criar-sites/o-que-e-php/">O Que é</a> PHP</li>
+<li><a href="https://www.homehost.com.br/blog/criar-sites/curso-de-php/">Curso Introdutório</a> de PHP</li>
+<li>PHP <a href="https://www.homehost.com.br/blog/criar-sites/php-foreach/">Foreach</a></li>
+<li>PHP <a href="https://www.homehost.com.br/blog/criar-sites/php-explode/">Explode: separando strings em</a> arrays</li>
+</ul>
+
+<div class="zem_rp_wrap zem_rp_th_plain" id="zem_rp_first"><div class="zem_rp_content"><h3 class="related_post_title">Artigos relacionados</h3><ul class="related_post zem_rp"><li data-position="0" data-poid="in-4714" data-post-type="none"><a href="https://www.homehost.com.br/blog/tutoriais/php/php-isset/" class="zem_rp_title">PHP Isset: Tudo sobre essa função nativa do PHP</a></li><li data-position="1" data-poid="in-4617" data-post-type="none"><a href="https://www.homehost.com.br/blog/tutoriais/php/curso-de-php/" class="zem_rp_title">Curso de PHP Introdutório: inicie seus estudos em PHP</a></li><li data-position="2" data-poid="in-4461" data-post-type="none"><a href="https://www.homehost.com.br/blog/tutoriais/php/o-que-e-php/" class="zem_rp_title">O que é PHP: entenda de forma descomplicada</a></li><li data-position="3" data-poid="in-5871" data-post-type="none"><a href="https://www.homehost.com.br/blog/tutoriais/php/php-8/" class="zem_rp_title">PHP 8: conheça as melhorias da nova versão do PHP</a></li><li data-position="4" data-poid="in-5714" data-post-type="none"><a href="https://www.homehost.com.br/blog/tutoriais/wordpress-tutoriais/como-criar-um-site-com-cadastro-de-clientes-em-wordpress/" class="zem_rp_title">Como Criar um Site com Cadastro de Clientes em WordPress</a></li><li data-position="5" data-poid="in-4732" data-post-type="none"><a href="https://www.homehost.com.br/blog/tutoriais/php/php-date-format/" class="zem_rp_title">PHP Date Format: Exibindo a modificando o padrão de Datas</a></li></ul></div></div>
+	</div><!-- .entry-content -->
+
+	
+<div class="author-info">
+	<h2 class="author-heading">Publicado por</h2>
+	<div class="author-avatar">
+		<img alt="" src="./PHPArrays_Comandos_files/lazy_placeholder.gif" data-lazy-type="image" data-src="https://secure.gravatar.com/avatar/6b8d285d6e9d504bc747fe0b0a36909a?s=56&amp;d=mm&amp;r=g" srcset="" data-srcset="https://secure.gravatar.com/avatar/6b8d285d6e9d504bc747fe0b0a36909a?s=112&amp;d=mm&amp;r=g 2x" class="lazy-hidden avatar avatar-56 photo" height="56" width="56" loading="lazy"><noscript><img alt='' src='https://secure.gravatar.com/avatar/6b8d285d6e9d504bc747fe0b0a36909a?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/6b8d285d6e9d504bc747fe0b0a36909a?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56' loading='lazy'/></noscript>	</div><!-- .author-avatar -->
+
+	<div class="author-description">
+		<h3 class="author-title">Rafael Marques</h3>
+
+		<p class="author-bio">
+			Desenvolvedor e Escritor apaixonado por Tecnologia, Empreendedorismo e Educação.			<a class="author-link" href="https://www.homehost.com.br/blog/author/rafamarques/" rel="author">
+				Ver todos os posts de Rafael Marques			</a>
+		</p><!-- .author-bio -->
+
+	</div><!-- .author-description -->
+</div><!-- .author-info -->
+
+	<!--<footer class="entry-footer">
+		
+					</footer>--><!-- .entry-footer -->
+
+</article><!-- #post-## -->
+
+<div id="comments" class="comments-area">
+
+	
+	
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Deixe uma resposta <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://www.homehost.com.br/blog/tutoriais/php/php-array/#respond" style="display:none;">Cancelar resposta</a></small></h3><form action="https://www.homehost.com.br/blog/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate=""><p class="comment-notes"><span id="email-notes">O seu endereço de e-mail não será publicado.</span> Campos obrigatórios são marcados com <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comentário</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Nome <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required="required"></p>
+<p class="comment-form-email"><label for="email">E-mail <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
+<p class="comment-form-url"><label for="url">Site</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200"></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Publicar comentário"> <input type="hidden" name="comment_post_ID" value="4694" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p></form>	</div><!-- #respond -->
+	
+</div><!-- .comments-area -->
+
+		</div><!-- .site-main -->
+                <div class="blogDetailRight">
+			<div id="secondary" class="secondary">
+
+		
+		
+					<div id="widget-area" class="widget-area" role="complementary">
+				<aside id="text-6" class="widget widget_text">			<div class="textwidget"><p><a href="https://www.homehost.com.br/hospedagem-de-sites?utm_source=blog&amp;utm_medium=banners&amp;utm_campaign=banner-lateral-blog" target="_blank" rel="noopener"><img loading="lazy" class="lazy-hidden aligncenter size-full wp-image-4540" src="./PHPArrays_Comandos_files/lazy_placeholder.gif" data-lazy-type="image" data-src="https://www.homehost.com.br/blog/wp-content/uploads/2019/12/BANNER-HH-SCRAPPER-2020.png" alt="" width="359" height="607"><noscript><img loading="lazy" class="aligncenter size-full wp-image-4540" src="https://www.homehost.com.br/blog/wp-content/uploads/2019/12/BANNER-HH-SCRAPPER-2020.png" alt="" width="359" height="607" /></noscript></a></p>
+<p><!--a href="https://www.homehost.com.br/hospedagem-de-sites?utm_source=blog&amp;utm_medium=banners&amp;utm_campaign=banner-lateral-home" target="_blank" rel="noopener"><img loading="lazy" class="lazy lazy-hidden aligncenter size-full wp-image-4540" src="//www.homehost.com.br/blog/wp-content/plugins/a3-lazy-load/assets/images/lazy_placeholder.gif" data-lazy-type="image" data-src="https://www.homehost.com.br/blog/wp-content/uploads/2019/09/dominio-ssl-gratis.jpeg" alt="" width="359" height="288" srcset="" data-srcset="https://www.homehost.com.br/blog/wp-content/uploads/2019/09/dominio-ssl-gratis.jpeg 359w, https://www.homehost.com.br/blog/wp-content/uploads/2019/09/dominio-ssl-gratis-300x241.jpeg 300w, https://www.homehost.com.br/blog/wp-content/uploads/2019/09/dominio-ssl-gratis-1x1.jpeg 1w" sizes="(max-width: 359px) 100vw, 359px" /><noscript><img loading="lazy" class="aligncenter size-full wp-image-4540" src="https://www.homehost.com.br/blog/wp-content/uploads/2019/09/dominio-ssl-gratis.jpeg" alt="" width="359" height="288" srcset="https://www.homehost.com.br/blog/wp-content/uploads/2019/09/dominio-ssl-gratis.jpeg 359w, https://www.homehost.com.br/blog/wp-content/uploads/2019/09/dominio-ssl-gratis-300x241.jpeg 300w, https://www.homehost.com.br/blog/wp-content/uploads/2019/09/dominio-ssl-gratis-1x1.jpeg 1w" sizes="(max-width: 359px) 100vw, 359px" /></noscript></a--></p>
+</div>
+		</aside>			</div><!-- .widget-area -->
+		
+	</div><!-- .secondary -->
+
+                </div>
+	</div><!-- .content-area -->
+
+</div>
+</div>
+
+
+<!-- include chat phplive  -->
+<!-- BEGIN EVENTOS GOOGLE ANALYTICS (CHAT, VIDEO) -->
+<script>
+  jQuery('body').on('click','[src="https://phplive.homehost.com.br/web/icon_online_0.GIF?1491560216"]',function(){
+      //ga('send','event','botao','clique','chat');
+      gtag('event', 'clique', {
+          'event_category': 'botao',
+          'event_label': 'chat'
+      });
+  });
+
+  var tag = document.createElement('script');
+tag.src = "//www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+var videoArray = new Array();
+var playerArray = new Array();
+var videoURL = '';
+
+
+
+  function trackYouTube()
+  {
+        _ytMigrateObjectEmbed();
+        enableYouTubeAPI();
+    var i = 0;
+
+    jQuery('iframe').each(function() {
+
+      var video = jQuery(this);
+     videoURL = video.attr('src');
+
+     if(video.attr('src')===undefined){
+        var vidSrc = "";
+      }else{
+        var vidSrc = video.attr('src');
+      }
+      var regex = /(https?\:)?\/\/www\.youtube\.com\/embed\/([\w-]{11})(?:\?.*)?/;
+      var matches = vidSrc.match(regex);
+
+      if(matches && matches.length > 1){
+          videoArray[i] = matches[2];
+          jQuery(this).attr('id', matches[2]);
+          i++;
+      }
+      else
+      {
+          var regex = /(https?\:)?\/\/www\.youtube\.com\/v\/([\w-]{11})(?:\?.*)?/;
+          var matches = vidSrc.match(regex);
+          if(matches && matches.length > 1){
+//              console.log('matches')
+//              console.log(matches);
+              videoArray[i] = matches[2];
+              jQuery(this).attr('id', matches[2]);
+              i++;
+          }
+
+      }
+
+
+    });
+  }
+
+function onYouTubeIframeAPIReady() {
+
+for (var i = 0; i < videoArray.length; i++) {
+    playerArray[i] = new YT.Player(videoArray[i], {
+      events: {
+      'onReady': onPlayerReady,
+      'onStateChange': onPlayerStateChange
+      }
+    });
+  }
+}
+
+function onPlayerReady(event) {
+    //do nothing right now
+
+}
+var PageviewURL = document.location.href;
+var _pauseFlag = false;
+function onPlayerStateChange(event) {
+
+  videoarraynum = event.target.id - 1;
+  if (event.data ==YT.PlayerState.PLAYING){
+   var video_data = event.target["getVideoData"](),
+   label = video_data.title;
+    //_gaq.push(['_trackEvent', 'Video', 'Play', label]);
+      //ga('send','event','Video','Play',label)
+   gtag('event', 'Play', {
+       'event_category': 'Video',
+       'event_label': label
+   });
+
+    _pauseFlag = false;
+  }
+if (event.data ==YT.PlayerState.ENDED){
+   var video_data = event.target["getVideoData"](),
+   label = video_data.title;
+//    _gaq.push(['_trackEvent', 'Video', 'Ended', label]);
+    //ga('send','event','Video','Ended',label)
+   gtag('event', 'Ended', {
+       'event_category': 'Video',
+       'event_label': label
+   });
+    _pauseFlag = false;
+  }
+if (event.data ==YT.PlayerState.PAUSED){
+  var video_data = event.target["getVideoData"](),
+   label = video_data.title;
+   // _gaq.push(['_trackEvent', 'Video', 'Pause', label]);
+    //ga('send','event','Video','Pause',label)
+  gtag('event', 'Pause', {
+      'event_category': 'Video',
+      'event_label': label
+  });
+    _pauseFlag = false;
+  }
+}
+
+function enableYouTubeAPI(){
+    var iframes = document.getElementsByTagName('iframe');
+    for (var i = 0; i < iframes.length; i++) {
+ iframeSrc = iframes[i].src;
+ iframeSrc= iframeSrc.replace("/v/","/embed/");
+ if (iframeSrc.indexOf('//www.youtube.com/') > -1) {
+ if (iframeSrc.indexOf('enablejsapi=1') < 0) {
+ // Reload the video enabling the api
+ if (iframeSrc.indexOf('?') < 0) {
+ iframeSrc += '?enablejsapi=1';
+ iframes[i].src = iframeSrc;
+ } else {
+ iframeSrc += '&enablejsapi=1';
+ iframes[i].src = iframeSrc;
+ }
+
+ }
+ }
+ }
+}
+
+function _ytMigrateObjectEmbed() {
+    var objs = document.getElementsByTagName('object');
+    var pars, ifr, ytid;
+    var r = /(https?:\/\/www\.youtube(-nocookie)?\.com[^\/]*).*\/v\/([^&?]+)/;
+    for (var i = 0; i < objs.length; i++) {
+        pars = objs[i].getElementsByTagName('param');
+        for (var j = 0; j < pars.length; j++) {
+            if (pars[j].name === 'movie' && pars[j].value) {
+                // Replace the object with an iframe
+                ytid = pars[j].value.match(r);
+                if (ytid && ytid[1] && ytid[3]) {
+                    ifr = document.createElement('iframe');
+                    ifr.src = ytid[1] + '/embed/' + ytid[3] + '?enablejsapi=1';
+                    ifr.width = objs[i].width;
+                    ifr.height = objs[i].height;
+                    ifr.setAttribute('frameBorder', '0');
+                    ifr.setAttribute('allowfullscreen', '');
+                    objs[i].parentNode.insertBefore(ifr, objs[i]);
+                    objs[i].parentNode.removeChild(objs[i]);
+                    // Since we removed the object the Array changed
+                    i--;
+                }
+                break;
+            }
+        }
+    }
+
+}
+trackYouTube()
+</script>
+<!-- END EVENTOS GOOGLE ANALYTICS (CHAT, VIDEO) -->
+
+<!-- BEGIN PHP Live! HTML Code -->
+<span style="color: #0000FF; text-decoration: underline; cursor: pointer; position: fixed; bottom: 0px; right: 0px; z-index: 1000000;" id="phplive_btn_1490800312" onclick="phplive_launch_chat_0(0)"><img src="./PHPArrays_Comandos_files/icon_online_0.PNG" border="0" alt="" title=""></span>
+<script type="text/javascript">
+
+(function() {
+var phplive_e_1490800312 = document.createElement("script") ;
+phplive_e_1490800312.type = "text/javascript" ;
+phplive_e_1490800312.async = true ;
+phplive_e_1490800312.src = "https://phplive.homehost.com.br/js/phplive_v2.js.php?v=0|1490800312|2|" ;
+document.getElementById("phplive_btn_1490800312").appendChild( phplive_e_1490800312 ) ;
+})() ;
+
+</script>
+<!-- END PHP Live! HTML Code -->
+
+
+<!-- END PHP Live! HTML Code -->
+
+
+<footer class="footer">
+        <div class="footer-top">
+        <div class="wrap clear">
+                <div class="footer-top-left">
+                <div class="footer-links">
+                        <h4>Nossos serviços</h4>
+                    <ul>
+                        <li><a href="https://www.homehost.com.br/hospedagem-de-sites">Hospedagem de sites</a></li>
+                        <li><a href="https://www.homehost.com.br/servidores-cloud">Servidores Cloud</a></li>
+                        <li><a href="https://www.homehost.com.br/pesquisa-de-dominios#extensoes">Registro de domínios</a></li>
+			<li><a href="https://www.homehost.com.br/blog/registro-de-dominios/registro-whois">WHOIS</a></li>
+		        <li><a href="https://www.homehost.com.br/afiliados">Programa de afiliados</a></li>
+			<li><a href="https://www.homehost.com.br/termos">Termos de uso</a></li>
+			<li><a href="https://www.homehost.com.br/banners-homehost">Banners da Homehost</a></li>
+
+                    </ul>
+                </div>
+                <div class="footer-links">
+                        <h4>Atendimento</h4>
+                    <ul>
+                        <li><a href="https://www.homehost.com.br/suporte#faqSec">Tutoriais</a></li>
+                        <li><a href="https://www.homehost.com.br/suporte#phoneSec">Telefones</a></li>
+                        <li><a href="https://www.homehost.com.br/suporte#contactSec">Chat</a></li>
+                        <li><a href="https://www.homehost.com.br/suporte#contactSec">Abuse</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                        <h4>Helpdesk</h4>
+                    <ul>
+                        <li>Suporte Técnico<br><a href="https://www.homehost.com.br/">suporte@homehost.com.br</a></li>
+                        <li>Vendas<br><a href="https://www.homehost.com.br/">comercial@homehost.com.br</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="footer-top-right">
+                        <ul class="footer-social">
+                        <li><a href="https://facebook.com/homehost" target="_blank"><img src="./PHPArrays_Comandos_files/fb.png" alt="facebook" width="40" height="40"></a></li>
+                    <li><a href="https://twitter.com/homehost"><img src="./PHPArrays_Comandos_files/twitter.png" alt="twitter"></a></li>
+                    <!--li><a href="#"><img src="images/gp.png" alt="" /></a></li-->
+					<li><a href="https://www.youtube.com/channel/UCtBxMydaLWKyU51k6WYb5_Q"><img src="./PHPArrays_Comandos_files/youicon.png" alt="youtube" width="41" height="41"></a></li>
+                </ul>
+                <div class="footer-top-inn-r">
+                        <h4>Política de privacidade HomeHost</h4>
+                    <p>A Homehost armazenará cookies no seu navegador. Os dados fornecidos pelo cliente são armazenados de forma segura e serão mantidos em sigilo, e não serão divulgados a terceiros, exceto sob demanda judicial. </p>
+                    <a href="https://www.homehost.com.br/#">Rua Senador Dantas, 117 gr. 2143, Rio de Janeiro-RJ, Brasil</a>
+                    <a href="https://www.homehost.com.br/#">comercial@homehost.com.br</a>
+                    <a href="https://www.homehost.com.br/#">+55 21 3609-2856</a>
+		     <a href="https://www.homehost.com.br/#">+55 11 4765-3176</a>
+		 <a href="https://www.homehost.com.br/blog">Blog</a>
+                    <br>
+                    <a href="https://www.homehost.com.br/#">Segunda a Sexta - 08h as 00h</a>
+                    <a href="https://www.homehost.com.br/#">Sábado - 09h as 18h</a>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+        
+    <div class="footer-bot">
+        <div class="wrap">
+                <a href="https://www.homehost.com.br/termos#remover-sistema-backup" target="_blank">* Obs.: limitações contratuais aplicáveis.</a>
+        </div>
+    </div>
+    
+    <div class="footer-bot">
+        <div class="wrap">
+                Copyright (c) 2006-2021  HomeHost - Todos os direitos reservados
+        </div>
+    </div>
+
+
+<!-- Cóo do Google para tag de remarketing --> 
+<!-------------------------------------------------- 
+As tags de remarketing nãpodem ser associadas a informaçs pessoais de identificaç nem inseridas em pánas relacionadas a categorias de confidencialidade. Veja mais informaçs e instruçs sobre como configurar a tag em:http://google.com/ads/remarketingsetup 
+---------------------------------------------------> 
+<script type="text/javascript"> 
+/* <![CDATA[ */ 
+    /*
+    var google_conversion_id = 989716450; 
+var google_custom_params = window.google_tag_params; 
+var google_remarketing_only = true; 
+    */
+/* ]]> */ 
+</script> 
+    <!-- 
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"> 
+    </script> 
+    -->
+<noscript> 
+<div style="display:inline;"> 
+<img height="1" width="1" style="border-style:none;" alt="googleads" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/989716450/?value=0&amp;guid=ON&amp;script=0"/> 
+</div> 
+</noscript>
+
+<!--script type="text/javascript">
+    window.smartlook||(function(d) {
+    var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
+    var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
+    c.charset='utf-8';c.src='//rec.smartlook.com/recorder.js';h.appendChild(c);
+    })(document);
+    smartlook('init', 'e998325e90fc676b283e8d5d126b8aea20f6ac56');
+</script-->
+
+
+
+<!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '444003689635203');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=444003689635203&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</footer>
+
+<script type="text/javascript" src="./PHPArrays_Comandos_files/skip-link-focus-fix.js.transferir" id="twentyfifteen-skip-link-focus-fix-js"></script>
+<script type="text/javascript" src="./PHPArrays_Comandos_files/comment-reply.min.js.transferir" id="comment-reply-js"></script>
+<script type="text/javascript" id="twentyfifteen-script-js-extra">
+/* <![CDATA[ */
+var screenReaderText = {"expand":"<span class=\"screen-reader-text\">expandir submenu<\/span>","collapse":"<span class=\"screen-reader-text\">fechar submenu<\/span>"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./PHPArrays_Comandos_files/functions.js.transferir" id="twentyfifteen-script-js"></script>
+<script type="text/javascript" id="jquery-lazyloadxt-js-extra">
+/* <![CDATA[ */
+var a3_lazyload_params = {"apply_images":"1","apply_videos":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./PHPArrays_Comandos_files/jquery.lazyloadxt.extra.min.js.transferir" id="jquery-lazyloadxt-js"></script>
+<script type="text/javascript" src="./PHPArrays_Comandos_files/jquery.lazyloadxt.srcset.min.js.transferir" id="jquery-lazyloadxt-srcset-js"></script>
+<script type="text/javascript" id="jquery-lazyloadxt-extend-js-extra">
+/* <![CDATA[ */
+var a3_lazyload_extend_params = {"edgeY":"0","horizontal_container_classnames":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./PHPArrays_Comandos_files/jquery.lazyloadxt.extend.js.transferir" id="jquery-lazyloadxt-extend-js"></script>
+<script type="text/javascript" src="./PHPArrays_Comandos_files/wp-embed.min.js.transferir" id="wp-embed-js"></script>
+
+<!-- This site is optimized with Phil Singleton's WP SEO Structured Data Plugin v2.6.14 - https://kcseopro.com/wordpress-seo-structured-data-schema-plugin/ -->
+
+<!-- / WP SEO Structured Data Plugin. -->
+
+
+<!--<script src="https://www.homehost.com.br/js/jquery.min.js"></script>-->
+<script src="./PHPArrays_Comandos_files/easyResponsiveTabs.min.js.transferir"></script>
+<script src="./PHPArrays_Comandos_files/cbpAnimatedHeader.min.js.transferir"></script>
+<script src="./PHPArrays_Comandos_files/classie.min.js.transferir"></script>
+<script src="./PHPArrays_Comandos_files/modernizr.min.js.transferir"></script>
+<script src="./PHPArrays_Comandos_files/owl.carousel.min.js.transferir"></script>
+<script src="./PHPArrays_Comandos_files/responsiveTabs.min.js.transferir"></script>
+<script src="./PHPArrays_Comandos_files/jquery.bxslider.min.js.transferir"></script>
+<script src="./PHPArrays_Comandos_files/common.min.js.transferir"></script>
+<script src="./PHPArrays_Comandos_files/main.min.js.transferir"></script>
+
+
+<script>
+
+
+$('#domain-name').keypress(function (e) {
+//      alert(e.which);
+     //if the letter is not digit then display error and don't type anything
+     if (e.which >=97 && e.which<=122) return true;
+     if (e.which >=48 && e.which<=57)  return true;
+      if (e.which == 8 || e.which == 0) return true;
+     if (e.which ==45) return true;
+        return false;
+
+   });
+
+
+
+function scrollplanos() {
+
+	 var pos = $('#tabplanos').offset().top;
+	 pos = pos - 100;
+	 //alert(pos);
+
+	 $('html, body').animate({
+	            scrollTop: pos
+        }, 800);
+}
+
+
+
+ function spin()
+ {
+
+
+
+    
+   setTimeout(function() {
+    $("#loader").show();
+    return true;
+  }, 1000);
+ 
+$(window).unload(function() {
+
+});
+ }
+    
+</script>
+<style>
+   #categories-2 ul{height:410px; overflow: hidden;}
+   #categories-2 ul.full{height:auto; }
+</style>
+<script>
+jQuery(document).on('ready',function(){
+    var hh = jQuery('#categories-2 ul li').height();
+    jQuery('#categories-2').append('<span class="toggle-cat">Load More Categories</span>');
+    jQuery('#categories-2 .toggle-cat').click(function(){
+        jQuery('#categories-2 ul').toggleClass('full');
+    });
+});
+</script>
+<script>
+    jQuery(function(){
+        jQuery('a.setting').on('click',function(e){
+            e.preventDefault();
+        })
+    })
+</script>
+
+
+
+
+
+<div id="inc_chat_hh" class="escondido"><script>console.log('Cookie?');</script>
+
+
+<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script-->
+<link rel="stylesheet" type="text/css" href="./PHPArrays_Comandos_files/homehostchat_cliente.css">
+
+
+<script>
+
+// console.log("Cookie:["+$.cookie('hh_userid')+"]");
+
+
+function iniciarChat()
+{
+	var nome = encodeURIComponent(document.getElementById("chat_nome").value);
+	var chat_pergunta = encodeURIComponent(document.getElementById("chat_pergunta").value);
+
+	//alert('LS:'+localStorage.getItem("homehost_chat_csid"))
+	if (localStorage.getItem("homehost_chat_csid")!=null) 	var csid = localStorage.getItem("homehost_chat_csid");
+	else var csid=0;
+
+	$( "#chat_cliente #chat_mensagens" ).load( "https://www.homehost.com.br/chat/cliente_homehost.php?op=iniciar&nome="+nome+"&chat_pergunta="+chat_pergunta+"&csid="+csid);
+
+
+	$('#chat_cliente #chat_enviar_mensagem').css({'visibility': 'visible'});
+	$('#chat_cliente #chat_enviar_mensagem').css({'display': 'block'});
+	$('#chat_cliente #chat_mensagens').css({'visibility': 'visible'});
+	$('#chat_cliente #chat_mensagens').css({'display': 'block'});
+
+	$('#chat_cliente #chamar').css({'visibility': 'hidden'});
+	$('#chat_cliente #chamar').css({'display': 'none'});
+
+	$( "#chat_cliente #chat_mensagens" ).load( "https://www.homehost.com.br/chat/cliente_conteudochat.php?csid="+csid );
+	console.log("iniciar csid:"+csid);
+	setInterval(refreshChat,10000);
+	
+}
+
+function refreshChat()
+{
+	var csid = localStorage.getItem("homehost_chat_csid");
+	if (csid=="") return;
+
+	$("#csidupload").val(csid);
+
+//	$( "#chat_cliente #chat_mensagens" ).load( "https://www.homehost.com.br/chat/cliente_conteudochat.php?csid="+csid , function() {      $("#chat_cliente #chat_mensagens").scrollTop($( "#chat_cliente #chat_mensagens" ).height()*2);      } );
+	$( "#chat_cliente #chat_mensagens" ).load( "https://www.homehost.com.br/chat/cliente_conteudochat.php?csid="+csid+"&rand="+Math.random() );
+}
+
+function rolar(msgs)
+{
+        console.log("rolar qtd:"+msgs);
+
+        msgs=msgs*80;
+
+        $("#chat_cliente #chat_mensagens").scrollTop(msgs);
+}
+
+
+function encerrarChat()
+{
+	var csid = localStorage.getItem("homehost_chat_csid");
+	$( "#chat_cliente #chat_mensagens" ).load( "https://www.homehost.com.br/chat/cliente_conteudochat.php?op=encerrar&csid="+csid );
+	localStorage.setItem("homehost_chat_csid", "");
+
+}
+
+function abrirPopupChatExterno()
+{
+	$('#inc_chat_hh').fadeIn();
+	$('#inc_chat_hh').toggleClass("mini");
+}
+
+function abrirPopupChat()
+{
+	$('#inc_chat_hh').fadeIn();
+}
+
+function fecharPopupChat()
+{
+		$('#inc_chat_hh').fadeOut();
+		encerrarChat();
+}
+
+function enviarMsg()
+{
+	var txt = encodeURIComponent(document.getElementById("chat_txt").value);
+	var csid = localStorage.getItem("homehost_chat_csid");
+
+	document.getElementById("chat_txt").value="";
+
+	$( "#chat_cliente #chat_mensagens" ).load( "https://www.homehost.com.br/chat/cliente_conteudochat.php?op=enviarmsg&csid="+csid+"&txt="+txt );
+
+}
+
+$(document).keyup(function(e) {
+    if(e.which == 13) {
+        enviarMsg();
+    }
+});
+
+
+
+
+
+
+
+
+              $('.min-btn').click(function(not) {
+					not.preventDefault();
+                    $('#inc_chat_hh').toggleClass("mini");
+				
+              });
+              $('.titulo_chat').click(function(not) {
+                                        not.preventDefault();
+                    $('#inc_chat_hh').toggleClass("mini");
+
+              });
+
+
+
+        
+
+</script>
+
+<a href="https://www.homehost.com.br/#" class="titulo_chat" onclick="function();"><h3>Chat Online</h3></a>
+
+<a href="https://www.homehost.com.br/#" onclick="fecharPopupChat();" class="close-thik"></a>
+<a href="https://www.homehost.com.br/#" onclick="function();" class="min-btn"></a>
+
+
+<div id="chat_cliente">
+
+	<div id="chat_mensagens">
+
+	</div>
+
+	<div id="chat_enviar_mensagem">
+		<textarea id="chat_txt" placeholder="Digite sua mensagem..."></textarea>
+<br>		<input type="button" id="btmsg1" class="btmsg1" value="Enviar" onclick="enviarMsg();">
+
+                <div class="image-upload">
+                    <label for="file-input" style="position:inline;top:-20;display:inline-block;float:right;" xxstylexx="position:relative;left:-30;top:15;">
+                       <img src="./PHPArrays_Comandos_files/clip.png">
+                    </label>
+			   <form action="https://www.homehost.com.br/chat/upload.php" method="POST" enctype="multipart/form-data" name="frmUpload" target="ifupload">
+                   <input type="hidden" name="csidupload" id="csidupload" value="">
+                   <input type="hidden" name="op_id" value="0">
+                   <input type="hidden" name="de" value="cliente">
+                    <input name="arquivo" id="file-input" type="file" onchange="document.frmUpload.submit();">
+                   </form>
+                </div>
+
+		<iframe id="ifupload" name="ifupload" style="display:none" src="./PHPArrays_Comandos_files/saved_resource.html"></iframe>
+
+		<!--input type=button ID=btchat2 class=btfechar value="Encerrar" onClick="encerrarChat();"-->
+	</div>
+
+
+	<div id="chamar">
+		<form action="javascript:iniciarChat();">
+		<input type="text" placeholder="Seu nome" id="chat_nome" required=""><br>
+		<textarea placeholder="Como podemos lhe ajudar?" id="chat_pergunta"></textarea><br>
+		<!--input type=text placeholder="Seu email" ID="chat_email" required><br-->
+		<input type="submit" class="btiniciarchat" value="Iniciar chat" onxclick="iniciarChat();">
+		</form>
+	</div>
+
+</div>
+
+
+<script>
+
+//      console.log("localstorage:"+localStorage.getItem("homehost_chat_csid"));
+        if (localStorage.getItem("homehost_chat_csid")) iniciarChat();
+        else if (0) { $('#inc_chat_hh').toggleClass("mini"); console.log("chat mini"); }
+        else { $('#inc_chat_hh').toggleClass("escondido"); console.log("sem op - 0"); }
+
+        if (localStorage.getItem("homehost_chat_nome")) $('#chat_nome').val(localStorage.getItem("homehost_chat_nome"));
+
+
+
+
+</script>
+
+
+</div>
+
+<script>
+$('#inc_chat_hh').load('https://www.homehost.com.br/chat/cliente_homehost.php');
+</script>
+
+
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<script async="" src="./PHPArrays_Comandos_files/jquery-3.4.1.min.js.transferir"></script>
+<script src="./PHPArrays_Comandos_files/popper.min.js.transferir" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="./PHPArrays_Comandos_files/bootstrap.min.js.transferir" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+
+</body></html>
