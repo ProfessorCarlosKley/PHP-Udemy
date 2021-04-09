@@ -5,13 +5,16 @@
 # while não exige uma sequência como For, o loop acontece enquanto a condição for verdadeira.
 
 $condicao = true;
-
+$i = 0;
 while ($condicao) {
+    
+    $i +=1;
     $numero = rand(1, 10);
     #números aleatórios entre 1 e 10;
     if ($numero === 3) {
-        echo "ENCONTRADO: " . $numero;
+        
         $condicao = false;
     }
-    echo "Tentativa: " . $numero . "<br>";
+    echo "Tentativa: " . $i . " = ".	$numero . "<br>";
+
 }

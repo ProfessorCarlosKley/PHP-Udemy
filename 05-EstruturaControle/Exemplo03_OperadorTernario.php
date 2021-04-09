@@ -15,5 +15,12 @@ if ($qualSuaIdade < $idadeCrianca) {
 }
 
 echo "<br>";
-//Operador Ternário...
+
 echo ($qualSuaIdade < $idadeMaior) ? "Menor de idade." : "Maior de Idade.";
+
+/*Operador Ternário...
+	- indicado para testes simples, sem muitas condições.
+() = teste.
+? = então.
+: = senão.
+*/

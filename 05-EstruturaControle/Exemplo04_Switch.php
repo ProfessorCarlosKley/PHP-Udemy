@@ -1,10 +1,11 @@
 <?php
 $diaDaSemana = date("w");
-
+/*w recupera dias da semana do objeto date. Varia de 0 a 6.*/
 switch ($diaDaSemana) {
     case 0:
         echo "DOMINGO";
-        break; //evita execução do segundo case, caso est seja verdadeiro.
+        break;
+        //evita execução do segundo case, caso este seja verdadeiro.
     case 1:
         echo "SEGUNDA-FEIRA";
         break;
