@@ -6,9 +6,17 @@ function teste()
 {
 
 	global $nome;
+
 	/*
-	- global permite à função reocnhecer a variável nome definida fora dela.
-	- Se a função for chamada sem essa definição, echo não reconhecerá $nome, pois ela não consegue pegar fora do escopo da função.
+	
+	- global permite à função reocnhecer a variável nome definida fora da função. Diz que a função quero ouvir a variável nome globalmente.
+
+	- Se a função for chamada sem essa definição, echo não reconhecerá 	$nome, pois ela não consegue pegar fora do escopo da função.
+
+	- As chaves determinam um escopo.
+
+	- $nome dentro da função não é a mesma coisa que $nome fora da função, estão em áreas diferentes (escopo). Por isso, indicamos que $nome como global, aí a função reonhece fora de seu escopo.
+
 	*/
 	echo $nome;
 }
