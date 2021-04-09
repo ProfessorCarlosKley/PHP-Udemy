@@ -19,7 +19,8 @@ var_dump($a == $b); //aqui só compara o valor, será true.
 echo "<br>";
 echo "a === b: ";
 var_dump($a === $b);
-//compara o valor e o tipo tmb, dará false, pois apesar dos valroes serem iguais os tipos são diferentes. Int e Float.
+//compara o valor e o tipo também, dará false, pois apesar dos valroes serem iguais os tipos são diferentes. Int e Float.
+// === chamado de comprardor de identidade.
 echo "<br>";
 echo "a != b: ";
 var_dump($a != $b);
@@ -32,9 +33,15 @@ var_dump($a !== $b);
 echo "<br>";
 echo "<br>";
 echo "<br>";
-echo "Operador novo php 7 - a <=> b: ";
+echo "Operador novo php 7: a <=> b: ";
 echo "<br>";
 var_dump($a <=> $b);
+echo "<br>";
+echo "<br>";
+echo "Retorna. <br>";
+echo "1 se maior. <br>";
+echo "0 se igual. <br>";
+echo "-1 se menor. <br>";
 //Se o a for maior retorna     1;
 //Se o a for menor retorna   - 1;
 //Se forem iguais retorna      0;

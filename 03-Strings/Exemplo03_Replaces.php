@@ -1,4 +1,4 @@
-<?php
+	<?php
 $nome = "Carlos Klei";
 $nome = str_replace("a", "ª", $nome);
 $nome = str_replace("e", "3", $nome);
