@@ -1,10 +1,15 @@
 <?php
 # Uma constante que armazena um arry. PHP 7.
 define("BANCO_DE_DADOS", [
-    '127.0.0.1', 'root', 'password', 'bancoTeste'
-], true); //true esse arâmetro torna a constante case insensitive
+'127.0.0.1',
+'root',
+'password',
+'bancoTeste'], true);
+
+// true - esse parâmetro torna a constante case insensitive.
 
 print_r(BANCO_DE_DADOS);
+echo "<br>";
 echo "<br>";
 echo "Endereço: ";
 print_r(BANCO_DE_DADOS[0]);
