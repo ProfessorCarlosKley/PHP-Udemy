@@ -4,14 +4,15 @@ echo "Local do arquivo de sessão: " . session_save_path();
 # Obtém e/ou define o caminho para armazenamento da sessão atual
 echo "<br>";
 
-
 echo "<br>";
 echo "Nome da Seção: " . session_name();
 # Obtém e/ou define o nome da sessão atual
+
 echo "<br>";
 echo "Status da Seção: ";
 echo "Status: " . session_status() . ": ";
 # Retorna o status atual da sessão
+echo "<br>";
 var_dump(session_status());
 switch (session_status()) {
     case PHP_SESSION_DISABLED:
