@@ -1,11 +1,15 @@
 <?php
-/*A função date obedece à linguagem e regionais do servidor...  */
-echo "DATA ATUAL <BR>";
+/*A função date não é sensível ao setlocale, para configuração regional,(idioma e fuso horário) por isso, mesmo configurndo aqui a data obedece o padrão americano. Resultado em inglês.
+
+A função date, obedece configurações do servidor.*/
+
+echo "<b>DATA ATUAL </b><BR>";
 echo "Data e Hora: " . date('d-m-Y :: H:i:s');
 echo "<br>";
 echo "<br>";
 
-echo "FUSO HORÁRIO <BR>";
+echo "<b>FUSO HORÁRIO </b><BR>";
+
 echo "<br>";
 echo "Data e Hora: " . date('e'). "	:: 'e' - Identificador do fuso horário (adicionado no PHP 5.1.0)";
 echo "<br>";
@@ -20,7 +24,9 @@ echo "<br>";
 echo "Deslocamento em segundos: " . date('Z'). " :: 'Z' - Deslocamento, em segundos, do fuso horário. O deslocamento para fusos horários a oeste de UTC sempre será negativa, e para aqueles à leste de UTC sempre será positiva.. - (-43200 até 50400).";
 echo "<br>";
 echo "<br>";
-echo "DATA / HORA COMPLETA <BR>";
+
+echo "<b>DATA / HORA COMPLETA </b><BR>";
+
 echo "Data e Hora Completa: " . date('c'). " :: 'c' - Data ISO 8601 (adicionado no PHP 5).";
 echo "<br>";
 echo "Data Formatada: " . date('r'). " :: 'r' - » RFC 2822 formatted date. - Exemplo: Thu, 21 Dec 2000 16:01:07 +0200";

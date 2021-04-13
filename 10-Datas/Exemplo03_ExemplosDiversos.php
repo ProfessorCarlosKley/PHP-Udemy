@@ -1,6 +1,7 @@
 <?php
-/*A função date obedece à linguagem e regionais do servidor...  */
-// Modifica a zona de tempo a ser utilizada. Disnovível desde o PHP 5.1
+/*A função date não é sensível ao setlocale, para configuração regional,(idioma e fuso horário) por isso, mesmo configurndo aqui a data obedece o padrão americano. Resultado em inglês.
+
+A função date, obedece configurações do servidor.*/
 date_default_timezone_set('UTC');
 echo "<br>";
 
