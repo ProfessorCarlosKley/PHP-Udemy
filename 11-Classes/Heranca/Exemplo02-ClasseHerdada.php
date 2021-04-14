@@ -21,7 +21,7 @@ class Programador extends Pessoa{
 }
 
 $linha = str_repeat("=", 150);
-#-----------------------------------------------------------------------------
+#--------------------------------------------------------------------------
 echo $linha;
 echo "<br>";
 echo "Trabalhando com a classe Pessoa()";
@@ -30,14 +30,16 @@ echo $linha;
 echo "<br>";
 
 $objeto = new Pessoa();
-echo "Criador PHP: " . $objeto->nome . "<br>"; //acesso direto ao atributo.
+echo "Criador PHP: " . $objeto->nome . "<br>"; 
+//acesso direto ao atributo público da classe Pessoa.
 echo "<br>";
 echo "O método resolve problema de leitura de protected e private.";
 echo "<br>";
-$objeto->verDados(); //acesso através do método.
-//verDados método público, pode ser chamado fora da classe.
+$objeto->verDados();
+//acesso através do método público da classe pessoa.
+//Por ser público, o método pode ser chamado fora da classe.
 echo "<br>";
-#------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------
 echo $linha;
 echo "<br>";
 echo "Trabalhando com a classe extendida Programador()";
@@ -48,7 +50,7 @@ echo "<br>";
 $objeto2 = new Programador();
 echo "Acessando método público de Pessoa(), função verDados(), através da classe filha Programador(): <br>";
 echo "---------------------------------------. <br>";
-$objeto2->verDados();
+$objeto2->verDados();//Possível, Programador extends de Pessoa.
 echo "<br>";
 echo "O atributo protegido (senha) é lido pela função verDados() na própria classe, por isso conseguimos chamar na classe filha, mas aqui diretamente não conseguiremos. <br>";
 echo "---------------------------------------. <br>";

@@ -1,5 +1,5 @@
 <?php
-//Static, perite a chamada sem a necessidade da instância.
+//Static, permite a chamada sem a necessidade da instância do objeto.
 
 class Documento{
     private $numero;

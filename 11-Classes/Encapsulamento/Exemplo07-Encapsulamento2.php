@@ -8,7 +8,8 @@ class Pessoa
     public function verDados()
     {
         echo "ESSE MÉTODO PERTENCE À CLASSE: " . get_class($this) . "<br>";
-        //$this refere-se à própria classe. e get_classe obtém a classe do método.
+        // $this refere-se à própria classe.
+        // get_classe retorna a classe do método em questão.
 
         echo "Nome: " . $this->nome . "<br>";
         echo "Idade: " . $this->idade . "<br>"; //Acesso ao protected;
@@ -17,7 +18,7 @@ class Pessoa
 } //Fim da classe.
 
 $objeto = new Pessoa();
-echo "Criador PHP: " . $objeto->nome . "<br>";
+echo "Criador PHP: " . $objeto->nome . ". Acesso dierto ao atributo fora da classe - nome é public. <br>";
 
 echo "<br>";
 echo "O método resolve problema de leitura de protected e private.";

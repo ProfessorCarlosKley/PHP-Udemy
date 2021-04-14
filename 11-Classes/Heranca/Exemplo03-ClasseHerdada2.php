@@ -26,7 +26,7 @@ class Programador extends Pessoa
         echo "Nome: " . $this->nome . "<br>"; //Acesso ao públic
         echo "Idade: " . $this->idade . "<br>"; //Acesso ao protected; Ok
         echo "Senha: " . $this->senha . "<br>";
-        //Acesso negado. Dará erro. Undefined; private não é lido por classe herdada.
+        //ERRO! Acesso negado. Dará erro. Undefined; senha é private e não é lido por classes filhas.
     } //Fim da função.
 
 }
