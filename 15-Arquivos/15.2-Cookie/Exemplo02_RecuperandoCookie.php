@@ -1,11 +1,13 @@
 <?php 
 
 //Array super global que contém os cookies na máquinha local.
-//Para verificar, F12 no chrome e na aba aplicativo do lado esquerdo tem a lista do cookies na opção cookie.
+//Para verificar, F12 no chrome e na aba << aplicativo >> do lado esquerdo tem a lista do cookies na opção cookie.
 // NOME_DO_COOKIE foi o nome do cookie que criamos.
 
-if (isset($_COOKIE["NOME_DO_COOKIE"])){
-	//$_COOKIE retorna uma string formatada em JSON;
+if (isset($_COOKIE["NOME_DO_COOKIE"])){//Verificando se o coolie existe.
+	//$_COOKIE array dos cookies existentes;
+	
+	//var_dump($_COOKIE["NOME_DO_COOKIE"]) // retorna uma string formatada em json.
 	
 	$data = (json_decode($_COOKIE["NOME_DO_COOKIE"], true));
 	//PRECISO FORNECER O NOME DO COOKIE PARA CONSULTAR;
