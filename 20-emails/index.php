@@ -1,6 +1,7 @@
 <?php 
 	require_once ("vendor/autoload.php");
 	/*
+    "vendor/autoload.php" importando autloado padrão da dependencia.
 	Para baixar os arquivos do projetos neste exemplo, criamos o arquivo composer.json com o requerimento do pacote que queremos baixar, neste caso, utsamos "require": {"phpmailer/phpmailer": "^6.2"}. Esse comando para require, pegamos na pasta do pacote https://github.com/PHPMailer/PHPMailer, que também tem a instrução para o comando composer na linha de comando: composer require phpmailer/phpmailer.
 	O compose permite gerenciar dependências, ou seja, ao baixarmos um prjeto como modelo, todas as suas dependências de bibliotecas já são automaticamente baixadas.
 
@@ -37,11 +38,9 @@ $mail->Host = 'smtp.gmail.com';
 // se a sua rede não suportar SMTP sobre IPv6
 
 //Defina o número da porta SMTP - 587 para TLS autenticado, também conhecido como RFC4409 envio SMTP. Porta padrão do Gmail 587.
-
 $mail->Port = 587;
 
 //Defina o mecanismo de criptografia a ser usado - STARTTLS ou SMTPS
-
 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 #$mail->SMTPSecure = 'tls';
 
@@ -57,16 +56,16 @@ $mail->Password = "mwxxcgpvtqjvvubi";
 //End. que gerei: https://accounts.google.com/IssuedAuthSubTokens?hide_authsub=1
 //Depois de gerada, ir nas configurações e reconhecer a senha.
 
-//Defina de quem a mensagem deve ser enviada
+//Defina de quem está saindo o email, remetente.
 $mail->setFrom('karloskley@gmail.com', 'Programador Carlos Kley');
-//Defina um endereço de resposta alternativo
+//Defina um endereço que receberá o email caso respondam.
 $mail->addReplyTo('suportad@hotmail.com', 'Não visualizarei');
-//Defina para quem a mensagem deve ser enviada
+//Defina para quem a mensagem deve ser enviada. Pode ser vários emails por linha.
 $mail->addAddress('karloskley@hotmail.com', 'Carlos Kley');
 $mail->addAddress('geaoaraci@gmail.com', 'Carlos Kley');
 //Defina a linha de assunto
 $mail->Subject = 'Testando PHPMailer GMail SMTP';
-/* Leia o corpo de uma mensagem HTML de um arquivo externo, converta imagens referenciadas em incorporadas, converter HTML em um corpo alternativo de texto simples básico */
+/* Leia o corpo de uma mensagem HTML de um arquivo externo, converta imagens referenciadas em incorporadas, converter HTML em um corpo alternativo de texto simples básico; contents.html o arquivo que será incorporado à mensagem. */
 $mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
 //Substitua o corpo do texto simples por um criado manualmente
 $mail->AltBody = 'Esse texto apareceu devido ao não funcinamento do HTML';

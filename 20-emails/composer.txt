@@ -1,0 +1,23 @@
+"phpmailer/phpmailer": "^6.2"
+
+Esse requere, vendor (fornecedor), é obtido no site github do prjeto, na parte de baixo da página  no endereço.
+
+https://github.com/PHPMailer/PHPMailer
+
+	/*
+	Para baixar os arquivos do projetos neste exemplo, criamos o arquivo composer.json com o requerimento do pacote que queremos baixar, neste caso, utsamos "require": {"phpmailer/phpmailer": "^6.2"}. Esse comando para require, pegamos na pasta do pacote https://github.com/PHPMailer/PHPMailer, que também tem a instrução para o comando composer na linha de comando: composer require phpmailer/phpmailer.
+	O compose permite gerenciar dependências, ou seja, ao baixarmos um prjeto como modelo, todas as suas dependências de bibliotecas já são automaticamente baixadas.
+
+	- Neste exemplo, estamos utilizando um pacote para trabalharmos com emails. Baixamos via composer já com todas as suas bilibotecas ramificadas.
+
+	- Para enviarmos emails precisamos ter um servidor de emails, normalmente fornecido pelo site de hospedagem. Existem vários servidores de emails, o padão do windows é o exchange.
+
+	Aqui vamos trabalhar com o gratuito do gmail.
+	*/
+/**
+ * This example shows settings to use when sending via Google's Gmail servers.
+ * This uses traditional id & password authentication - look at the gmail_xoauth.phps
+ * example to see how to use XOAUTH2.
+ * The IMAP section shows how to save this message to the 'Sent Mail' folder using IMAP commands.
+ */
+
