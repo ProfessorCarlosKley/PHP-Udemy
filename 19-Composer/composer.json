@@ -1,16 +1,20 @@
 {
-    "name": "karloskley/composer",
-    "description": "Aula PHP 7",
+    "name": "hcodebr/composer",
+    "description": "Aula de PHP7",
     "type": "project",
     "authors": [
-    	{
-    		"name": "Carlos Kley",
-    		"email": "karloskley@hotmail.com"
-    	}
+        {
+            "name": "CARLOS KLEI D' CARVALHO",
+            "email": "karloskley@hotmail.com"
+        }
     ],
     "minimum-stability": "dev",
-    "require":{
-    	"monolog/monolog": "1.0.*"
+    "require": {
+        
+        "monolog/monolog": "1.0.*",
+        "phpmailer/phpmailer": "^6.2",
+        "slim/slim":"2.0",
+        "rain/raintpl":"3.0.0"
+       
     }
-
 }

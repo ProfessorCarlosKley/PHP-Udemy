@@ -31,11 +31,11 @@ private static $installed = array (
     array (
     ),
     'reference' => NULL,
-    'name' => 'karloskley/composer',
+    'name' => 'hcodebr/composer',
   ),
   'versions' => 
   array (
-    'karloskley/composer' => 
+    'hcodebr/composer' => 
     array (
       'pretty_version' => '1.0.0+no-version-set',
       'version' => '1.0.0.0',
@@ -276,7 +276,6 @@ self::$canGetVendors = method_exists('Composer\Autoload\ClassLoader', 'getRegist
 $installed = array();
 
 if (self::$canGetVendors) {
-
 foreach (ClassLoader::getRegisteredLoaders() as $vendorDir => $loader) {
 if (isset(self::$installedByVendor[$vendorDir])) {
 $installed[] = self::$installedByVendor[$vendorDir];

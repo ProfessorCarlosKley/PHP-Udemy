@@ -22,13 +22,14 @@ Tpl::configure( $config );
 $tpl = new Tpl;
 
 // assign a variable
-$tpl->assign( "name", "CARVALHO DESENVOLVIMENTO" );
+$tpl->assign( "name", "CARVALHO DESENVOLVIMENTO - email TEMPLATE" );
 $tpl->assign( "version", PHP_VERSION);
 
 // assign an array
 //$tpl->assign( "week", array( "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ) );
 
-// draw the template
+// Gerando Template com a variável html.
+// Todo template e gerado e repassado para essa variável que será usada na mensagem de envio do email. Linha 90.
 $html = $tpl->draw("index", true);
 //Como padrão já é html para esse template, não precisamos colocar.
 //draw usa o arquivo index.html como templates e escreve o conteúdo das variáveis.
@@ -77,7 +78,7 @@ $mail->Password = "mwxxcgpvtqjvvubi";
 //Depois de gerada, ir nas configurações e reconhecer a senha.
 
 //Defina de quem a mensagem deve ser enviada
-$mail->setFrom('karloskley@gmail.com', 'Programador Carlos Kley');
+$mail->setFrom('karloskley@gmail.com', 'Template Rain - email');
 //Defina um endereço de resposta alternativo
 $mail->addReplyTo('suportad@hotmail.com', 'Não visualizarei');
 //Defina para quem a mensagem deve ser enviada
@@ -85,8 +86,9 @@ $mail->addAddress('karloskley@hotmail.com', 'Carlos Kley');
 $mail->addAddress('geaoaraci@gmail.com', 'Carlos Kley');
 //Defina a linha de assunto
 $mail->Subject = 'Testando PHPMailer GMail SMTP';
-/* Leia o corpo de uma mensagem HTML de um arquivo externo, converta imagens referenciadas em incorporadas, converter HTML em um corpo alternativo de texto simples básico */
+/* Leia o corpo de uma mensagem HTML de um arquivo externo, converta imagens referenciadas em incorporadas, converter HTML em um corpo alternativo de texto simples básico. Aqui o arquivo da mensagem será passado através de uma variável. */
 $mail->msgHTML($html);
+//html variável criada na linha 32.
 //Substitua o corpo do texto simples por um criado manualmente
 $mail->AltBody = 'Esse texto apareceu devido ao não funcinamento do HTML';
 

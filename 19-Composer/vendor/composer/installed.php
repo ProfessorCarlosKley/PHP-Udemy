@@ -7,11 +7,11 @@
     array (
     ),
     'reference' => NULL,
-    'name' => 'karloskley/composer',
+    'name' => 'hcodebr/composer',
   ),
   'versions' => 
   array (
-    'karloskley/composer' => 
+    'hcodebr/composer' => 
     array (
       'pretty_version' => '1.0.0+no-version-set',
       'version' => '1.0.0.0',

@@ -1,0 +1,2 @@
+Esse arquivo composer.json já embuti no meu projeto as dependências por ele utilizdo. Se uma terceira pessoa baixar meu projeto, automaticamente as dependências serão baixadas também através da linha require do meu composer.
+O arquivo autoload.php é um gerenciador denamespaces mais sofitistaco, mais padronizado. Todas as dependências tem padronizado um autoload e seus vendor's (fornecedores).
